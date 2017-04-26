@@ -247,10 +247,10 @@ $(document).ready(function () {
      *  
      */
     $("#filtro").kendoAutoComplete({
-        dataTextField: "euserid",
+        dataTextField: "euser__Name",
         dataValueField: "euserid",
         dataSource: dataSource,
-        filter: "startswith",
+        filter: "contains",
         placeholder: "Nombre...",
     });
     /**
