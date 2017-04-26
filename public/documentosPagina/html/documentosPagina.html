@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Documentos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script> 
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>        
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="../../js/variablesPopUpDocumentos.js" type="text/javascript"></script>
+        <script src="../../js/popUpDocumentos.js" type="text/javascript"></script>        
+        <script src="../js/documentosPagina.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>                        
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/documentosPagina.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="divSubtitulo">
+            <table style="height: 50px; vertical-align: top; width: 100%">
+                <td style="width: 50px; height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                <td style="height: 50px;"><h4 id = "subtitulo" class="subTitulo">Documentos</h4></td>                 
+            </table>   
+            <div class="sidenavSup"></div>                    
+        </div>        
+        <div class="container-fluid">            
+            <div id="gridDocumentosPaginas"></div>        
+        </div>
+        <div id="popUpPreview" hidden="hidden" style = "overflow-y: hidden;" class="customPopUp">
+            <div class="k-window-titlebar k-header" style="margin-top: 1px;height: 1em">
+                &nbsp;
+                <span class="k-window-title"><label id="lbAccion"></label></span>
+                <div class="k-window-actions">
+                    <a role="button" href="#" class="k-window-action k-link" aria-label="Close">
+                        <span class="k-icon k-i-close" onclick="cerrarCustomPopUpPreview('popUpPreview')" role="button"></span>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div id="divTituloCustomPopUp">
+                <table style="width: 100%; padding-top: 20px;">
+                    <tr>
+                        <td style="width: 50px; padding-top: 0px;"><a class="k-grid" aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                        <td>
+                            <h1 id = "subtitulo" class="subTitulo"><label id="lbTitulo"></label></h1>
+                        </td>                                                    
+                    </tr>
+                </table>
+                <div class="sidenavSup"></div>                
+            </div>                        
+            <div id="gridDocumentoAd" style="height: 390px; width: 98%;overflow-y: hidden; overflow-x : hidden; margin-right: 0px;margin-left: 5px;">
+                <iframe id="ifPreview" class="doc" src=""></iframe>
+                <table style="width: 300px; position: absolute;top: 100px;left: 630px;">
+                    <tr>
+                        <td><b>Nombre: </b></td>
+                    </tr>
+                    <tr>    
+                        <td><label id="lbNombreArchivo"></label><br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Tipo: </b></td>
+                    </tr>
+                    <tr>
+                        <td><label id="lbTipoArchivo"></label><br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Autor: </b></td>
+                    </tr>
+                    <tr>
+                        <td><label id="lbAutorArchivo"></label><br></td>
+                    </tr>
+<!--                    <tr>
+                        <td><b>Tamaño: </b></td>
+                        <td><label id="lbTamanoArchivo"></label></td>
+                    </tr>-->
+                    <tr>
+                        <td><b>Creado por: </b></td>
+                    </tr>
+                    <tr>
+                        <td><label id="lbCreadorArchivo"></label><br></td>
+                    </tr>
+                    <tr>
+                        <td><b>Fecha de creación:  </b></td>
+                    </tr>
+                    <tr>
+                        <td><label id="lbFecCreadoArchivo"></label><br></td>
+                    </tr>
+                    
+                </table>
+            </div>            
+        </div>
+    </body>
+</html>

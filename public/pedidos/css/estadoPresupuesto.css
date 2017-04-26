@@ -1,0 +1,109 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20/09/2016, 02:14:29 PM
+    Author     : Desarrollo
+*/
+body{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 14px; 
+    font-family: "Verdana"; 
+    color:"#E6E6FA";
+}
+table{
+    padding: 0px;
+    border-spacing: 0;
+}
+
+
+.sidenavSup {
+    border-style: solid;
+    border-color: #7EA700 #fff  #fff  #fff;
+}
+
+.sidenavIzq {
+    border-style: solid;
+    border-color: #fff #fff #fff #7EA700;
+    height: 100%;
+}
+.sidenavSub1{
+    border-style: solid;
+    border-color: #fff #fff #fff #7EA700;
+    height: 100%;
+}
+.letraParrafo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: normal;
+    font-family: Verdana;
+
+}
+.subTitulo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 17px;
+    line-height: normal;
+    font-family: Verdana;
+    font-weight: bold;
+    vertical-align: center;
+}
+
+
+#outerWrapper{
+  background-color: #FFFFFF;
+  position:relative;
+  min-height:470px;
+}
+#grid {
+  height:100%;
+}
+.k-grid.table tr.k-state-selected{
+    background:  #FFFFFF;
+}
+
+#wrapper {
+        width: 950px;
+        margin: 0 auto;
+        }
+        
+#header {
+        padding-top: 40px;
+        width: 950px;
+        }
+        
+p {
+        font-size: 1.4em;
+        width: 400px;
+        }
+        
+a:link,     
+a:visited {
+        color: #a2b52d;
+        text-decoration: none;
+        }
+        
+a:hover, 
+a:focus {
+        border-bottom: 1px dotted #a2b52d;
+        }
+
+
+        .pt-page-moveFromLeft {
+    -webkit-animation: moveFromLeft .6s ease both;
+    animation: moveFromLeft .6s ease both;
+}
+
+html{}a.solink{position:fixed;top:50;width:100%;text-align:center;background:#f3f5f6;color:#cfd6d9;border:1px solid #cfd6d9;line-height:30px;text-decoration:none;transition:all .3s;z-index:999}a.solink::first-letter{text-transform:capitalize}a.solink:hover{color:#428bca}

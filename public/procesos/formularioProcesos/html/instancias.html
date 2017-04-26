@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+        To change this license header, choose License Headers in Project Properties.
+        To change this template file, choose Tools | Templates
+        and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Instancias </title>
+       <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>html { font-size: 20px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>
+        <link href="../../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="../../../scripts/jqueryBotstrap.js" type="text/javascript"></script>
+        <script src="../../../scripts/bootstrap.js" type="text/javascript"></script>
+        
+        <script src="../../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/kendo.all.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <script src="../../js/variablesProcesos.js" type="text/javascript"></script>
+        
+            
+        <link href="../../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/kendo.customprocesos.css" rel="stylesheet" type="text/css"/>
+        <script src="../../../js/servicios.js" type="text/javascript"></script>
+        <link href="../../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/fomularios.css" rel="stylesheet" type="text/css"/>
+        <script src="../../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../js/instancias.js" type="text/javascript"></script>
+    </head>
+    <body> 
+        <script id="rowTemplateCmp" type="text/x-kendo-tmpl">
+                    <tr data-uid="#: uid #"> 
+                    
+            
+                    <td>
+                    <span class="title" id ="#: task__name #">#: task__name # </span>
+                    </td>
+                    <td>
+                    <a  class='k-grid-proceso'><span title='Proceso' id = "spanproceso#: task__name#" class='k-sprite pro_groupoff'></span></a>
+                    </td>
+            
+                    </tr>
+        </script>
+        <script id="altRowTemplateCmp" type="text/x-kendo-tmpl">
+                    <tr class="k-alt" data-uid="#: uid #">
+                    
+                    
+                    <td>
+                    <span class="title" id ="#: task__name #">#: task__name # </span>
+                    </td>
+                    <td>
+                    <a  class='k-grid-proceso'><span title='Asignar Usuarios' id = "spanproceso#: task__name#" class='k-sprite pro_groupoff'></span></a>
+                  
+                    </td>
+                    </tr>
+    
+        </script>
+            <div>
+                <table style="height: 50px; vertical-align: top">
+                    <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite pro_info"></span></a></td>
+                    <td ><h4 id = "subtitulo2" class="subTitulo">Instancias  - </h4>
+                    <td><h4 id = "subtitulo" class="subTitulo"><p id="task1"></p></h4> </td>
+                   
+                   
+                </table>
+                
+            </div>
+           <div class="sidenavSup1"></div>
+                                    <div id="grilla"></div>
+                                   
+     <div id="grilla2" ></div>
+    </body>
+</html>	

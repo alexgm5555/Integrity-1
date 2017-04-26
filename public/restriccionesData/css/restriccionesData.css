@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27-mar-2017, 10:25:20
+    Author     : Quantum
+*/
+
+.sidenavSup {
+    border-style: solid;
+    border-color: #DBDBDB #fff  #fff  #fff;
+}
+.borderDiv {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #DBDBDB #DBDBDB  #DBDBDB  #DBDBDB;
+}
+.k-textbox1{
+    max-width: 200px;
+    width: 100%;
+}
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+
+/*.k-grid-header{
+    border-color: transparent;
+        display: none;
+}*/
+#gridCampos {
+    height:100%;
+}
+#restDatos {
+    height:100%;
+}

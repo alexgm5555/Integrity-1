@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Item Pedido</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoCabecera.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.culture.es-CO.min.js" type="text/javascript"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="../js/popupCabeceravendedor.js" type="text/javascript"></script>
+        <script src="../js/variablesEstados.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>                        
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/popupVendedores.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <br>
+        <table style="width: 100%;">            
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Codigo Vendedor</label>
+                </td>
+                <td class="tdDerecho">
+                    <span id="codigo_vendedor" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Nit:</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="nit" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Nombre:</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="nombre" style="width: 100%" required/>
+                </td>
+            </tr>            
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Clase Cliente:</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="claseCliente" STYLE="z-index:1; position:relative" required/>
+                </td>
+            </tr>
+                       
+            <tr>
+                <td class="tdBotones" colspan="2" >
+                    <button id="btAgregar" class="k-primary"  >Agregar</button>
+                    <button id="btCancelar" class="k-primary"  >Cancelar</button>
+                </td>                
+            </tr>
+        </table>                    
+    </body>
+</html>

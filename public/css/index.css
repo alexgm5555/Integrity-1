@@ -1,0 +1,223 @@
+div{
+    border-style: none;    
+}
+body, html  {
+    background-color: #48494B;;   
+    margin: 0 ;
+    padding: 0 ;
+    font-family: Arial;
+    color: #48494B;
+    overflow-y:hidden;
+  
+
+}
+table{
+    border-spacing: 0;
+    border-collapse: collapse;    
+}
+tr{
+    vertical-align: top;
+    border-color: red;
+}
+td{
+    padding: 0;
+}
+.tdAzul{
+    background-color: #23ADDE
+}
+
+.tdNaranja{
+    background-color: #EF9F27
+}
+
+.tdRojo{
+    background-color: #CF0021
+}
+
+.tdVerde{
+    background-color: #80BD28
+}
+
+.tdGris{
+    background-color: #48494B;
+    color: white;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.tdPerfil{
+    text-align: center;
+    padding-top: 10px;
+    background-image: url("../images/fondo-perfil.png");
+}
+.tdIFrame{
+    text-align: center;    
+    background-color: #fff;           
+}
+#outerWrapper{  
+    position:relative;
+    min-height:470px;
+}
+#perfil {
+    height:100%;    
+}
+#divArbol {
+    height:100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:300px;
+    z-index: 10;
+    overflow: auto;
+
+    background-image: url("../images/fondo-arbol.png");
+    /*overflow: auto;*/
+}
+#divIFrame{
+    position: absolute;
+    height:100%;
+    width: auto;
+    border: 0;
+    
+}
+img{    
+    border: 0;
+    cursor: pointer;
+}
+
+#logoEmpresa{
+    border: 0;
+    cursor: auto;
+}
+
+#imgUsuario{
+    border: 0;
+    cursor: auto;
+}
+
+#divFrameInc{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+}
+
+#divDocumentos {
+    height:100%;
+    position: absolute;
+    right:  0px;
+    top: 0;
+    width:300px;
+    z-index: 9;    
+    background-image: url("../images/fondo-arbol.png");
+    overflow: auto
+}
+#divNotificaciones {
+    height:100%;
+    position: absolute;
+    right:  0px;
+    top: 0;
+    width:300px;
+    z-index: 9;    
+    background-image: url("../images/fondo-arbol.png");
+    overflow: auto;
+/*    scrollbar-face-color: ThreeDFace ;
+  scrollbar-shadow-color: ThreeDDarkShadow ;
+  scrollbar-highlight-color: ThreeDHighlight ;
+  scrollbar-3dlight-color: ThreeDLightShadow ;
+  scrollbar-darkshadow-color: ThreeDDarkShadow ;
+  scrollbar-track-color: Scrollbar ;*/
+
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background-color:#4F4F4F;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 15px;
+    border-radius: 10px;
+    background: #909090; 
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #454545; 
+}
+#divDocumentosd {
+    height:50%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:700px;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto
+}
+.imgcumple{
+    width:100%;
+    background-image: url("../images/FelizCumple.png");
+}
+.k-alt{
+    background-color: #656565;
+}
+
+.k-grid.k-widget{
+    background-color: #505050;
+    border-color: #323232;
+    color: #cecece;
+}
+
+
+.k-filter-row th:hover{    
+    background-color: #505050;
+    border-color: #323232;
+}
+
+.k-filter-row th{    
+    background-color: #505050;
+    border-color: #323232;
+}
+
+.k-window-titlebar{    
+    background-color: #ffffff;
+}
+
+.k-grid td {
+    padding-left: 20px;
+}
+ .orders.k-grid.k-widget{
+            border:0;
+      
+      
+  }
+  divNotificaciones .k-grid td {
+    padding-left: px;
+}
+#close {
+    float:right;
+    display:inline-block;
+    padding:6px 5px;
+}
+.icon-small{
+    zoom:0.29;
+    -moz-transform:scale(0.29);
+    -moz-transform-origin: 0 0;
+}
+footer {
+            bottom: 0;
+            position: fixed;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+.jstree-default a.jstree-search { color:#8CC451; }

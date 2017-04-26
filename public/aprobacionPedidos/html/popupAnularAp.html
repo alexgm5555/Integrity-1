@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Anular pedido</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script> 
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoCabecera.custom.min.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="../js/variablesAprobacionPedidos.js" type="text/javascript"></script>
+        <script src="../js/popupAnularAp.js" type="text/javascript"></script>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/popUpFiltros.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <p>¿Cual es la razón por la que desea anular este pedido?</p>
+        <table style="width: 100%" >
+            <tr>
+                <tr>
+                    <td class="tdIzquierdo">
+                        <label>Condición anulación</label>
+                    </td>                
+                    <td class="tdDerecho">                    
+                        <input id="ipAnular" style="width: 100%" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdIzquierdo">
+                        <label>Observaciones:</label>
+                    </td>                
+                    <td class="tdDerecho">                    
+                        <textarea id="idObservaciones" data-bind="value: textareaValue" class="k-textbox" style="height: 80px; width: 100%;"></textarea>
+                    </td>
+                </tr>
+                <td class="tdBotones" colspan="2" >
+                    <button id="btAnular" class="k-primary" onclick="anularPedido()" >Anular</button>
+                    <button id="btCancelar" class="k-primary" onclick="btnCancelar()" >Cancelar</button>  
+                </td>                
+            </tr>
+        </table>        
+        <br><br>
+         
+    </body>
+</html>

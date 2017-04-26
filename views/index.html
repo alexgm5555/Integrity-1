@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Integrity</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../scripts/jquery.min.js"></script>              
+
+        <script src="../js/servicios.js" type="text/javascript"></script>
+        <script src="../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../scripts/FileSaver.js" type="text/javascript"></script>      
+
+        <link href="../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>    
+
+        <link rel="stylesheet" href="../css/kendo.common.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../css/kendo.metro.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../css/kendo.metro.mobile.min.css" type="text/css"/>        
+        <link rel="stylesheet" href="../css/estilos.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../css/index.css" type="text/css"/>
+        <link href="../css/objIntermitente.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/variablesIndex.js" type="text/javascript"></script>
+        
+        <link href="../css/style2min.css" rel="stylesheet" type="text/css"/>
+        <script src="../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../js/index.js" type="text/javascript" ></script>
+        <script src="../scripts/jstree.min.js" type="text/javascript"></script>
+        
+        <script src="../js/documentos.js" type="text/javascript"></script>
+        <script src="../js/notificaciones.js" type="text/javascript"></script>
+        <script src="../js/arbolMenu.js" type="text/javascript"></script>
+        <script src="../js/metodEventClickNoticacion.js" type="text/javascript"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+        
+        
+    </head>
+    
+    <body style="overflow-x:hidden">
+        <script id="rowTemplateCmp" type="text/x-kendo-tmpl">
+                    <tr id="rowNoti#: alt__id#" data-uid="#: uid #"> 
+                   
+                    <td style="width:40px;" align="left">
+                    <img style="width:40px;" id = "imgNoti#: alt__id#" class="imgNoti" align="center" src="../images/transaccionesOff.png" />
+                    </td>
+                    <td>
+                    <span class="title">#: alt__msj #</span>
+                    <br>   
+                    <div align="right">#: alt__datehour #</div>
+                    </td>
+                  
+                    </tr>
+        </script>
+        <script id="altRowTemplateCmp" type="text/x-kendo-tmpl">
+                    <tr id="rowNoti#: alt__id#" data-uid="#: uid #">
+                    
+                    <td style="width:40px;" align="left">
+                    <img style="width:40px;" id = "imgNoti#: alt__id#" class="imgNoti" align="center" src="../images/transaccionesOff.png" />
+                    </td>
+                    <td>
+                    <span class="title">#: alt__msj #</span>
+                    <br>   
+                    <div align="right">#: alt__datehour #</div>
+                    </td>
+                  
+                    </tr>
+            
+        </script>
+        <div>
+            <div>
+                <table width="100%">
+                    <tr>
+                        <td width="51px" name="tdSuperior">
+                            <img id="imgLogoIntegrity" src="../images/Login Inicio-07.png"  onclick="inicio()" alt=""/>
+                        </td>
+                        <td align="center" name="tdSuperior">
+                            <img id="logoEmpresa" src=""/>
+                        </td>
+                        <td width="230px" id="tdAyuda" name="tdSuperior" align="right">
+                            <span id="regalo" hidden="hidden" class="parpadea text"><img src="../images/regalo.png" title="Cumpleaños" onClick="mostrarListaCumple()"/></span>
+                            <span id="mensaje" hidden="hidden" class="parpadea text"><img src="../images/regalo.png" title="Mesaje" onClick="mostrarMensajes()"/></span>
+                            <span ><img id="imgNotificaciones" src="../images/Notificaciones.png" title="Notificaciones" onClick="mostrarNotificaciones()"/></span>
+                            <img src="../images/documentos.png" title="Documentos" onClick="mostrarDocumentos()"/>
+                            <span ><img id="imgCongiguracion" src="../images/configuracion.png" title="" onclick="mostrarConfig()"/></span>
+                            <img src="../images/ayuda.png" title="Ayuda" onClick="ayuda()"/>
+                            <img src="../images/salir.png" title="Salir" onClick="cerrarSesion()"/>
+                        </td>
+                        <td width="10px" name="tdSuperior">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="divDerecho">
+                <table width="100%" height="100%">
+                    <tr>
+                        <td width="51px">
+                            <div>
+                                <table width="100%">
+                                    <tr id="trTransacciones">
+                                        <td>
+                                            <img id="imgTransacciones" src="../images/transaccionesOff.png" title="Transacciones" onClick="" estado="off" name="imgMenu" onmouseover="this.src = '../images/transaccionesRO.png';  mostrarArbol();" onmouseout="this.src = '../images/transaccionesOff.png';" servicio=""/>                    
+                                        </td>                
+                                    </tr>
+                                    <tr id="trreports">
+                                        <td>
+                                            <img id="imgReportes" src="../images/reportesOff.png" title="Reportes" onClick="cambiarImagen('imgReportes', 'tdNaranja')" estado="off" name="imgMenu" onmouseover="this.src = '../images/reportesRO.png';" onmouseout="this.src = '../images/reportesOff.png';" servicio="Reportes"/>
+                                        </td>                
+                                    </tr>
+                                    <tr id="trindicators">
+                                        <td>
+                                            <img id="imgIndicadores" src="../images/indicadoresOff.png" title="Indicadores" onClick="cambiarImagen('imgIndicadores', 'tdAzul')" estado="off" name="imgMenu" onmouseover="this.src = '../images/indicadoresRO.png';" onmouseout="this.src = '../images/indicadoresOff.png';" servicio="Indicadores"/>
+                                        </td>
+                                    </tr>
+                                    <tr id="trprocess">
+                                        <td>
+                                            <img id="imgProcesos" src="../images/procesosOff.png" title="Procesos" onClick="cambiarImagen('imgProcesos', 'tdRojo')" estado="off" name="imgMenu" onmouseover="this.src = '../images/procesosRO.png';" onmouseout="this.src = '../images/procesosOff.png';" servicio="procesos"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td >                                
+                            <div id="outerWrapper">
+                                <div id="divCenteredNotification">
+                                <span id="centeredNotification" style="display:none;"></span>
+                                </div>
+                                <script id="msnTemplate" type="text/x-kendo-template">
+                                    <span class='mmm'><img src="../images/regalo.png"/></span>
+                                    <div class="upload-success">
+                                    <br>
+                                    <p>  #= message #</p>
+                                    </div>
+                                </script>
+                                
+                                <style>
+                                    .upload-success {
+                                        width: 300px;
+                                        height: 100px;
+                                        background: rgba(0%,0%,0%,.7);
+                                        color: #fff;
+                                    }
+                                    .mmm  {
+                                        float: left;
+                                        margin: 30px 15px 15px 30px;
+                                        
+                                    }
+                                    
+                                </style>
+                                <div id="perfil">
+                                    <table width="100%" height="100%">
+                                        <tr>                
+                                            <td id="tdPerfil" class="tdPerfil" width="256px">                                                    
+                                                <img id="imgUsuario" src="" onerror="this.src='../images/equipo/use default.png'"/>
+                                                <div id="datosUsuario">
+                                                    <label id= "lbNombre">Nombre</label><br>                                                   
+                                                    <label id= "lbEMail">Correo electrónico</label><br><br>
+                                                    <div id="divBtCambiarClave">
+                                                        <button id="btnCambiarClave" class="k-primary" onclick="cambiarClave()">Cambiar Clave</button>                                                            
+                                                    </div>                                                        
+                                                </div>
+                                                <div id="cambiarClave" hidden="hidden">
+                                                    <br>
+                                                    <br>                                                    
+                                                    <label id= "lbClave" >Nueva clave:</label><br> 
+                                                    <input id="IpClave" name ="Clave" required validationMessage="Clave necesaria" type="password" class="k-textbox"/><br><br>
+                                                    <label id= "lbRClave" >Repetir clave:</label><br>
+                                                    <input id="IpRClave" name ="RepetirClave" required validationMessage="Confirme su clave" type="password" class="k-textbox"/>
+                                                    <span class="k-invalid-msg" data-for="RepetirClave"></span><br><br><br>
+                                                    <button id="btnGuardarClave" class="k-primary" onclick="guardarClave()">Guardar Clave</button>
+                                                    <span class="status"></span>                                                    
+                                                </div>
+                                                <br>
+                                            </td>
+                                            <td class="tdIFrame" onmouseover="ocultarArbol(); ocultarDocumentos(); ocultarNotificaciones();" width="auto" align="left" >
+                                                <div id = "divIFrame">
+                                                    <iframe id="idFrame" width="auto" height="100%" src="" frameborder="0" align="left"></iframe>
+                                                </div>
+                                                <div id="divFrameInc" width="100%" height="100%" align="left" style="z-index:-1">
+                                                    
+                                                    <table width="100%">
+                                                        <tr>
+                                                            <td width="10px"></td>
+                                                            <td style="padding: 10px" class="tdGris">
+                                                                <span class="po_bullet1"></span>
+                                                                <label id="labelConsole"></label>
+                                                            </td>                                                
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td>
+                                                                <iframe frameborder="0" id="includeTerm"  src=""></iframe>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="divDocumentos" hidden="hidden">
+                                    <table style="width: 100%">
+                                        <tr>               
+                                            <td style="padding: 0px 0px 0px 10px; width: 35px">                    
+                                                <img src="../images/documentos.png" onClick="abreFuncion('documentosPagina/html/documentosPagina.html')"/>                        
+                                            </td>
+                                            <td style="padding: 0px 0px 0px 0px; vertical-align: middle">
+                                                <font color="#ffffff" size="4">Documentos</font>
+                                            </td>
+                                            <td style="padding: 0px 10px 0px 10px; width: 35px; vertical-align: middle">
+                                                <img src="../images/pixel.png" class="po_upfolder_sup" onClick="popUpSubirArchivo()"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <span class="k-textbox k-space-left " style="width: 300px;background-color:#3B3B3B; border-color: #3B3B3B">
+                                        <input type="text" id="buscarDoc" name="buscarDoc"  placeholder="Buscar" title="Buscar Documento" style="width:100%;background-color:#2b2b2b; border-color: transparent" />
+                                        <a class="k-icon k-i-search">&nbsp;</a>
+                                    </span>
+                                    <div id="grid"></div>
+                                </div>
+                                <div id="divNotificaciones" hidden="hidden">
+                                    <table style="width: 100%">
+                                        <tr>               
+                                            <td style="padding: 0px 0px 0px 10px; width: 35px">                    
+                                                <img src="../images/Notificaciones.png"/>                        
+                                            </td>
+                                            <td style="padding: 0px 0px 0px 0px; vertical-align: middle">
+                                                <font color="#ffffff" size="4">Notificaciones</font>
+                                            </td>
+                                            
+                                        </tr>
+                                        
+                                    </table>
+                                    
+                                    <div id="gridNotificaciones"></div>
+                                </div>
+                                <div id="divArbol" hidden="hidden">
+                                    <table>
+                                        <tr>               
+                                            <td style="padding: 10px">
+                                                <font color="#ffffff" size="4">Portafolios</font>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="k-textbox k-space-left " style="width: 300px;background-color:#3B3B3B; border-color: #3B3B3B">
+                                                    <input type="text" id="inpSearch" placeholder="Buscar" style="width:100%;background-color:#2b2b2b; border-color: transparent" />
+                                                    <a class="k-icon k-i-search">&nbsp;</a>
+                                                </span>
+                                            </td>
+                                            
+                                    </table>
+                                    <div id="jstree2" style="font-family:Arial;font-size:9pt;color:white;"></div>
+                                    
+                                </div>
+                                <div id="divDocumentosd" hidden="hidden" style = "overflow-y: hidden;">
+                                    <span style ="float:right; cursor: pointer;"  id = "close" onclick='cerrarListaCumple()'>x</span>
+                                    <table class = "imgcumple">
+                                        <tr >               
+                                            <td style="padding: 20px">
+                                                <font color="#000" size="6" style="padding: 10px">Deseales un<br>  feliz cumpleaños</font>
+                                            </td>                                                
+                                        </tr>
+                                    </table> 
+                                    <div class="panel-body panel-scroll">
+                                        <div ng-app='firstApp'>
+                                            <div ng-controller='firstControler'>
+                                                <ul ng-repeat='com in items'>
+                                                    
+                                                    <div class='customer-photo' style='background-image: url(data:image/png;base64,{{com.birthdaypersonpicture}})'></div>
+                                                    <div class='customer-name'>{{com.birthdaypersonname}}<br><div>{{com.birthdaypersondate}}</div></div>
+                                                    <hr class ="style-two"/>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div></div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                        </td>
+                    </tr>
+                </table>            
+            </div>
+        </div>
+        <audio id="myAudioNoty">
+            <source src="../sounds/Chord0.mp3" type="audio/mpeg">
+            Your browser does not support the <code>audio</code> tag.
+        </audio>
+        <style type="text/css">
+            .panel-body {max-height:50%;overflow:scroll;overflow-x: hidden;}
+            hr.style-two {
+                color: #656565;
+                border: 0;
+                height: 1px;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            .customer-photo {
+                display: inline-block;
+                width: 72px;
+                height: 66px;
+                /*        border-radius: 50%;*/
+                background-size: 72px 66px;
+                background-position: center center;
+                vertical-align: middle;
+                line-height: 2px;
+                /*box-shadow: inset 0 0 1px #999, inset 0 0 10px rgba(0,0,0,.2);*/
+                margin-left: 5px;
+            }
+            
+            .customer-name {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 22px;
+                padding-left: 3px;
+                font-size: 1.2em;
+                font-weight: normal;
+            }
+            #fechalabel {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: 12px;
+                padding-left: 2px;
+                font-size: .5em;
+            }
+        </style>
+    </body>
+</html>
+

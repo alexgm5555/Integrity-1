@@ -1,0 +1,199 @@
+#fieldlist {
+    margin: 0 0 -2em;
+    padding: 0;
+}
+
+#fieldlist li {
+    list-style: none;
+    padding-bottom: 2em;
+}
+
+#fieldlist label {
+    display: block;
+    padding-bottom: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #444;
+}
+
+#fieldlist input {
+
+    width: 201px;
+
+}
+
+
+.k-primary {
+    min-width: 150px;
+}
+li.k-button {
+    line-height: 35px;
+    text-align: center;
+    min-height: 26px;
+}
+#grid {
+    height:100%;
+}
+
+#outerWrapper{
+    background-color: #FFFFFF;
+    position:relative;
+    min-height:470px;
+}
+.k-grid td {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.k-grid table {
+    table-layout: fixed;
+}
+.k-pager-wrap {
+    position:absolute;    
+    bottom:0;
+    width:100%;
+}
+.GridNoHeader thead.k-grid-header
+{
+    height: 0;
+    border-bottom-width: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+.GridNoHeader th.k-header
+{
+    padding: 0;
+    border-width: 0;
+}
+
+/*#grid tbody tr:hover {
+    background: transparent;
+}
+.k-grid table tr.k-state-selected{
+    ackground: #EF9F27 
+}*/
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #EF9F27;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #F5F5F5;
+}
+.sidenavSup {
+    border-style: solid;
+    border-color: #EF9F27 #fff  #fff  #fff;
+}
+body{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+    font-size: 14px; 
+    font-family: "Verdana"; 
+    color:"#E6E6FA";
+    overflow-y:hidden;
+    width:100%;
+}
+/*.k-grid-header{
+    border-color: transparent
+}*/
+.k-filter-row th, .k-grid-header th.k-header{
+    border-color: #fff #fff  #fff  #DBDBDB;
+}
+#customPopUp{
+    height:500px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:60%;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+#customPopUp1{
+    height:500px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:60%;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+
+#disable {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background-color:rgba(0,0,0,0.5);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+footer {
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    left: 0px;
+    position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+th.k-header, .k-window-titlebar 
+{
+  /*font-weight: bold;*/
+}
+
+.divNewFun{
+    cursor: pointer;
+    background-color: transparent;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+    display: inline-table
+}
+
+.divNewFun:hover{
+    background-color: transparent;
+    filter:alpha(opacity=70);
+    -moz-opacity:0.7;
+    opacity: 0.7;   
+}
+.k-grid table tr.k-state-selected
+{
+background: #ededed;
+color: #EF9F27;
+border-style: solid;
+
+    border-color: red;
+ }
+.k-link:not(.k-state-disabled):hover>.k-i-close{
+        background-position: -32px -16px;
+}
+/*.k-grid table tr.k-state-selected
+{
+
+color: #EF9F27;
+
+ }
+ .k-grid table tr.k-state-selected:hover
+{
+background: #EF9F27;
+
+ }*/
+

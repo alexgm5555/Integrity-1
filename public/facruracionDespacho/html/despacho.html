@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pedido</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>        
+        <script src="../../scripts/bootstrap.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script> 
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>        
+        <script src="../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>        
+        <script src="../js/variablesFactDespacho.js" type="text/javascript"></script>
+        <script src="../js/despacho.js" type="text/javascript"></script>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/facruracionDespacho.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+        <span id="centeredNotification" style="display:none;"></span>
+        <div class="container-fluid">
+            <div class="row content">
+                <div>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 50px; height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                            <td>
+                                <h1 id = "subtitulo" class="subTitulo">Despacho <label id="idNumeroDespacho"></label></h1>                                
+                            </td>                            
+                            <td style="width: 50px; text-align: right; padding-right: 20">
+                                <a id ="btnVolver" class="k-grid" onclick ="volverDespachos()" aling="center"><span class="k-sprite po_back"></span></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="sidenavSup"></div>                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Transportista:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <label id="lbTransportista" class="letraParrafo" style="width: 100%" />                        
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Fecha de despacho:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <label id="lbFecha" class="letraParrafo" style="width: 100%" />
+                                </td>
+                            </tr>                            
+                        </table>                        
+                    </div>
+                    <div class="col-md-6">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Camión:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <label id="lbCamion" class="letraParrafo" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Peso total en Kg:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <label id="lbPeso" class="letraParrafo" style="width: 100%"/>
+                                </td>
+                            </tr>                           
+                        </table>
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 10%">
+                                    <label class="letraParrafo">Observaciones:</label><br>
+                                </td>
+                                <td>
+                                    <label id="lbObservaciones" class="letraParrafo" style="width: 100%"/>                                    
+                                </td>
+                            </tr>                            
+                        </table>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="container-fluid">
+            <div class="row content">
+                <div>
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <h1 id = "subtitulo" class="subTitulo">Detalle</h1>
+                            </td>                            
+                        </tr>
+                    </table>                    
+                </div>
+            </div>
+            <div id="gridDetalleDespacho"></div>                        
+        </div>        
+    </body>
+</html>

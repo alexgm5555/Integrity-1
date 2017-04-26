@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link href="../css/style2min.css" rel="stylesheet" type="text/css"/>
+        <script src="../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../scripts/jstree.min.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <table>
+            <tr>               
+                <td style="padding: 10px">
+                    <font color="#ffffff" size="4">Portafolios</font>
+                </td>                                                
+            </tr>
+        </table>
+        <div id="jstree2" style="font-family:Arial;font-size:9pt;color:white;"></div>
+        <script>
+            try{
+                $(function() {
+                    try{                        
+                        $('#jstree2').jstree(JSON.parse(sessionStorage.getItem("txtJson2")));
+                        if(sessionStorage.getItem("pcf")){
+                            $('#jstree2').jstree(true).select_node(sessionStorage.getItem("pcf"));
+                        }
+                    }catch(e){alert(e.message);}
+                    $('#jstree2').on('dblclick', function () {                        
+                        if(sessionStorage.getItem("cabeceraLast")||(sessionStorage.getItem("cabeceraNew"))||(sessionStorage.getItem("cabeceraTitu"))||(sessionStorage.getItem("cabeceraLlaves"))){
+                            sessionStorage.removeItem('cabeceraTitu');
+                            sessionStorage.removeItem('cabeceraNew');
+                            sessionStorage.removeItem('cabeceraLlaves');
+                            sessionStorage.removeItem('cabeceraLast');
+                        }var id=$('#jstree2').jstree(false).get_selected();
+                        var id=$('#jstree2').jstree(true).get_selected();
+                        sessionStorage.setItem("ncf",$('#jstree2').jstree(true).get_text($('#jstree2').jstree(true).get_selected()))
+                        for(var i=0;i<id.length;i++){
+                            if($('#jstree2').jstree(true).is_open(id[i])){
+                                $('#jstree2').jstree(true).close_node(id[i]);
+                            }
+                            else{
+                                $('#jstree2').jstree(true).open_node(id[i]);
+                            }
+                            if(!$('#jstree2').jstree(true).is_parent(id[i])){                                
+                                var texto = id[i];
+                                parent.fijarPcf(sessionStorage.setItem("pcf", texto));
+                            }
+                        }
+                    });
+                });
+            }
+            catch(err){
+                alert(err);
+            }  
+        </script>
+    </body>
+</html>

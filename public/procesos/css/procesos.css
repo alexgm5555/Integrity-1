@@ -1,0 +1,244 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20/09/2016, 02:14:29 PM
+    Author     : Desarrollo
+*/
+body{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 14px; 
+    font-family: "Verdana"; 
+    color:"#E6E6FA";
+}
+table{
+    padding: 0px;
+    border-spacing: 0;
+}
+.k-primary {
+    min-width: 150px;
+}
+
+.sidenavSup1 {
+    border-style: solid;
+    border-color: #cf0021  #fff   #fff  #fff;
+}
+
+.sidenavIzq1{
+    border-style: solid;
+    border: 1;
+    border-color:  #fff  #fff  #fff #cf0021 ;
+    height: 100%;
+}
+.sidenavInf {
+    border-style: solid;
+    border-color: #fff  #fff  #E0E0E0  #fff ;
+    height: 100%;
+}
+.letraParrafo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: normal;
+    font-family: Verdana;
+
+}
+.subTituloform{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 13px;
+    line-height: normal;
+    font-family: Verdana;
+    font-weight: bold;
+    vertical-align: center;
+}
+.mensaje{
+    
+    font-size: 14px;
+    font-family: Verdana;
+    font-weight: bold;
+    vertical-align: center;
+   
+}
+.btnSend {
+
+    width: 300px; /* Full width */
+    height: 100px; /* Full height */
+}
+
+ @media screen and (max-width: 1023px) {
+                    div.k-window {
+                        display: none !important;
+                    }
+                }
+  
+
+#gridproceso {
+    height:250px;
+
+    /*width:550px;*/
+   
+    overflow: auto;
+}
+
+.po_bulleto1{
+	width: 34px;
+	height: 34px;
+	background: url(../../../images/SpriteIntegrity.png) -8px -8px;
+	cursor:pointer;
+        border: 0px;
+             
+}
+.po_bulleto1:active {
+	width: 34px;
+	height: 34px;
+	background:url(../../../images/SpriteIntegrity.png) -8px -8px;
+}
+.sidenavIzq {
+    border-style: solid;
+    border-color: #fff #fff #fff #E0E0E0;
+    height: 100%;
+}
+.sidenavSub {
+    border-style: solid;
+    border-color: #80BD28 #fff  #fff  #fff;
+    height: 100%;
+}
+
+
+
+#outerWrapper{
+  background-color: #FFFFFF;
+  position:relative;
+  min-height:470px;
+}
+#grilla_usr{
+     height:250px;
+
+    /*width:550px;*/
+   
+    overflow: auto;
+}
+#bottn
+{
+    float:right;
+}
+
+
+
+.k-grid tr:hover {
+  background: transparent;
+  
+}
+.k-grid tr:not(.k-state-selected):hover {
+      color: #ED4B5E;
+    
+  }
+
+  .k-grid tr.k-alt:not(.k-state-selected):hover {
+      background: #f1f1f1;
+       /*background: transparent;*/
+  }
+  .k-grid .k-state-selected  {
+  background-color: #48494B !important;
+
+  opacity: 0.5;
+}
+ 
+.k-grid .k-alt.k-state-selected {
+  background-color: #48494B !important;
+  
+  opacity: 0.5;
+}
+
+/*.red {
+    color: red;
+}*/
+#customPopUp1{
+    height:70%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:60%;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+
+#disable {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background-color:rgba(0,0,0,0.5);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+footer {
+            background-color: #333;
+            width: 100%;
+            bottom: 0;
+            left: 0px;
+            position: fixed;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+.k-multiselect-wrap {
+    font-style: normal;
+    opacity: 0.6;
+    color: grey;
+    font-size: 14px;
+}
+html{}a.solink{position:fixed;top:50;width:100%;text-align:center;background:#f3f5f6;color:#cfd6d9;border:1px solid #cfd6d9;line-height:30px;text-decoration:none;transition:all .3s;z-index:999}a.solink::first-letter{text-transform:capitalize}a.solink:hover{color:#428bca}
+
+#disable {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background-color:rgba(0,0,0,0.5);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+footer {
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    left: 0px;
+    position: absolute;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#customPopUp{
+    height:500px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:60%;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+      
+}

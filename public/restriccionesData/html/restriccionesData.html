@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<base href="http://demos.telerik.com/kendo-ui/tabstrip/angular">-->
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/bootstrap.js" type="text/javascript"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+        <!--<script src="../../scripts/kendoGridAnguMultiSelect.custom.min.js" type="text/javascript"></script>-->
+
+
+
+
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>        
+        <script src="../../scripts/kendo.all.min.js" type="text/javascript"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>        
+        <script src="../js/varDataSKendo.js" type="text/javascript"></script>
+        <script src="../js/restriccionesData.js" type="text/javascript"></script>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/restriccionesData.css" rel="stylesheet" type="text/css"/>
+        <!--<script src="https://kendo.cdn.telerik.com/2017.1.223/js/angular.min.js"></script>-->
+        <link href="../../css/style2min.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/jstree.min.js"></script>
+    </head>
+    <body>
+        <div id="divGrillaPrincipal">
+            <div id = "titulogrid">
+                <table style="height: 50px; width: 100%">
+                    <td style="width: 50px;height: 50px"><a class="k-grid"  ><span class="k-sprite po_admin"></span></a></td>
+                    <td style="height: 50px"><h1 id = "subtitulo" class="subTitulo"><label id="lbfuncion">Permisos y Restricciones</label></h1></td>
+                </table>
+                <div class="sidenavSup"></div>
+            </div>
+            
+                
+
+                    
+
+                        <div  class="container-fluid">
+                            <div class="row content">
+                                
+                                <div id="jstree" style="font-family:Arial;font-size:9pt;"class="col-sm-3" >
+                                    
+                                </div>
+                                <div id="tabstrip" class="col-sm-8" style = "border-color: rgba(255,255,255,.15);">
+                                    <ul>
+                                        <li class="k-state-active">Inhabilitar Campos</li>
+                                        <li>Restricción de Datos</li>
+                                    </ul>
+
+                                    <div style="padding: 3em">
+                                        <div class ="row">
+                                            <div class = "col-sm-5" style="vertical-align: middle">
+                                                <br>
+                                                <label class="letraParrafo" >Anexo:</label><br>
+                                                <input id="anexoventanaCampos"  style="width: 100%;"/><br><br>
+                                            </div>
+                                            <div class="col-sm-5 ">
+                                                <br>
+                                                <label class="letraParrafo">Campo:</label><br>
+                                                <input id="campoventanaCampos"  class = "k-textbox" disabled style="width: 70%;"/>
+                                                <a id ="btnAddCampos" class="k-grid" onclick ="clickCrearCampos()"  hidden ><span class="k-sprite po_mas"></span></a>
+                                            </div>
+
+                                        </div>
+                                        <br>
+                                        
+                                        <div id="outerWrapper">
+                                            <div id="gridCampos" ></div>
+                                        </div>
+                                    </div>
+
+                                    <div style="padding: 3em">
+                                        <div class ="row">
+                                            <div class = "col-sm-5" style="vertical-align: middle">
+                                                <br>
+                                                <label class="letraParrafo" >Anexo:</label><br>
+                                                <input id="anexoventanaDatos" style="width: 100%;"/><br><br>
+                                            </div>
+                                            <div class="col-sm-5 ">
+                                                <br>
+                                                <label class="letraParrafo">Campo:</label><br>
+                                                <input id="campoventanaDatos"  class = "k-textbox" disabled style="width: 70%;"/>
+                                                <a id ="btnAddDatos" class="k-grid" onclick ="clickCrearDatos()" aling="right" hidden ><span class="k-sprite po_mas"></span></a>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div id="outerWrapper2">
+                                            <div id="restDatos"  name="grid"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            <script id="rowTemplateDatos" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title">#: cmp_desc #</span>
+            </td>
+            <td>
+            <span class="title"><input type="text" class="k-textbox1 k-textbox "  disabled value=#: seg_val #></span>
+            </td>
+            <td>
+            <a  class='k-grid-edit'><span id = "edit#: id#" class='k-sprite po_editon'></span></a>
+            <a  class='k-grid-Delete'><span id = "Delete#: id#" class='k-sprite po_cerrar'></span></a>
+            </td>                
+            </tr>
+        </script>
+        <script id="altRowTemplateDatos" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">
+            <td>
+            <span class="title">#: cmp_desc #</span>
+            </td>
+            <td>
+            <span class="title"><input type="text" class="k-textbox1 k-textbox "  disabled value=#: seg_val #></span>
+            </td>
+            <td>
+            <a  class='k-grid-edit'><span id = "edit#: id#" class='k-sprite po_editon'></span></a>
+            <a  class='k-grid-Delete'><span id = "Delete#: id#" class='k-sprite po_cerrar'></span></a>
+            </td>
+            </tr>
+        </script>
+    </body>
+</html>
+

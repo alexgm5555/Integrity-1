@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Asignación de productos por articulos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script> 
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="../js/variablesAsignacionPedidosArticulos.js" type="text/javascript"></script>
+        <script src="../js/asignacionPedidosArticulos.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>                        
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/asignacionPedidosArticulos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="divSubtitulo">
+            <table style="height: 50px; vertical-align: top; width: 100%">
+                <td style="width: 50px; height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                <td style="height: 50px;"><h4 id = "subtitulo" class="subTitulo">Asignacion de productos</h4></td> 
+            </table>   
+            <div class="sidenavSup"></div>                    
+        </div>
+ <!--       <script id="rowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title" id ="#: cla__des #">#: cla__des # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: art__des #">#: art__des # </span>
+            </td>
+            <td>
+            <span  class='title'>#try{if(cla__apl__inv === true){#si#}else {#no#}}catch(e){#no#}#</span>
+            </td>
+            <td>
+            <span class="title" id ="#: art__cant #">#: art__cant # </span>
+            </td>
+    
+//            <td>
+//            <a  class='k-grid-check'><span title='check' id = "spanproceso#: str__cod##: ter__nit##: trr__cod#" class='k-sprite po_checkCreate'></span></a> 
+//            <a  class='k-grid-edit'><span title='' id = "spanproceso#: str__cod#" class='k-sprite po_editoff'></span></a>
+//            <a  class='k-grid-deletae'><span title='' id = "spantarea#: str__cod#" class='k-sprite po_cerrar'></span></a>
+//                   
+//            </td>
+            
+            </tr>
+        </script>
+        <script id="altRowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title" id ="#: cla__des #">#: cla__des # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: art__des #">#: art__des # </span>
+            </td>
+            <td>
+            <span  class='title'>#try{if(cla__apl__inv === true){#si#}else {#no#}}catch(e){#no#}#</span>
+            </td>
+            <td>
+            <span class="title" id ="#: art__cant #">#: art__cant # </span>
+            </td>
+    
+//            <td>
+//            <a  class='k-grid-check'><span title='check' id = "spanproceso#: str__cod##: ter__nit##: trr__cod#" class='k-sprite po_checkCreate'></span></a> 
+//            <a  class='k-grid-edit'><span title='' id = "spanproceso#: str__cod#" class='k-sprite po_editoff'></span></a>
+//            <a  class='k-grid-deletae'><span title='' id = "spantarea#: str__cod#" class='k-sprite po_cerrar'></span></a>
+//                   
+//            </td>
+            
+            </tr>            
+        </script> -->
+        <div class="container-fluid">            
+            <div id="gridAsignacionPedidos"></div>        
+        </div>            
+    </body>
+</html>

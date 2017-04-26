@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/04/2017, 09:26:48 AM
+    Author     : jenny
+*/
+
+.doc {
+    width: 600px;
+    height: 350px;
+}
+
+.customPopUp {    
+    max-height: 50%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 1000px;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    overflow: auto;  
+}
+
+#disable {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background-color:rgba(0,0,0,0.5);
+    color: #000000;
+    overflow: auto;  
+}

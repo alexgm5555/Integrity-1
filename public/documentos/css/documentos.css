@@ -1,0 +1,36 @@
+body{
+    font-size: 14px; 
+    font-family: "Verdana"; 
+    color:"#E6E6FA";
+}
+
+.k-alt{
+    background-color: #656565;
+}
+
+.k-grid.k-widget{
+    background-color: #505050;
+    border-color: #323232;
+    color: #cecece;
+}
+
+
+.k-filter-row th:hover{    
+    background-color: #505050;
+    border-color: #323232;
+}
+
+.k-filter-row th{    
+    background-color: #505050;
+    border-color: #323232;
+}
+
+.k-window-titlebar{    
+    background-color: #ffffff;
+}
+
+.k-grid td {
+    padding-left: 20px;
+}
+
+

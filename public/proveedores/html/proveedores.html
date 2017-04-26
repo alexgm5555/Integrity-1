@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Proveedores </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; }</style>
+
+        <script src="../../scripts/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/bootstrap.js" type="text/javascript"></script>
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoToolbar.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <script src="../js/proveedores.js" type="text/javascript"></script>
+        <script src="../js/variablesProveedores.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <script src="../../js/servicios.js" type="text/javascript"></script>        
+        <link href="http://cdn.kendostatic.com/2013.3.1119/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <link href="../css/proveedores.css" rel="stylesheet" type="text/css"/>
+
+
+
+    </head>
+    <body>
+
+        <div>
+            <div>
+
+                <table style="width: 100%">
+                    <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                    <td style="width: 90%;height: 50px;" ><h4 id = "subtitulo" class="subTitulo">Proveedores</h4> </td>
+                    
+                    <td style="width: 50px; text-align: right; ">
+                               
+                            </td>
+
+                        <div class="container-fluid">                                                
+                            <button type="button" class="navbar-toggle" class="btn btn-default btn-circle btn-lg" data-toggle="collapse" data-target="#myNavbar">
+                                <i class="glyphicon glyphicon-list"></i>
+                            </button>                                                                         
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar" style="text-align: left">
+                            <ul class="nav navbar-nav">    
+
+
+                            </ul>
+                        </div>
+
+
+                    </td>
+
+                </table>
+                <div class="sidenavSup"></div>
+            </div>
+<div id="contenido" hidden="hidden" style="display: block;height: 70px;width: 100%;overflow-y: auto;overflow-x : hidden">
+            <div class="container-fluid">
+                <div class="row">
+                    <div> <h4 id = "subtitulo" style="padding-left: 20px;" class="subTitulo">Datos Personales Del Proveedor: <label id="nit"></label><label id="raz"></label></h4> </div>
+                    <div class="col-md-6">      
+
+                        <table style="width: 100%">
+                            <tr id="nitNuevo" hidden="hidden" >
+                                <td style="width: 30%">
+                                    <label class="letraParrafo" >Ruc/cc:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="NiT" style="width: 100%"  required/>                 
+                                </td>
+                            </tr>
+                            <tr id="razon" hidden="hidden" >
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Razon Social:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="razonSocial" style="width: 100%"  required/>                 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Telefono:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="telefono" style="width: 100%" class ="k-textbox" required/>                 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <span style="width: 10px" ></span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Correo/Email:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="correo" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Numero De Fax:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="fax"  class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Direccion:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="direccion"  class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Indicativo/Fax:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="indicativo" class ="k-textbox" style="width: 100%"/>                        
+                                </td>
+                            </tr>
+                           <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Forma De Pago:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="formaPago"  style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr id="fechaAutorizacionHidden" >
+                                <td>
+                                    <label class="letraParrafo">Fecha Autorizacion:</label>
+                                </td>
+                                <td>
+                                    <input id="fechaAutorizacion1"  style="width: 100%"/>
+                                </td>
+                            </tr>
+
+                        </table>                        
+                    </div>
+                    <div class="col-md-6" >                        
+                        <table style="width: 100%" id="columna2">
+                             <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Pais:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="pais"  style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Departamento:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="departamento"  style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Ciudad:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ciudad"  style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">N° Autorizacion:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="autorizacion" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Codigo Postal:</label>
+                                </td>
+                                <td>
+                                    <input id="postal" class ="k-textbox" style="width: 100%"/>      
+                                </td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    <label class="letraParrafo">Informar Beneficiario:</label>
+                                </td>
+                                <td>
+                                    <input id="informarBeneficiario" class ="k-textbox" value=""  style="width: 100%" />
+                                </td>
+                            </tr>
+                            
+                            
+                        </table>
+                    </div>
+
+                </div>
+
+                <br><br>
+                <div class="row">
+                    <h4 id = "subtitulo" style="padding-left: 20px;" class="subTitulo">Datos Banco Del Proveedor:</h4> 
+                    <div class="col-md-6">      
+
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Banco:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="Banco"  style="width: 100%" required/>                 
+                                </td>
+                            </tr>
+                            <tr>
+
+
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">N° Cuenta:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="cuenta" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Maximo Pago:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="maximoPago" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Direccion:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="direccionBanco" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Pais:</label>
+                                </td>
+                                <td>
+                                    <input id="paisBanco"  style="width: 100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Departamento:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="departamentoBanco"  style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Ciudad:</label>
+                                </td>
+                                <td>
+                                    <input id="ciudadBanco"  style="width: 100%" />
+                                </td>
+                            </tr>
+                            
+
+                        </table>                        
+                    </div>
+                    <div class="col-md-6">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Sucursal:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="agencia"  style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Tipo Cuenta:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="tipoCuenta"  style="width: 100%"/>                        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Tercero Bancario:</label>
+                                </td>
+                                <td>
+                                    <input id="terceroBancario"  style="width: 100%"/>      
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Responsable:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="responsable" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Cargo Responsable:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="cargoResponsable" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Banco Transaccion:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="bancoTrans" class ="k-textbox" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                        </table><br>
+                    </div><br>
+                </div>
+
+            </div>    
+    
+        </div>   
+            
+   
+</div>
+         <footer><button id="btnCrearRepo" onclick = "crearProveedor()" class="k-primary" style="width: 100%;height: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >Enviar</button></footer>
+        <div id="customPopUp" hidden="hidden" style = "overflow-y: hidden;" class="">
+            <div class="k-window-titlebar k-header" style="margin-top: 1px;height: 2em">
+                &nbsp;
+
+                <div class="k-window-actions">
+                    <a role="button" href="#" class="k-window-action k-link" aria-label="Close">
+                        <span class="k-icon k-i-close" onclick='cerrarCustomPopUp()' role="button"></span>
+                    </a>
+                </div>
+            </div>
+            <br>
+
+
+            <span id="centeredNotification" style="display:none;"></span>
+            <div >
+                <!-- codigo html -->
+                <div id="window">
+                    <div>
+                        <table style="height: 50px; vertical-align: top">
+                            <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite  po_bullet1"></span></a></td>
+                            <td style="width: 90%; height: 50px; vertical-align: middle"><h4 id = "subtituloReasigna" class="subTitulo"></h4>
+                            <td style="width: 10%; height: 50px; vertical-align: middle"><span></span></td>
+                        </table>
+                        <div class="sidenavSup"></div>
+                    </div>
+                    <div class= "container-fluid text-left"  style="text-align:center ">
+                        <div>
+                            <table style="width: 100%; align-content: center">
+                                <td style=" align-content: center">
+                                    <h1 id = "subtitulo2" class="subTituloPopUp">Buscar Tercero: </h1>
+                                    <input id="terceroNit" content-align="center"/>    
+                                </td>
+                            </table>   
+                        </div>                       
+
+
+                    </div>
+                </div>
+                 <footer><button id="btnCrearRepo" onclick = "cargarDatos()" class="k-primary" style="width: 100%;height: 70px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >Actualizar</button></footer>
+            </div></div>
+        
+         <div id="customPopUp1" hidden="hidden" style = "overflow-y: hidden;" class="">
+            <div class="k-window-titlebar k-header" style="margin-top: 1px;height: 2em">
+                &nbsp;
+
+                <div class="k-window-actions">
+                    <a role="button" href="#" class="k-window-action k-link" aria-label="Close">
+                        <span class="k-icon k-i-close" onclick='cerrarCustomPopUp1()' role="button"></span>
+                    </a>
+                </div>
+            </div>
+            <br>
+
+
+            <span id="centeredNotification" style="display:none;"></span>
+            <div >
+                <!-- codigo html -->
+                <div id="window">
+                    <div>
+                        <table style="height: 50px; vertical-align: top">
+                            <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite  po_bullet1"></span></a></td>
+                            <td style="width: 90%; height: 50px; vertical-align: middle"><h4 id = "subtituloReasigna" class="subTitulo"></h4>
+                            <td style="width: 10%; height: 50px; vertical-align: middle"><span></span></td>
+                        </table>
+                        <div class="sidenavSup"></div>
+                    </div>
+                    <div class= "container-fluid text-left"  style="text-align:center ">
+                        <div>
+                            <table style="width: 100%; align-content: center">
+                                <td style=" align-content: center">
+                                    <h1 id = "subtitulo2" class="subTituloPopUp">Seleccionar  Banco: </h1>
+                                    <input id="bancoTercero" content-align="center"/>    
+                                </td>
+                            </table>   
+                        </div>                       
+
+
+                    </div>
+                </div>
+                 <footer><button id="btnCrearRepo" onclick = "crearProveedor()" class="k-primary" style="width: 100%;height: 70px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >Enviar</button></footer>
+            </div></div>
+        
+    </body>
+</html>

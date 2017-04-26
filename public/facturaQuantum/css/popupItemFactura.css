@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/10/2016, 02:58:46 PM
+    Author     : jenny
+*/
+
+table {
+    border-collapse: collapse;
+}
+
+.tdIzquierdo{
+    text-align: right;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+    
+    width: 30%
+}
+
+.tdDerecho{
+    text-align: left;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;    
+    width: 70%
+}
+
+.tdBotones{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;        
+}
+
+.k-input{
+    resize: none;
+}

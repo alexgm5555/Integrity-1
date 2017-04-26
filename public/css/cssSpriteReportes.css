@@ -1,0 +1,514 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-ago-2016, 14:54:23
+    Author     : Quantum
+*/
+.re_sumaon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -8px;
+	cursor:pointer
+}
+.re_sumaon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -8px;
+	cursor:pointer
+}
+.re_sumaon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -8px;
+}
+
+
+
+.re_sumaoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -58px;
+	cursor:pointer
+}
+.re_sumaoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -58px;
+	cursor:pointer
+}
+.re_sumaoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -58px;
+}
+
+
+
+
+.re_filtroon  {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -108px;
+	cursor:pointer
+}
+.re_filtroon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -108px;
+	cursor:pointer
+}
+.re_filtroon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -108px;
+}
+
+
+
+.re_filtrooff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -158px;
+	cursor:pointer
+}
+.re_filtrooff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -158px;
+	cursor:pointer
+}
+
+.re_filtrooff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -158px;
+}
+
+
+
+.re_counton {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -208px;
+	cursor:pointer
+}
+.re_counton:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -208px;
+	cursor:pointer
+}
+.re_counton:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -208px;
+}
+
+
+.re_countoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -258px;
+	cursor:pointer
+}
+.re_countoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -258px;
+	cursor:pointer
+}
+.re_countoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -258px;
+}
+
+
+
+.re_consultaon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -308px;
+	cursor:pointer
+}
+.re_consultaon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -308px;
+	cursor:pointer
+}
+.re_consultaon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -308px;
+}
+
+
+.re_consultaoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -358px;
+	cursor:pointer
+}
+.re_consultaoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -358px;
+	cursor:pointer
+}
+.re_consultaoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -358px;
+}
+
+
+
+.re_listaon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -408px;
+	cursor:pointer
+}
+.re_listaon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -408px;
+	cursor:pointer
+}
+.re_listaon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -408px;
+}
+
+
+.re_listaoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -458px;
+	cursor:pointer
+}
+.re_listaoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -458px;
+	cursor:pointer
+}
+.re_listaoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -458px;
+}
+
+
+
+.re_visibleon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -508px;
+	cursor:pointer
+}
+.re_visibleon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -58px -508px;
+	cursor:pointer
+}
+.re_visibleon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -8px -508px;
+}
+
+
+.re_visibleoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -8px;
+	cursor:pointer
+}
+.re_visibleoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -8px;
+	cursor:pointer
+}
+.re_visibleoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -8px;
+}
+
+
+
+.re_filtroon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -58px;
+	cursor:pointer
+}
+.re_filtroon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -58px;
+	cursor:pointer
+}
+.re_filtroon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -58px;
+}
+
+
+.re_filtrooff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -108px;
+	cursor:pointer
+}
+.re_filtrooff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -108px;
+	cursor:pointer
+}
+.re_filtrooff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -108px;
+}
+
+
+
+.re_descargar {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -158px;
+	cursor:pointer
+}
+.re_descargar:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -158px;
+	cursor:pointer
+}
+.re_descargar:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -158px;
+}
+
+
+
+
+
+.re_desblon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -208px;
+	cursor:pointer
+}   
+.re_desblon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -208px;
+	cursor:pointer
+}   
+.re_desblon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -208px;
+} 
+
+
+.re_desbloff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -258px;
+	cursor:pointer
+}   
+.re_desbloff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -258px;
+	cursor:pointer
+}   
+.re_desbloff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -258px;
+}
+
+
+.re_blon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -308px;
+	cursor:pointer
+}
+.re_blon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -308px;
+	cursor:pointer
+}
+.re_blon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -308px;
+}
+
+
+.re_bloff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -358px;
+	cursor:pointer
+}
+.re_bloff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -358px;
+	cursor:pointer
+}
+.re_bloff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -358px;
+}
+
+
+
+.re_info {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -408px;
+	cursor:pointer
+}
+.re_info:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -408px;
+	cursor:pointer
+}
+.re_info:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -408px;
+}
+
+
+
+.re_compon {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -458px;
+	cursor:pointer
+}
+.re_compon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -458px;
+	cursor:pointer
+}
+.re_compon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -458px;
+}
+
+
+.re_compoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -508px;
+	cursor:pointer
+}
+.re_compoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -258px -508px;
+	cursor:pointer
+}
+.re_compoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -208px -508px;
+}
+
+.re_funcion{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -408px -8px;
+	cursor:pointer
+}
+.re_funcion:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -458px -8px;
+	cursor:pointer
+}
+.re_funcion:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -408px -8px;
+}
+
+.re_funcionoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -408px -58px;
+	cursor:pointer
+}
+.re_funcionoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -458px -58px;
+	cursor:pointer
+}
+.re_funcionoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -408px -58px;
+}
+
+
+.re_conoff{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -408px -108px;
+	cursor:pointer
+}
+.re_conoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -458px -108px;
+	cursor:pointer
+}
+.re_conoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -408px -108px;
+}
+
+.re_conon{
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -458px -108px;
+	cursor:pointer
+}
+.re_conon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -408px -108px;
+	cursor:pointer
+}
+.re_conon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/spriteRepo.png) -458px -108px;
+}

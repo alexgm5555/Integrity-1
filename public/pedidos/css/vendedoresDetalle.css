@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6/12/2016, 03:52:14 PM
+    Author     : jenny
+*/
+td{
+    padding: 5px
+}
+
+div{
+    padding-left: 5px;
+    padding-right: 5px;    
+}
+
+table{
+    padding: 2px;
+}
+
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+
+.k-window-titlebar .k-header {
+    display: none;
+}

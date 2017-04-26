@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Memorandos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>-->
+        <!-- <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>-->
+        <script src="../../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <link href="../../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>        
+        <!--<link href="../../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>-->
+        <link href="../../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="../../css/librerias/kendo.mobile.all.min.css" rel="stylesheet" type="text/css"/>-->        
+        <link href="../../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/memorandos.css" rel="stylesheet" type="text/css"/>        
+        <script src="../../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>                  
+        <script src="../../../js/servicios.js" type="text/javascript"></script>
+        <script src="../js/varDataSKendo.js"></script>		
+        <script src="../js/memorandos.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>
+            <table style="height: 50px; width: 100%">
+                <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                <td style="width: 40%;height: 50px"><h1 id = "subtitulo" class="subTitulo">Memorandos</h1></td>
+                <td style="height: 60%"> </td>
+                <td style="width: 50px;height: 50px" title="Crear Ciudad"><a id ="btnCrear" class="k-grid" onclick ="addRow()" aling="center"><span class="k-sprite po_mas"></span></a></td>
+            </table>
+            <div class="sidenavSup"></div>
+        </div>
+        <script id="rowTemplate" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title">#: ciu__cod #</span>
+            </td>
+            <td>
+            <span class="title">#: ciu__nom #</span>
+            </td> 
+            <td>
+            <span class="title">#: ciu__area #</span>
+            </td>
+            <td>
+            <a  class='k-grid-memo'><span id = "memo#: uni__cod#" class = "k-sprite #try{if(uni__est == 0){#po_checkAct#}else if(uni__est == 1){#po_checkBloq#}else if(uni__est == 99){#po_checkCreate#}}catch(e){#po_checkCreate#}#" ></span></a>
+            </td>                
+            </tr>
+        </script>
+        <script id="altRowTemplate" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">
+            <td>
+            <span class="title">#: ciu__cod #</span>
+            </td>
+            <td>
+            <span class="title">#: ciu__nom #</span>
+            </td> 
+            <td>
+            <span class="title">#: ciu__area #</span>
+            </td>
+            <td>
+            <a  class='k-grid-memo'><span id = "memo#: uni__cod#" class = "k-sprite #try{if(uni__est == 0){#po_checkAct#}else if(uni__est == 1){#po_checkBloq#}else if(uni__est == 99){#po_checkCreate#}}catch(e){#po_checkCreate#}#" ></span></a>
+            </td>
+            </tr>
+        </script>
+        <div id="outerWrapper">
+            <div id="grid" name="grid"></div>
+        </div>
+        <div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,232 @@
+{"ttmenuxusuario": [
+  {
+    "Codigo": "009P",
+    "Nombre": "PORTAL NOMINA",
+    "Depende": "#",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C",
+    "Nombre": "Consulta",
+    "Depende": "009P",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0001F",
+    "Nombre": "Comprobantes de Pago",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "ComprobantePago",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0002F",
+    "Nombre": "Cert. de ingresos y retenciones",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "CertificadoIngRet",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0003F",
+    "Nombre": "Solicitud de Certificados",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "SolicitudCertificado",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0004F",
+    "Nombre": "Memorandos",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "Memorandos",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0005F",
+    "Nombre": "Datos Personales",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "DatosPersonales",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0006F",
+    "Nombre": "Retencion en la Fuente",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "Retefuente",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0007F",
+    "Nombre": "Saldos",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "Saldos",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0008F",
+    "Nombre": "Vacaciones",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "Vacaciones",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C0009F",
+    "Nombre": "Generar Certificado",
+    "Depende": "009P002C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "GeneraCertificado",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "009P002C999C",
+    "Nombre": "Mis Reportes",
+    "Depende": "009P002C",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P",
+    "Nombre": "ACTAS\/SALAS\/PROYECTOS",
+    "Depende": "#",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P001C",
+    "Nombre": "Salas",
+    "Depende": "013P",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P001C0001F",
+    "Nombre": "Sedes",
+    "Depende": "013P001C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "Sedes",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P001C0002F",
+    "Nombre": "Tecnologia",
+    "Depende": "013P001C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "TipTecnolog",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P001C999C",
+    "Nombre": "Mis Reportes",
+    "Depende": "013P001C",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P004C",
+    "Nombre": "Proyectos",
+    "Depende": "013P",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P004C0001F",
+    "Nombre": "Proyectos",
+    "Depende": "013P004C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "Proyectos",
+    "Programa": "",
+    "Tablas": "acta.PUB.Proyectos,acta.PUB.Capitulos,acta.PUB.Actividades,sic.PUB.sic_usuc,sic.PUB.sic_ter,fin.PUB.gfc_cli",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P004C999C",
+    "Nombre": "Mis Reportes",
+    "Depende": "013P004C",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P005C",
+    "Nombre": "Actas",
+    "Depende": "013P",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P005C0001F",
+    "Nombre": "Actas",
+    "Depende": "013P005C",
+    "Imagen": "CON IMAGEN",
+    "Servicio": "actaActas",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  },
+  {
+    "Codigo": "013P005C999C",
+    "Nombre": "Mis Reportes",
+    "Depende": "013P005C",
+    "Imagen": "SIN IMAGEN",
+    "Servicio": "",
+    "Programa": "",
+    "Tablas": "",
+    "Parametro": 0
+  }
+]}

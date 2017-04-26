@@ -1,0 +1,581 @@
+{
+  "response": {
+    "poccargo": 10000,
+    "dslogin": {
+      "dslogin": {
+        "eesicusuarios": [
+          {
+            "carcod": "10000",
+            "usrnom": "FERNANDO CHAPARRO",
+            "usrmail": "fchaparro@quantumltda.com",
+            "usrcarp": "1100949331",
+            "succod": "",
+            "vencod": 0,
+            "usrest": 1
+          }
+        ],
+        "eesiccia": [
+          {
+            "ciacod": 1,
+            "cianit": "800001541",
+            "ciaserv": "LinuxWeb",
+            "ciapuerto": "5678",
+            "cialog": "iVBORw0KGgoAAAANSUhEUgAAAIIAAAAwCAYAAADdAaKDAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABSdJREFUeNrsXN1x3DYQpjJ5F1yB6AqOqUDwa17MVGC6ArODUB3QFZiqIFQHVAXhVRCoA6qCM5FZTjCbxR+PlKDT7syORYLEz+LDYvcDz1en0yljYfmFTcDCQGBhILAwEFgYCCwMBBYGAgsDgYWBwBIjv+5Ubz5rCVrMeg33H2ftZ+1mnXYem5i1Nq51myoBm0tQBTokgQRNMW+szazTyS26vNyhbVNb1Kbcub0QzVGfhgT69K9uvTXoVfen4QFsosv/mrXaEeMFuk5h5eXoerzEGEG74S+R7yRjiFeS6dKAoPfjhrh/N+vHWa9m/Q2un6DsuDMQbo2/HxOxd7IeYatgsSS2g6+wVZiDHgEwFWGU9yB5qh5hSyBkaAV2nlhi78g8tfjgXcQIAl33rzwuwR4hDULptfP1IlGPYMYtx/dAKMmNvUIBmhOAo0gZ18oTBlCmndyzhD7kb8EbbEkotQRhJDYgX9oAcmoR890hsMxH6BSonsbxrCbI+lO4NKmQSVsSSh1BGA0r92r9TjvrP7N+CyCnfHvxs8M9x24xk+UZ7VU0Qfb5LXIIW8YI2hAP6N4BwFBEGn4AAFDyBBkJ3l/x9Y0lMi/OABQV5es0+G8Yq6u/jxabXRwQFqMcLWCoIkBwIIypOYkPMDGSSFcnx2QrRzYxRHoEhcb7g3hHT/ofqL+SAMN0qUCYYMBHYpv4AduHcGwHHbENfAdjdshwrpUqHJMX6xFsdeWwfWVoC/pkBMq+ib5Yj2CC4Z4o++KIGxrCE2gvUK/Ix2UESGI8whHFRNeoLPfUd4u8XHbJQFgmpYKJfCa2ip6YVBwT3GVu9jF3TKiI2DZ8ck3UUxABZxXp6tV7AIK5aqQlajdXbU0Efs1OZFKMR7DVUxHbl8/Ny8htoYAFM0TGWA3R1ovyCL5cHHMBvVE+rfiAxMUTKMRnhJZRvACV94/ofh7QXxnBIXQBPAlWYdixTeHDFFtQhFf9ZwPF12jvjKWDnwNTR19ZqEc4rHDzMtATLd90aK+4HN9/gCzEJbVhR5na1uAinBZDxwZvVOA1BqZ7eaR7DiGA1n7nYANPadhLGe32nsymhgXx5OA0kgACRfqIlUGUiOAJXEDwtRUCnFDmVAa2PSBAhMjyLUhrLDiZMhDyjepxrXqXC44N2GRAuncIBINwLAhTWmjrNgun6GvjXZU6EAqCLBoDJjk2AhcR/ILyTMiN5dlHizt3ySGQUZygvmcAg/LYRELd9/CuWpkmn501lBDBF5FR/miUxZxaChT54yxjiDiRLCKidjMSryL7LFecOhZGdjI5MpNlTAr+Ho3rqLk8Fwim0Tqiw8JyNFs5DN9bDFtajqRt6aHyTHBDHHsPgUfGGIzKkfbWjrFngaDvAgCGRbwkEBTRgQWdNqOOnh99LHXUMNjG0g7FBbh+PFIR73dQ/+AxqgychBHqk6AlwTvISI9r+25isNTXrvlBz7lAmE5xMlqQWp3WyeD4iKR1kC6xklv6vKY+4fGwJeHFehhfgRaPctiyNp6VewMhD1hN5upzGWGNYTvHKq0DWU6qzjGQ1YsZv4/NlI53fkexTeeINwpUNoV4iHO/WVTZf+ftFfx7g1KlAfJbX7rWwbM1RM64nqXcPP7tUcR9ZykzMwwJnDz+mugB2uiNMfmyi2X8BYyfOpBa0k/lOUgb4KCuNLKf0UgLH+D+BHqf/f8ofHnnO8pqRt+h2BX/P4ssL00osTAQWBgILAwEFgYCCwOBhYHA8mblpwADAITlid0E1qckAAAAAElFTkSuQmCC"
+          },
+          {
+            "ciacod": 2,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 3,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 4,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 5,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 6,
+            "cianit": "1234",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 7,
+            "cianit": "ashldfkasj",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 8,
+            "cianit": "sdfa",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 9,
+            "cianit": "asdfa",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 10,
+            "cianit": "hjsdgkhdfa",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 12,
+            "cianit": "212313",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 13,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 14,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 15,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 16,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 17,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 18,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 19,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 20,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 21,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 22,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 23,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 24,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 25,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 27,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 28,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 29,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 30,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 31,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 32,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 33,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 34,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 35,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 36,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 37,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 38,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 39,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 40,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 41,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 42,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 43,
+            "cianit": "860006160",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 44,
+            "cianit": "18635198",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          },
+          {
+            "ciacod": 45,
+            "cianit": "860006160",
+            "ciaserv": "",
+            "ciapuerto": "",
+            "cialog": null
+          }
+        ],
+        "ttxmenuxusuario": [
+          {
+            "Codigo": "009P",
+            "Nombre": "PORTAL NOMINA",
+            "Depende": "#",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C",
+            "Nombre": "Consulta",
+            "Depende": "009P",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0001F",
+            "Nombre": "Comprobantes de Pago",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "ComprobantePago",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0002F",
+            "Nombre": "Cert. de ingresos y retenciones",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "CertificadoIngRet",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0003F",
+            "Nombre": "Solicitud de Certificados",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "SolicitudCertificado",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0004F",
+            "Nombre": "Memorandos",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "Memorandos",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0005F",
+            "Nombre": "Datos Personales",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "DatosPersonales",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0006F",
+            "Nombre": "Retencion en la Fuente",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "Retefuente",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0007F",
+            "Nombre": "Saldos",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "Saldos",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0008F",
+            "Nombre": "Vacaciones",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "Vacaciones",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C0009F",
+            "Nombre": "Generar Certificado",
+            "Depende": "009P002C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "GeneraCertificado",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "009P002C999C",
+            "Nombre": "Mis Reportes",
+            "Depende": "009P002C",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P",
+            "Nombre": "ACTAS/SALAS/PROYECTOS",
+            "Depende": "#",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P001C",
+            "Nombre": "Salas",
+            "Depende": "013P",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P001C0001F",
+            "Nombre": "Sedes",
+            "Depende": "013P001C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "Sedes",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P001C0002F",
+            "Nombre": "Tecnologia",
+            "Depende": "013P001C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "TipTecnolog",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P001C999C",
+            "Nombre": "Mis Reportes",
+            "Depende": "013P001C",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P004C",
+            "Nombre": "Proyectos",
+            "Depende": "013P",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P004C0001F",
+            "Nombre": "Proyectos",
+            "Depende": "013P004C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "Proyectos",
+            "Programa": "",
+            "Tablas": "acta.PUB.Proyectos,acta.PUB.Capitulos,acta.PUB.Actividades,sic.PUB.sic_usuc,sic.PUB.sic_ter,fin.PUB.gfc_cli",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P004C999C",
+            "Nombre": "Mis Reportes",
+            "Depende": "013P004C",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P005C",
+            "Nombre": "Actas",
+            "Depende": "013P",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P005C0001F",
+            "Nombre": "Actas",
+            "Depende": "013P005C",
+            "Imagen": "CON IMAGEN",
+            "Servicio": "actaActas",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          },
+          {
+            "Codigo": "013P005C999C",
+            "Nombre": "Mis Reportes",
+            "Depende": "013P005C",
+            "Imagen": "SIN IMAGEN",
+            "Servicio": "",
+            "Programa": "",
+            "Tablas": "",
+            "Parametro": 0
+          }
+        ],
+        "eerepprm": [
+          {
+            "prm_cod": 1,
+            "prm_url": "jdbc:datadirect:openedge://172.21.24.146;port:6050;databaseName=rep[-mdbq:basesintegrity]",
+            "prm_usr": "sysprogress",
+            "prm_cla": "123"
+          }
+        ],
+        "ttTareas": [
+          {
+            "Proyecto": "",
+            "Capitulo": "",
+            "TareasConsecutivo": 0,
+            "Descripcion": "",
+            "Fechainicio": null,
+            "Fechafinal": null,
+            "Estado": 0,
+            "Responsable": ""
+          }
+        ],
+        "ttestado": [
+          {
+            "pocestado": "OK",
+            "poireturnid": 0
+          }
+        ]
+      }
+    }
+  }
+}

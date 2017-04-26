@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Pedido</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="../../scripts/bootstrap.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script> 
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/variablesPedidos.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.all.min.js" type="text/javascript"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        
+        <script src="../js/pedidoCabecera.js" type="text/javascript"></script>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/pedido.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+        <span id="centeredNotification" style="display:none;"></span>
+        <div class="container-fluid">
+            <div class="row content">
+                <div>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                            <td>
+                                <h1 id = "subtitulo" class="subTitulo">Pedido <label id="idNumeroPedido"></label></h1>                                
+                            </td>                            
+                        </tr>
+                    </table>
+                    <div class="sidenavSup"></div>                    
+                </div>
+                <div class="row">
+                    <div class="col-md-6">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Sucursal/Agencia:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipSucursal" style="width: 100%" />                        
+                                </td>
+                            </tr>                            
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">NIT cliente:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipNITCliente" style="width: 100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Cliente:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipCliente" style="width: 100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Condiciones de pago:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipCdePago" style="width: 100%"/>                        
+                                </td>
+                            </tr>
+                             <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Divisa</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipDivisa" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Tipo de tasa:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipTipTasa" required="required"  style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Fecha tasa</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipFechaTasa" value="" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Numero de orden</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipNumOrden" class="k-textbox" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Prioridad:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipPrioridad" style="width: 100%"/>
+                                </td>
+                            </tr>
+                        </table>                        
+                    </div>
+                    <div class="col-md-6">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Vendedor:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipVendedor" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Solicitante</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipSolicitante" class="k-textbox" value="" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Fecha:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipFecha" value="" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Fecha entrega:</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipFechaEntrega" value="" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Establecimiento</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipEstablecimiento" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Dirección</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipDireccion" class="k-textbox" value="" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Teléfono</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipTelefono" class="k-textbox" value="" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%">
+                                    <label class="letraParrafo">Ciudad</label>
+                                </td>
+                                <td style="width: 75%">
+                                    <input id="ipCiudad" value="" style="width: 100%"/>
+                                </td>
+                            </tr>                            
+                        </table>
+                    </div>                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 10%">
+                                    <label class="letraParrafo">Observaciones:</label><br>
+                                </td>
+                                <td>
+                                    <textarea id="txtAObservacionePedido" data-bind="value: textareaValue" class="k-textbox" style="height: 40px; width: 100%;"></textarea>
+                                </td>
+                            </tr>                            
+                        </table>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <!--<ul class="k-dialog-buttongroup k-dialog-button-layout-stretched" role="toolbar">-->
+        
+        <!--</ul>-->
+    </body>
+    <footer><button id="buttonCab" class="k-primary" style="width: 99%;height: 40px; vertical-align: middle;" onclick="guardarCabecera()">Guardar</button><br>
+    </footer>
+    
+</html>

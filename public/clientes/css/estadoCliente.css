@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20/09/2016, 02:14:29 PM
+    Author     : Desarrollo
+*/
+body{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 14px; 
+    font-family: "Verdana"; 
+    color:"#E6E6FA";
+}
+table{
+    padding: 0px;
+    border-spacing: 0;
+}
+.k-primary {
+    min-width: 150px;
+}
+.sidenavSup {
+    border-style: solid;
+    border-color: #7EA700 #fff  #fff  #fff;
+}
+.sidenavSup1 {
+    border-style: solid;
+    border-color: #cf0021  #fff   #fff  #fff;
+}
+
+.sidenavIzq1{
+    border-style: solid;
+    border: 1;
+    border-color:  #fff  #fff  #fff #cf0021 ;
+    height: 100%;
+}
+.sidenavInf {
+    border-style: solid;
+    border-color: #fff  #fff  #E0E0E0  #fff ;
+    height: 100%;
+}
+.letraParrafo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: normal;
+    font-family: Verdana;
+
+}
+.subTituloform{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 13px;
+    line-height: normal;
+    font-family: Verdana;
+    font-weight: bold;
+    vertical-align: center;
+}
+.mensaje{
+    
+    font-size: 14px;
+    font-family: Verdana;
+    font-weight: bold;
+    vertical-align: center;
+   
+}
+.btnSend {
+
+    width: 300px; /* Full width */
+    height: 100px; /* Full height */
+}
+
+ @media screen and (max-width: 1023px) {
+                    div.k-window {
+                        display: none !important;
+                    }
+                }
+  
+.cedula::-ms-clear {
+    display: none;
+}
+
+
+#bottn
+{
+    float:right;
+}
+#outerWrapper{
+  background-color: #FFFFFF;
+  position:relative;
+  min-height:470px;
+}
+#grid {
+  height:470px;
+}
+
+
+.k-grid tr:hover {
+  background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+      color: #80BD28;
+  }
+
+  .k-grid tr.k-alt:not(.k-state-selected):hover {
+      background: #f1f1f1;
+  }
+
+.red {
+    color: red;
+}
+
+
+html{}a.solink{position:fixed;top:50;width:100%;text-align:center;background:#f3f5f6;color:#cfd6d9;border:1px solid #cfd6d9;line-height:30px;text-decoration:none;transition:all .3s;z-index:999}a.solink::first-letter{text-transform:capitalize}a.solink:hover{color:#428bca}

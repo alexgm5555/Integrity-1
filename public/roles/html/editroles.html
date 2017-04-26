@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Roles</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>
+
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <link href="../css/editroles.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoCabecera.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jstree.min.js" type="text/javascript"></script>
+
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+
+        <script src="../js/editroles.js" type="text/javascript"></script>
+        <script src="../js/variablesroles.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.default.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+
+
+        <link href="http://cdn.kendostatic.com/2013.3.1119/styles/kendo.mobile.all.min.css" rel="stylesheet" type="text/css" />
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+
+
+    </head>
+    <body>
+        <div class="mainContainer">
+            <div>
+                <div>
+
+                    <table style="height: 50px; vertical-align: top">
+                        <td style="width: 50px;height: 50px"><a class="k-grid" ><span class="k-sprite po_bullet1"></span></a></td>
+                        <td style="width: 20%;height: 50px;" ><h4 id = "subtitulo" class="subTitulo">Roles</h4> </td>
+                        <td style="width: 80%; height: 50px; vertical-align: middle" class="navbar" > 
+
+
+                            <div class="container-fluid">                                                
+                                <button type="button" class="navbar-toggle btn btn-default btn-circle btn-lg" data-toggle="collapse" data-target="#myNavbar">
+                                    <i class="glyphicon glyphicon-list"></i>
+                                </button>                                                                         
+                            </div>
+                            <div class="collapse navbar-collapse" id="myNavbar" style="text-align: left">
+                                <ul class="nav navbar-nav">   
+
+                                    <li> &nbsp; Nombre De Rol: &nbsp;<input type="search" class = "k-textbox" id="filtro" /></li>
+
+
+
+
+                                </ul>
+                            </div>
+
+                        </td>
+                        <td style="width: 50px;height: 50px"><a id ="btnreturn" class="k-grid" onclick ="ir_roles()"><span class="k-sprite po_back"></span></a></td>
+                    </table>
+                    <div class="sidenavSup"></div>
+
+                </div>
+                <div> 
+
+                    <table>
+                        <td height="75" width="15%">
+                    </table>
+                </div>
+
+                <div id="cargando"></div>
+                <div class="container">
+                    <table width="100%" border="0" >
+                        <tr valign="top">
+
+                            <td width="20%" height= "200px" >
+                                <div class="panel panel-default" style="align-content:center; border: 0" >
+                                    <div style="width: 70%;height: 40px ;position:relative;left:20%;top:1%;margin-top:20px;" class="letraParrafo">Todas Las Funciones 
+                                        
+
+                                        <div class="sidenavSup"></div>
+
+
+                                        <span class="k-textbox k-space-left "style="width:100%; background-color:#FFFFFF; border-color: #FFFFFF">
+                                                    <input type="text" id="inpSearchTree2" placeholder="" style="width:100%;background-color:#FFFFFF; border-color: transparent" />
+                                                    <a class="k-icon k-i-search">&nbsp;</a>
+                                                </span>
+
+                                        <div id="arbol1" style="z-index: 10;"> 
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td height="500" width="15%">
+                                <div id ="botones" style="position:relative;left:30%;top:12%;margin-top:50px; position:relative;" >
+                                    <div>
+                                        <button id="botonagregar" class="k-primary" style=" ">Agregar</button>
+                                    </div>
+                                    <div>
+                                        <br>
+                                    </div>
+                                    <div>
+                                        <button id="botoneliminar" class="k-primary" style="" >Eliminar</button>
+                                    </div>  
+                                </div>
+                            </td>
+                            <td width="10%" height= "50" >
+                                <div class="panel panel-default" style="align-content:center; border: 0" >
+                                    <div style="width: 70%;height: 40px ;position:relative;left:20%;top:15%;margin-top:20px;" class="letraParrafo">Funciones Por Rol
+
+
+                                        <div class="sidenavSup"></div>
+
+                                        <span class="k-textbox k-space-left "style="width:100%; background-color:#FFFFFF; border-color: #FFFFFF">
+                                                    <input type="text" id="inpSearchTree3" placeholder="" style="width:100%;background-color:#FFFFFF; border-color: transparent" />
+                                                    <a class="k-icon k-i-search">&nbsp;</a>
+                                                </span>
+
+                                        <div id="arbol2" style="z-index: 10; "> 
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script>
+            window.onload = function () {
+                if (!localStorage.justOnce) {
+                    localStorage.setItem("justOnce", "true");
+                    window.location.reload();
+                }
+            };
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

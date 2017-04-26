@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/11/2016, 11:06:02 AM
+    Author     : jenny
+*/
+
+
+
+
+td{
+    /*padding: 5px*/
+}
+
+.k-pager-info{
+    display: none;
+}
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+/*#outerWrapper{
+  background-color: #FFFFFF;
+  position:relative;
+  min-height:470px;
+}*/
+gridDetalleListaPrecios {
+  height:100%;
+}
+
+
+#customPopUp {
+    height:50%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:700px;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+
+#disable {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background-color:rgba(0,0,0,0.5);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+

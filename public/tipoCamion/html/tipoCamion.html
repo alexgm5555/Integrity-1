@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>prueba</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>
+        <!-- <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>-->
+        <script src="../../scripts/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="../../css/kendo.mobile.all.min.css" rel="stylesheet" type="text/css"/>-->        
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <!--<link href="../../css/librerias/HRD.css" rel="stylesheet" type="text/css"/>-->            
+        
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/varDataSKendo.js"></script>
+        
+        <link href="../css/tipoCamion.css" rel="stylesheet" type="text/css"/>		
+        <script src="../js/tipoCamion.js" type="text/javascript"></script>
+    </head>
+    <body >
+        <div>
+            <table style="height: 50px; width: 100%">
+                <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                <td style="width: 40%;height: 50px"><h1 id = "subtitulo" class="subTitulo">Tipo de Camión</h1></td>
+                <td style="width: 60%; height: 50px;" class="navbar" > 
+                    <div class="container-fluid">                                                
+                        <button type="button" class="navbar-toggle" class="btn btn-default btn-circle btn-lg" data-toggle="collapse" data-target="#myNavbar">
+                            <i class="glyphicon glyphicon-list"></i>
+                        </button>                                                                         
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar" style="text-align: left">
+                        <ul class="nav navbar-nav">    
+                            <input id="fltrEst" style="width: 250px" required/>
+                        </ul>
+                    </div>
+                </td>
+                <td style="width: 50px;height: 50px"><a id ="btnCrear" class="k-grid" onclick ="addRow()" aling="center"><span class="k-sprite po_mas"></span></a></td>
+            </table>
+            <div class="sidenavSup"></div>
+        </div>
+        <script id="rowTemplate" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title">#= kendo.toString( cam__cap__kg,"n0")+" kg"  #</span>
+            </td>
+            <td>
+            <span class="title">#: cam__des #</span>
+            </td>
+            <td>
+            <span class="title">#: cam__mod #</span>
+            </td>
+            <td>
+            <span class="title">#: cam__pla #</span>
+            </td>
+            <td>
+            <span class="title">#: cam__vers #</span>
+            </td>
+            <td>
+            <a  class='k-grid-aprobar'><span id = "aprobar#: id#" class = "k-sprite #try{if(cam__est == 0){#po_checkAct#}else if(cam__est == 1){#po_checkBloq#}else if(cam__est == 99){#po_checkCreate#}}catch(e){#po_checkCreate#}#" ></span></a>
+            <a  class='k-grid-edit'><span id = "edit#: id#" class='k-sprite po_editon'></span></a>
+            <a  class='k-grid-Delete'><span id = "Delete#: id#" class='k-sprite po_cerrar'></span></a>
+            </td>                
+            </tr>
+        </script>
+        <script id="altRowTemplate" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">
+            <td>
+            <span class="title">#= kendo.toString( cam__cap__kg,"n0")+" kg" #</span>
+            </td> 
+            <td>
+            <span class="title">#: cam__des #</span>
+            </td>
+            <td>
+            <span class="title">#: cam__mod #</span>
+            </td>
+            <td>
+            <span class="title">#: cam__pla #</span>
+            </td>
+            <td>
+            <span class="title">#: cam__vers #</span>
+            </td>
+            <td>
+            <a  class='k-grid-aprobar'><span id = "aprobar#: id#" class = "k-sprite #try{if(cam__est == 0){#po_checkAct#}else if(cam__est == 1){#po_checkBloq#}else if(cam__est == 99){#po_checkCreate#}}catch(e){#po_checkCreate#}#" ></span></a>
+            <a  class='k-grid-edit'><span id = "edit#: id#" class='k-sprite po_editon'></span></a>
+            <a  class='k-grid-Delete'><span id = "Delete#: id#" class='k-sprite po_cerrar'></span></a>
+            </td>
+            </tr>
+        </script>
+        <div id="outerWrapper">
+            <div id="grid" name="grid"></div>
+        </div>
+        <div>
+        </div>
+    </body>
+</html>

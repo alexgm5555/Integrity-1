@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/02/2017, 10:51:59 AM
+    Author     : jenny
+*/
+
+tr{    
+    vertical-align: top;
+}
+
+.pdf-page {
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px 6px rgba(0,0,0,.3);
+    background-color: #fff;
+    color: #333;
+    position: relative;
+}
+.pdf-header {
+    position: absolute;
+    top: 0cm;
+    height: 3cm;
+    left: 0cm;
+    right: 1cm;
+    vertical-align: bottom;    
+}
+.documentName {
+    padding-top: 2cm;
+    float: right;
+}
+.pdf-footer {
+    position: absolute;
+    bottom: 0cm;
+    height: 3.5cm;
+    left: 0cm;
+    right: 0cm;    
+    text-align: left;
+    vertical-align: bottom
+}
+	/*216 x 279*/
+.size-letter { width: 279mm; height: 216mm;}
+
+.pdf-body {
+    position: absolute;
+    top: 8.5cm;
+    bottom: 3cm;
+    left: 1cm;
+    right: 1cm;
+}
+.company-logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3aabf0;
+}
+.encabezado {
+    position: absolute;
+    top: 5cm;
+    left: 1cm;
+    right: 1cm;    
+}
+.signature {
+    position: absolute;    
+    left: 1cm;
+    right: 1cm;
+    text-align: center
+}
+
+.k-grid-header th.k-header {
+    vertical-align: middle;
+    text-align: center
+}
+
+.pdf-page {
+    font-family: "DejaVu Sans", "Arial", sans-serif;
+    font-size: 12px;
+}
+
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+
+.k-grid-footer td{
+    background-color: #DFDFDF;
+}
+
+#divPDF{
+    background-color: #f1f1f1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Saldos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script> 
+        <script src="../../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <link href="../../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>        
+        <script src="../../../scripts/kendo.all.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../../scripts/zipPdf.js" type="text/javascript"></script>
+        <script src="../../../scripts/pakoPdf.js" type="text/javascript"></script>
+        <script src="../../../js/servicios.js" type="text/javascript"></script>        
+        <script src="../js/variablesSaldos.js" type="text/javascript"></script>
+        <script src="../js/saldos.js" type="text/javascript"></script>
+        <link href="../../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/saldos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div>
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                    <td>
+                        <h1 id = "subtitulo" class="subTitulo">Saldos</h1>                                
+                    </td>
+                    <td style="width: 40px; text-align: right; padding-right: 10px">
+                        <a id ="btnCrearPedido" class="k-grid" onclick="getPDF('.pdf-page')" aling="center"><span class="k-sprite po_downflecha_sup"></span></a>
+                    </td>
+                </tr>
+            </table>
+            <div class="sidenavSup"></div>                    
+        </div>
+        <table style="width: 100%">
+            <tr>                
+                <td style="width: 100%">
+                    <div id="divPDF" class="page-container hidden-on-narrow" style="width: 100%;overflow-y: auto;overflow-x : hidden">
+                        <div class="pdf-page size-letter">
+                            <div class="pdf-header">
+                                <span class="company-logo">
+                                    <img id="logoEmpresaPDF" src="" width="300" height="115"/>                                    
+                                </span>
+                                <span class="documentName"><h3>Obligaciones</h3></span>
+                            </div>
+                            <div class="pdf-footer">
+                                <span class="company-logo">                                    
+                                    <img src="../../../images/ComprobantePie.png" width="1054" height="132" style="position: absolute; right: 0px; bottom: 0px;"/>                                    
+                                </span>                                
+                            </div>
+                            <div class="encabezado" align="right">
+                                <table>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Sucursal/agencia:
+                                        </td>
+                                        <td>
+                                            <label id="lbSuscursal"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Centro de actividad:
+                                        </td>
+                                        <td>
+                                            <label id="lbCentroActividad"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Empleado:
+                                        </td>
+                                        <td>
+                                            <label id="lbEmpleado"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Codigo:
+                                        </td>
+                                        <td>
+                                            <label id="lbCodigo"></label>
+                                        </td>                                        
+                                    </tr>                                    
+                                </table>
+                            </div>                                                        
+                            <div class="pdf-body">
+                                <div id="grid"></div>                                
+                            </div>
+                        </div>
+                    </div>                    
+                </td>
+            </tr>
+        </table>
+        <script id="rowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title" id ="#: numdoc #">#: numdoc # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fecdoc #">#: fecdoc # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: descripcion #">#: descripcion # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechavigencia #">#: fechavigencia # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: valorcuota #">#: kendo.toString( valorcuota,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: acumulado #">#: kendo.toString( acumulado,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: valortope #">#: kendo.toString( valortope,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: saldo #">#: kendo.toString( saldo,"c0") # </span>
+            </td>                        
+            <td>
+            <span class="title" id ="#: ultimatx #">#: ultimatx # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: apl #">#: apl # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: Per #">#: Per # </span>
+            </td>            
+            </tr>                       
+        </script>
+        <script id="altRowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">             
+            <td>
+            <span class="title" id ="#: numdoc #">#: numdoc # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fecdoc #">#: fecdoc # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: descripcion #">#: descripcion # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechavigencia #">#: fechavigencia # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: valorcuota #">#: kendo.toString( valorcuota,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: acumulado #">#: kendo.toString( acumulado,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: valortope #">#: kendo.toString( valortope,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: saldo #">#: kendo.toString( saldo,"c0") # </span>
+            </td>                        
+            <td>
+            <span class="title" id ="#: ultimatx #">#: ultimatx # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: apl #">#: apl # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: Per #">#: Per # </span>
+            </td>
+            </tr>
+        </script>
+    </body>
+</html>

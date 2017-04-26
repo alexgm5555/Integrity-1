@@ -1,0 +1,666 @@
+  #ingresos{
+                 text-align: right;
+            }
+            #numCasilla4{
+            position: absolute;
+            top: 80px;
+            left: 450px;    
+            }
+            #numCasilla5P1{
+            position: absolute;
+            top: 115px;
+            left: 230px;    
+            }
+            #numCasilla5P2{
+            position: absolute;
+            top: 115px;
+            left: 215px;    
+            }
+            #numCasilla5P3{
+            position: absolute;
+            top: 115px;
+            left: 200px;     
+            }
+            #numCasilla5P4{
+            position: absolute;
+            top: 115px;
+            left: 185px;    
+            }
+            #numCasilla5P5{
+            position: absolute;
+            top: 115px;
+            left: 170px;    
+            }
+            #numCasilla5P6{
+            position: absolute;
+            top: 115px;
+            left: 155px;    
+            }
+             #numCasilla5P7{
+            position: absolute;
+            top: 115px;
+            left: 140px;    
+            }
+             #numCasilla5P8{
+            position: absolute;
+            top: 115px;
+            left: 125px;    
+            }
+             #numCasilla5P9{
+            position: absolute;
+            top: 115px;
+            left: 110px;    
+            }
+             #numCasilla5P10{
+            position: absolute;
+            top: 115px;
+            left: 95px;    
+            }
+             #numCasilla5P11{
+            position: absolute;
+            top: 115px;
+            left: 80px;    
+            }
+             #numCasilla5P12{
+            position: absolute;
+            top: 115px;
+            left: 65px;    
+            }
+             #numCasilla5P13{
+            position: absolute;
+            top: 115px;
+            left: 50px;    
+            }
+             #numCasilla5P14{
+            position: absolute;
+            top: 115px;
+            left: 35px;    
+            }
+             #numCasilla6{           
+            position: absolute;
+            top: 115px;
+            left: 245px;    
+            }
+            #numCasilla7{           
+            position: absolute;
+            top: 115px;
+            left: 270px;    
+            }
+            #numCasilla8{           
+            position: absolute;
+            top: 115px;
+            left: 400px;    
+            }
+            #numCasilla9{           
+            position: absolute;
+            top: 115px;
+            left: 520px;    
+            }
+             #numCasilla10{           
+            position: absolute;
+            top: 115px;
+            left: 650px;    
+            }
+            #numCasilla11{           
+            position: absolute;
+            top: 148px;
+            left: 35px;    
+            }
+            #numCasilla24{           
+            position: absolute;
+            top: 180px;
+            left: 45px;    
+            }
+            #numCasilla25P1{           
+            position: absolute;
+            top: 180px;
+            left: 290px;    
+            }
+            #numCasilla25P2{           
+            position: absolute;
+            top: 180px;
+            left: 275px;    
+            }
+            #numCasilla25P3{           
+            position: absolute;
+            top: 180px;
+            left: 260px;    
+            }
+            #numCasilla25P4{           
+            position: absolute;
+            top: 180px;
+            left: 245px;    
+            }
+            #numCasilla25P5{           
+            position: absolute;
+            top: 180px;
+            left: 230px;    
+            }
+            #numCasilla25P6{           
+            position: absolute;
+            top: 180px;
+            left: 215px;    
+            }
+            #numCasilla25P7{           
+            position: absolute;
+            top: 180px;
+            left: 200px;    
+            }
+            #numCasilla25P8{           
+            position: absolute;
+            top: 180px;
+            left: 185px;    
+            }
+            #numCasilla25P9{           
+            position: absolute;
+            top: 180px;
+            left: 170px;    
+            }
+            #numCasilla25P10{           
+            position: absolute;
+            top: 180px;
+            left: 155px;    
+            }
+            #numCasilla25P11{           
+            position: absolute;
+            top: 180px;
+            left: 140px;    
+            }
+            #numCasilla25P12{           
+            position: absolute;
+            top: 180px;
+            left: 125px;    
+            }
+            #numCasilla25P13{           
+            position: absolute;
+            top: 180px;
+            left: 110px;    
+            }
+            #numCasilla25P14{           
+            position: absolute;
+            top: 180px;
+            left: 95px;    
+            }
+            #numCasilla26{           
+            position: absolute;
+            top: 180px;
+            left: 310px;    
+            }
+            #numCasilla27{           
+            position: absolute;
+            top: 180px;
+            left: 440px;    
+            }
+             #numCasilla28{           
+            position: absolute;
+            top: 180px;
+            left: 560px;    
+            }
+             #numCasilla29{           
+            position: absolute;
+            top: 180px;
+            left: 690px;    
+            }
+            #numCasilla30P1{           
+            position: absolute;
+            top: 212px;
+            left: 55px;    
+            }
+            #numCasilla30P2{           
+            position: absolute;
+            top: 212px;
+            left: 105px;    
+            }
+            #numCasilla30P3{           
+            position: absolute;
+            top: 212px;
+            left: 140px;    
+            }
+            #numCasilla31P1{           
+            position: absolute;
+            top: 212px;
+            left: 215px;    
+            }
+            #numCasilla31P2{           
+            position: absolute;
+            top: 212px;
+            left: 265px;    
+            }
+            #numCasilla31P3{           
+            position: absolute;
+            top: 212px;
+            left: 295px;    
+            }
+            #numCasilla32P1{           
+            position: absolute;
+            top: 212px;
+            left: 345px;    
+            }
+            #numCasilla32P2{           
+            position: absolute;
+            top: 212px;
+            left: 395px;    
+            }
+            #numCasilla32P3{           
+            position: absolute;
+            top: 212px;
+            left: 416px;    
+            }
+            #numCasilla33{           
+            position: absolute;
+            top: 212px;
+            left: 500px;    
+            }
+            #numCasilla34P1{           
+            position: absolute;
+            top: 212px;
+            left: 712px;    
+            }
+            #numCasilla34P2{           
+            position: absolute;
+            top: 212px;
+            left: 730px;    
+            }
+             #numCasilla35P1{           
+            position: absolute;
+            top: 212px;
+            left: 750px;    
+            }
+            #numCasilla35P2{           
+            position: absolute;
+            top: 212px;
+            left: 768px;    
+            }
+            #numCasilla35P3{           
+            position: absolute;
+            top: 212px;
+            left: 790px;    
+            }
+            #numCasilla36{           
+            position: absolute;
+            top: 230px;
+            left: 600px;    
+            }
+            #numCasilla37{           
+            position: absolute;
+            
+            top: 262px;
+                right: 15px;   
+            }#numCasilla38{           
+            position: absolute;
+            
+            top: 277px;
+                right: 15px;   
+            }#numCasilla39{           
+            position: absolute;
+            top: 295px;
+               right: 15px;   
+            }#numCasilla40{           
+            position: absolute;
+            top: 310px;
+                right: 15px;   
+            }#numCasilla41{           
+            position: absolute;
+            top: 328px;
+                right: 15px;    
+            }
+            #numCasilla42{           
+            position: absolute;
+            top: 345px;
+             right: 15px;    
+            }
+            #numCasilla43{           
+            position: absolute;
+            top: 375px;
+               right: 15px;  
+            }
+            #numCasilla44{           
+            position: absolute;
+            top: 392px;
+                right: 15px;  
+            }
+            #numCasilla45{           
+            position: absolute;
+            top: 407px;
+             right: 15px;   
+            }
+            #numCasilla46{           
+            position: absolute;
+            top: 425px;
+           right: 15px;    
+            } 
+            #numCasillaPagador{           
+            position: absolute;
+            top: 460px;
+            left: 50px;     
+            }
+            #numCasilla47{           
+            position: absolute;
+            top: 525px;
+            left: 500px;    
+            }
+             #numCasilla48{           
+            position: absolute;
+            top: 540px;
+            left: 500px;    
+            }
+            #numCasilla49{           
+            position: absolute;
+            top: 556px;
+            left: 500px;    
+            }
+            #numCasilla50{           
+            position: absolute;
+            top: 572px;
+            left: 500px;    
+            }
+            #numCasilla51{           
+            position: absolute;
+            top: 588px;
+            left: 500px;    
+            }
+            #numCasilla52{           
+            position: absolute;
+            top: 603px;
+            left: 500px;    
+            }
+            #numCasilla53{           
+            position: absolute;
+            top: 618px;
+            left: 500px;    
+            }
+            #numCasilla54{           
+            position: absolute;
+            top: 525px;
+            left: 660px;    
+            }
+             #numCasilla55{           
+            position: absolute;
+            top: 540px;
+            left: 660px;    
+            }
+            #numCasilla56{           
+            position: absolute;
+            top: 556px;
+            left: 660px;    
+            }
+            #numCasilla57{           
+            position: absolute;
+            top: 572px;
+            left: 660px;    
+            }
+            #numCasilla58{           
+            position: absolute;
+            top: 588px;
+            left: 660px;     
+            }
+            #numCasilla59{           
+            position: absolute;
+            top: 603px;
+            left: 660px;     
+            }
+            #numCasilla60{           
+            position: absolute;
+            top: 618px;
+            left: 660px;    
+            }
+            #numCasilla61{           
+            position: absolute;
+            top: 633px;
+            left: 660px;    
+            }
+            #numCasilla62P1{           
+            position: absolute;
+            top: 671px;
+            left: 50px;    
+            }
+            #numCasilla62P2{           
+            position: absolute;
+            top: 686px;
+            left: 50px;    
+            }
+            #numCasilla62P3{           
+            position: absolute;
+            top: 701px;
+            left: 50px;    
+            }
+            #numCasilla62P4{           
+            position: absolute;
+            top: 716px;
+            left: 50px;    
+            }
+            #numCasilla62P5{           
+            position: absolute;
+            top: 731px;
+            left: 50px;    
+            }
+            #numCasilla62P6{           
+            position: absolute;
+            top: 746px;
+            left: 50px;    
+            }
+            #numCasilla62P7{           
+            position: absolute;
+            top: 761px;
+            left: 50px;    
+            }
+            #numCasilla62P8{           
+            position: absolute;
+            top: 776px;
+            left: 50px;    
+            }
+            
+            
+            #numCasilla63P1{           
+            position: absolute;
+            top: 671px;
+            left: 660px;    
+            }
+            #numCasilla63P2{           
+            position: absolute;
+            top: 686px;
+            left: 660px;     
+            }
+            #numCasilla63P3{           
+            position: absolute;
+            top: 701px;
+            left: 660px;     
+            }
+            #numCasilla63P4{           
+            position: absolute;
+            top: 716px;
+            left: 660px;     
+            }
+            #numCasilla63P5{           
+            position: absolute;
+            top: 731px;
+            left: 660px;     
+            }
+            #numCasilla63P6{           
+            position: absolute;
+            top: 746px;
+            left: 660px;     
+            }
+            #numCasilla63P7{           
+            position: absolute;
+            top: 761px;
+            left: 660px;     
+            }
+            #numCasilla63P8{           
+            position: absolute;
+            top: 776px;
+            left: 660px;    
+            }
+            #numCasilla64{           
+            position: absolute;
+            top: 796px;
+            left: 660px;    
+            }
+            #numCasilla65P1{           
+            position: absolute;
+            top: 843px;
+            left: 50px;    
+            }
+            #numCasilla65P2{           
+            position: absolute;
+            top: 859px;
+            left: 50px;     
+            }
+            #numCasilla65P3{           
+            position: absolute;
+            top: 875px;
+            left: 50px;     
+            }
+            #numCasilla65P4{           
+            position: absolute;
+            top: 890px;
+            left: 50px;     
+            }
+            #numCasilla66P1{           
+            position: absolute;
+            top: 843px;
+            left: 200px;    
+            }
+            #numCasilla66P2{           
+            position: absolute;
+            top: 859px;
+            left: 200px;       
+            }
+            #numCasilla66P3{           
+            position: absolute;
+            top: 875px;
+            left: 200px;       
+            }
+            #numCasilla66P4{           
+            position: absolute;
+            top: 890px;
+            left: 200px;      
+            }
+            #numCasilla67P1{           
+            position: absolute;
+            top: 843px;
+            left: 700px;    
+            }
+            #numCasilla67P2{           
+            position: absolute;
+            top: 859px;
+            left: 700px;       
+            }
+            #numCasilla67P3{           
+            position: absolute;
+            top: 875px;
+            left: 700px;        
+            }
+            #numCasilla67P4{           
+            position: absolute;
+            top: 890px;
+            left: 700px;       
+            }
+            
+            
+            
+            
+            
+            tr{    
+                vertical-align: top;
+            }
+/*            #divPDF{
+                background-color: #f1f1f1;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }*/
+            .pdf-body {
+            position: absolute;
+            top: 3.7in;
+            bottom: 1.2in;
+            left: .5in;
+            right: .5in;
+        }
+            .pdf-page {
+                margin: 0 auto;
+                box-sizing: border-box;
+                box-shadow: 0 5px 10px 0 rgba(0,0,0,.3);
+                background-color: #fff;
+                color: #333;
+                position: relative;
+            }
+            .pdf-header {
+                position: absolute;
+                top: 0cm;
+                height: 3cm;
+                left: 0cm;
+                right: 1cm;
+                vertical-align: bottom;    
+            }
+            .documentName {
+                padding-top: 2cm;
+                float: right;
+            }
+            .pdf-footer {
+                position: absolute;
+                bottom: 0cm;
+                height: 3.5cm;
+                left: 0cm;
+                right: 0cm;    
+                text-align: left;
+                vertical-align: bottom
+            }
+            /*216 x 279*/
+            .size-letter { width: 216mm; height: 279mm;}
+          
+            
+            .company-logo {
+                font-size: 30px;
+                font-weight: bold;
+                color: #3aabf0;
+            }
+            .encabezado {
+                position: absolute;
+                top: 5cm;
+                left: 1cm;
+                right: 1cm;    
+            }
+            .signature {
+                position: absolute;    
+                left: 1cm;
+                right: 1cm;
+                text-align: center
+            }
+            
+            .k-grid-header th.k-header {
+                vertical-align: middle;
+                text-align: center
+            }
+            
+            .pdf-page {
+                font-family: "DejaVu Sans", "Arial", sans-serif;
+                font-size: 12px;
+            }
+            
+            .k-grid tr:hover {
+                background: transparent;
+            }
+            .k-grid tr:not(.k-state-selected):hover {
+                color: #80BD28;
+            }
+            
+            .k-grid tr.k-alt:not(.k-state-selected):hover {
+                background: #f1f1f1;
+            }
+            
+            .k-grid-footer td{
+                background-color: #DFDFDF;
+            }
+/*            #principal{
+                background-image: url(certificado2016.png);
+                background-size: 820px 1050px;
+            }*/
+            
+            .dosmilquince{
+                background-image: url(certificado2015.png);
+                background-size: 820px 1050px;
+            }
+            .dosmildieciseis{
+                background-image: url(certificado2016.png);
+                background-size: 820px 1050px;
+            }

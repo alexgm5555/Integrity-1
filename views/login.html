@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+        To change this license header, choose License Headers in Project Properties.
+        To change this template file, choose Tools | Templates
+        and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Integrity</title>
+	<link rel="stylesheet" href="../css/kendo.common.min.css">
+        <link rel="stylesheet" href="../css/kendo.default.min.css" />
+        <link rel="stylesheet" href="../css/kendo.common.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../css/kendo.metro.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../css/kendo.default.mobile.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../css/estilos.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="../css/login.css" />
+        <link rel="stylesheet" href="../css/cssSpriteIntegrity.css" />
+
+        <script src="../js/servicios.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../scripts/jquery-2.2.0.min.js"></script>      
+        <script type="text/javascript" src="../scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="../scripts/kendo.all.min.js"></script>
+        <script src="../scripts/kendoButtonNotifiEditor.custom.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../js/login.js"></script>
+        <script type="text/javascript" src="http://l2.io/ip.js?var=myip"></script>
+        <script src="../js/dirUser.js" type="text/javascript"></script>
+        <script src="../scripts/LibreriaIntegrity.js" type="text/javascript"></script>    
+    </head>
+    <body onload="onLoad()">
+        <div class="centrado">
+            <table id="tbLogin">
+                <tr>
+                    <td>
+                        <div>
+                            <img id="logoIntegrity" src="images/logoInt.png">
+                            <p><em>Quantum Data Systems</em> le da la bienvenida al <em> Sistema Integral Corporativo Integrity</em>, ofreciéndole las mejores soluciones en la nube para el desarrollo de su empresa y la evolución de nuestra región.
+                            </p>
+                            <img id="powered" src="images/powered.png">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="demo-section k-content">                       
+                            <img id="imgAcceso" src="images/acceso.png"><br><br>                        
+                            <ul id="fieldlist">                            
+                                <li>
+                                    <label id= "label1">Usuario:</label>
+                                    <input type="text" id="usuario" name="Usuario" class="k-textbox"  placeholder="usuario@dominio" required="" />
+                                </li>
+                                <li>
+                                    <label for="password">Password:</label>
+                                    <input id="password" type="password" name="Password" class="k-textbox">                                
+                                    <a href="">¿Olvidó su contraseña?</a>
+                                <li>
+                                <li>
+                                    <button id="btnLogin" class="k-primary" onclick="login()" >Login</button>
+                                </li>                            
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <span id="centeredNotification" style="display:none;"></span>
+        <script id="errorTemplate" type="text/x-kendo-template">
+            <a  class=''><span class='k-sprite po_cerrar mmm'></span></a>
+            <div class="wrong-pass">
+            <br>
+            <p>  #= message #</p>
+            </div>
+        </script>
+        <style>
+            .wrong-pass {
+                    width: 300px;
+                    height: 100px;
+                }
+                .mmm  {
+                    float: left;
+                    margin: 30px 15px 30px 30px;
+                }
+        </style>
+    </body>
+</html>

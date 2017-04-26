@@ -1,0 +1,917 @@
+/* ESTOS SON LOS BOTONES DE PORTAFOLIOS:
+
+.po_bullet1
+.po_bullet2
+.po_editon
+.po_editoff
+.po_detalle
+.po_saveon
+.po_saveoff
+.po.playon
+.po_playoff
+
+
+
+  */
+
+.po_bullet1{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -8px;
+	cursor:pointer;
+        border: 0px;
+            
+}
+.po_bullet1:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -8px;
+	cursor:pointer;
+        border: 0px;
+}
+.po_bullet1:active {
+	width: 34px;
+	height: 34px;
+	background:url(../../images/SpriteIntegrity.png) -8px -8px;
+}
+
+/* ——  */
+
+.po_bullet2{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -58px;
+	cursor:pointer
+}
+.po_bullet2:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -58px;
+	cursor:pointer
+}
+.po_bullet2:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -58px;
+}
+
+/* ——  */
+
+.po_editon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -108px;
+	cursor:pointer
+}
+.po_editon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -108px;
+	cursor:pointer
+}
+.po_editon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -108px;
+}
+
+/* ——  */
+
+.po_editoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -158px;
+	cursor:pointer
+}
+.po_editoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -158px;
+	cursor:pointer
+}
+.po_editoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -158px;
+}
+
+/* ——  */
+
+
+.po_detalle{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -208px;
+	cursor:pointer
+}
+.po_detalle:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -208px;
+	cursor:pointer
+}
+.po_detalle:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -208px;
+}
+
+
+.po_mas{
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -8px -258px;
+    cursor:pointer
+}
+.po_mas:hover {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -58px -258px;
+    cursor:pointer
+}
+.po_mas:active {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -8px -258px;
+}
+
+/* ??  */
+
+.po_cerrar{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -308px;
+	cursor:pointer
+}
+.po_cerrar:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -308px;
+	cursor:pointer
+}
+.po_cerrar:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -308px;
+}
+
+/* ——  */
+
+.po_saveon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -358px;
+	cursor:pointer
+}
+.po_saveon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -358px;
+	cursor:pointer
+}
+.po_saveon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -358px;
+}
+
+/* ——  */
+
+.po_saveoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -408px;
+	cursor:pointer
+}
+.po_saveoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -408px;
+	cursor:pointer
+}
+.po_saveoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -408px;
+}
+
+/* ——  */
+
+.po_playon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -458px;
+	cursor:pointer
+}
+.po_playon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -458px;
+	cursor:pointer
+}
+.po_playon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -458px;
+}
+
+/* ——  */
+
+.po_playoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -508px;
+	cursor:pointer
+}
+.po_playoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -58px -508px;
+	cursor:pointer
+}
+.po_playoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -8px -508px;
+}
+
+.re_bullet1{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -8px;
+	cursor:pointer
+}
+.re_bullet1:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -8px;
+	cursor:pointer
+}
+.re_bullet1:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -8px;
+}
+.re_bullet1off{
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -258px -8px;
+    cursor:pointer
+}
+.re_bullet1off:hover {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -258px -8px;
+    cursor:pointer
+}
+.re_bullet1off:active {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -208px -8px;
+}
+
+.re_bullet1Small{
+	width: 19px;
+	height: 19px;
+	background: url(../../images/SpriteIntegrity.png) -208px -8px;
+}
+
+
+/* ??  */
+
+.re_bullet2{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -58px;
+	cursor:pointer
+}
+.re_bullet2:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -58px;
+	cursor:pointer
+}
+.re_bullet2:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -58px;
+}
+
+/* ??  */
+
+.re_editon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -108px;
+	cursor:pointer
+}
+.re_editon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -108px;
+	cursor:pointer
+}
+.re_editon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -108px;
+}
+
+/* ??  */
+
+.re_editoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -158px;
+	cursor:pointer
+}
+.re_editoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -158px;
+	cursor:pointer
+}
+.re_editoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -158px;
+}
+
+/* ??  */
+
+.re_detalle{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -208px;
+	cursor:pointer
+}
+.re_detalle:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -208px;
+	cursor:pointer
+}
+.re_detalle:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -208px;
+}
+
+/* ??  */
+
+.re_mas{
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -208px -258px;
+    cursor:pointer
+}
+.re_mas:hover {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -258px -258px;
+    cursor:pointer
+}
+.re_mas:active {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -208px -258px;
+}
+
+/* ??  */
+
+
+
+.re_cerrar{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -308px;
+	cursor:pointer
+}
+.re_cerrar:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -308px;
+	cursor:pointer
+}
+.re_cerrar:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -308px;
+}
+/* ??  */
+
+.re_saveon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -358px;
+	cursor:pointer
+}
+.re_saveon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -358px;
+	cursor:pointer
+}
+.re_saveon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -358px;
+}
+
+/* ??  */
+
+.re_saveoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -408px;
+	cursor:pointer
+}
+.re_saveoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -408px;
+	cursor:pointer
+}
+.re_saveoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -408px;
+}
+
+/* ??  */
+
+.re_playon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -458px;
+	cursor:pointer
+}
+.re_playon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -458px;
+	cursor:pointer
+}
+.re_playon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -458px;
+}
+
+/* ??  */
+
+.re_playoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -508px;
+	cursor:pointer
+}
+.re_playoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -258px -508px;
+	cursor:pointer
+}
+.re_playoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -208px -508px;
+}
+
+
+.pro_bullet1{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -8px;
+	cursor:pointer
+}
+.pro_bullet1:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -8px;
+	cursor:pointer
+}
+.pro_bullet1:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -8px;
+}
+
+/* ??  */
+
+.pro_bullet2{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -58px;
+	cursor:pointer
+}
+.pro_bullet2:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -58px;
+	cursor:pointer
+}
+.pro_bullet2:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -58px;
+}
+
+/* ??  */
+
+.pro_editon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -108px;
+	cursor:pointer
+}
+.pro_editon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -108px;
+	cursor:pointer
+}
+.pro_editon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -108px;
+}
+
+/* ??  */
+
+.pro_editoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -158px;
+	cursor:pointer
+}
+.pro_editoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -158px;
+	cursor:pointer
+}
+.pro_editoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -158px;
+}
+
+/* ??  */
+
+.pro_detalle{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -208px;
+	cursor:pointer
+}
+.pro_detalle:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -208px;
+	cursor:pointer
+}
+.pro_detalle:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -208px;
+}
+
+/* ??  */
+
+.pro_mas{
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -408px -258px;
+    cursor:pointer
+}
+.pro_mas:hover {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -458px -258px;
+    cursor:pointer
+}
+.pro_mas:active {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -408px -258px;
+}
+
+/* ??  */
+
+.pro_cerrar{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -308px;
+	cursor:pointer
+}
+.pro_cerrar:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -308px;
+	cursor:pointer
+}
+.pro_cerrar:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -308px;
+}
+
+/* ??  */
+
+.pro_saveon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -358px;
+	cursor:pointer
+}
+.pro_saveon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -358px;
+	cursor:pointer
+}
+.pro_saveon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -358px;
+}
+
+/* ??  */
+
+.pro_saveoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -408px;
+	cursor:pointer
+}
+.pro_saveoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -408px;
+	cursor:pointer
+}
+.pro_saveoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -408px;
+}
+
+/* ??  */
+
+.pro_playon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -458px;
+	cursor:pointer
+}
+.pro_playon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -458px;
+	cursor:pointer
+}
+.pro_playon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -458px;
+}
+
+/* ??  */
+
+.pro_playoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -508px;
+	cursor:pointer
+}
+.pro_playoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -458px -508px;
+	cursor:pointer
+}
+.pro_playoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -408px -508px;
+}
+
+.in_bullet1{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -8px;
+	cursor:pointer
+}
+.in_bullet1:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -8px;
+	cursor:pointer
+}
+.in_bullet1:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -8px;
+}
+
+/* ??  */
+
+.in_bullet2{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -58px;
+	cursor:pointer
+}
+.in_bullet2:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -58px;
+	cursor:pointer
+}
+.in_bullet2:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -58px;
+}
+
+/* ??  */
+
+.in_editon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -108px;
+	cursor:pointer
+}
+.in_editon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -108px;
+	cursor:pointer
+}
+.in_editon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -108px;
+}
+
+/* ??  */
+
+.in_editoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -158px;
+	cursor:pointer
+}
+.in_editoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -158px;
+	cursor:pointer
+}
+.in_editoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -158px;
+}
+
+/* ??  */
+
+.in_detalle{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -208px;
+	cursor:pointer
+}
+.in_detalle:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -208px;
+	cursor:pointer
+}
+.in_detalle:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -208px;
+}
+
+/* ??  */
+
+.in_mas{
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -608px -258px;
+    cursor:pointer
+}
+.in_mas:hover {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -658px -258px;
+    cursor:pointer
+}
+.in_mas:active {
+    width: 34px;
+    height: 34px;
+    background: url(../../images/SpriteIntegrity.png) -608px -258px;
+}
+
+/* ??  */
+
+.in_cerrar{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -308px;
+	cursor:pointer
+}
+.in_cerrar:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -308px;
+	cursor:pointer
+}
+.in_cerrar:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -308px;
+}
+
+
+/* ??  */
+
+.in_saveon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -358px;
+	cursor:pointer
+}
+.in_saveon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -358px;
+	cursor:pointer
+}
+.in_saveon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -358px;
+}
+
+/* ??  */
+
+.in_saveoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -408px;
+	cursor:pointer
+}
+.in_saveoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -408px;
+	cursor:pointer
+}
+.in_saveoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -408px;
+}
+
+/* ??  */
+
+.in_playon{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -458px;
+	cursor:pointer
+}
+.in_playon:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -458px;
+	cursor:pointer
+}
+.in_playon:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -458px;
+}
+
+/* ??  */
+
+.in_playoff{
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -508px;
+	cursor:pointer
+}
+.in_playoff:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -658px -508px;
+	cursor:pointer
+}
+.in_playoff:active {
+	width: 34px;
+	height: 34px;
+	background: url(../../images/SpriteIntegrity.png) -608px -508px;
+}

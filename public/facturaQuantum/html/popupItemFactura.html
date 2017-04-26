@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Item Factura</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">       
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../scripts/kendoCabecera.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.culture.es-CO.min.js" type="text/javascript"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="../js/variablesFacturaQuantum.js" type="text/javascript"></script>
+        <script src="../js/popupItemFactura.js" type="text/javascript"></script>        
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>                        
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/integrity.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/popupItemFactura.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <br>
+        <table style="width: 100%;">
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Concepto:</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="ipConceptoDet" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Clase de articulo</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="idClaseArticulo" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Articulo</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="idArticulo" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Descripción</label>
+                </td>
+                <td class="tdDerecho">
+                    <textarea id="idDescripcion" data-bind="value: textareaValue" class="k-textbox" style="height: 80px; width: 100%;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Cantidad</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="ipCantidad" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Descuento</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="idDescuento" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">IVA</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="idIVA" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Valor unitario</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="idValorUnitario" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Valor total</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="idValorTotal" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Código de amortizacion</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="idCodigoAmortizacion" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Días de amortización</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="ipDiasAmortizacion" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdIzquierdo">
+                    <label class="letraParrafo">Fecha de amortización</label>
+                </td>
+                <td class="tdDerecho">
+                    <input id="ipFechaAmortizacion" style="width: 100%" required/>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdBotones" colspan="2" >
+                    <button id="btAgregar" class="k-primary" onclick="agregarItem()" >Agregar</button>
+                    <button id="btCancelar" class="k-primary" onclick="btnCancelar()" >Cancelar</button>
+                </td>                
+            </tr>
+        </table>                    
+    </body>
+</html>

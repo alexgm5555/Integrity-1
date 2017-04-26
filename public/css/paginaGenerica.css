@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/03/2017, 03:58:22 PM
+    Author     : jenny
+*/
+
+.k-grid .rightAling,
+.k-numerictextbox .k-input
+{
+    text-align: right;
+}
+.customPopUp {    
+    max-height: 50%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:700px;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000;
+    overflow: auto;  
+}
+
+#disable {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background-color:rgba(0,0,0,0.5);
+    color: #000000;
+    overflow: auto;  
+}
+
+footer {
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    left: 0px;
+    position: fixed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.k-link:not(.k-state-disabled):hover>.k-i-close{
+    background-position: -32px -16px;
+}
+
+td{
+    padding: 5px
+}
+
+table{
+    padding: 2px;
+}
+
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+
+.k-window-titlebar .k-header {
+    display: none;
+}
+
+.k-grid table tr.k-state-selected
+{
+    background: #ededed;
+    color: #80BD28;
+    border-style: solid;
+
+}

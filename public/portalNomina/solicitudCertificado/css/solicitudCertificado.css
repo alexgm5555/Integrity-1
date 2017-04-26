@@ -1,0 +1,82 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21-sep-2016, 13:52:08
+    Author     : Quantum
+*/
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+
+body{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 14px; 
+    font-family: "Verdana"; 
+    color:"#E6E6FA";
+}
+
+
+table{
+    padding: 0px;
+    border-spacing: 0;
+}
+
+
+.sidenavSup {
+    border-style: solid;
+    border-color: #80BD28 #fff  #fff  #fff;
+}
+
+.sidenavIzq {
+    border-style: solid;
+    border-color: #fff #fff #fff #E0E0E0;
+    height: 100%;
+}
+
+.letraParrafo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 16px;
+    line-height: normal;
+    font-family: Verdana;
+}
+.subTitulo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 17px;
+    line-height: normal;
+    font-family: Verdana;
+    font-weight: bold;
+}
+
+
+
+
+#outerWrapper{
+  background-color: #FFFFFF;
+  position:relative;
+  min-height:470px;
+}
+#grid {
+  height:100%;
+}
+

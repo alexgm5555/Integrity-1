@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+        To change this license header, choose License Headers in Project Properties.
+        To change this template file, choose Tools | Templates
+        and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Reporte</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>html { font-size: 20px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>
+        
+        <script src="../../../scripts/jquery.min.js" type="text/javascript"></script>
+        <link href="../../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="../../../scripts/bootstrap.js" type="text/javascript"></script>
+        
+        
+        <link href="../../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+       
+        <script src="../../../scripts/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link href="../../css/kendo.customRepo.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="../../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>-->
+        <script src="../../../scripts/kendoGridAnguMultiSelect.custom.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/kendo.culture.es-CO.min.js" type="text/javascript"></script><script src="../../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        
+        <script src="../../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <link href="../../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="../css/reporteCU.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/estilos.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="../../css/kendo.customRepo.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/reporteCU.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/cssSpriteReportes.css" rel="stylesheet" type="text/css"/>
+        <script src="../../../js/servicios.js" type="text/javascript"></script>
+        <script src="../js/reporteCU.js" type="text/javascript"></script>
+        <script src="../js/opcCampos.js" type="text/javascript"></script>
+        
+        <script src="../js/popUpFunciones.js" type="text/javascript"></script>
+        <script src="../js/opcFiltros.js" type="text/javascript"></script>
+        <script src="../js/PopUpFiltros.js" type="text/javascript"></script>
+        <script src="../js/PopUpFiltrosV2.js" type="text/javascript"></script>
+        <script src="../js/popUpCond.js" type="text/javascript"></script>
+        <script src="../js/opcFormato.js" type="text/javascript"></script>
+        <script src="../../js/urlRest.js" type="text/javascript"></script>
+        
+        <style>html { font-size: 14px; font-family: "Helvetica, sans-serif"; bgcolor:"#E6E6FA"}</style>        
+    </head>
+    <body>
+        <div>
+            <table style="height: 50px">
+                <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite re_bullet1"></span></a></td>
+                <td style="width: 100%;height: 50px"><h4 id="titulo" class="subTitulo"></h4></td>
+                <td style="width: 50px;height: 50px" title="Regresar Reportes"><a id ="btnCrear" class="k-grid" onclick ="location.href = '../../indexRepo/html/indexRepo.html'" aling="center"><span class="k-sprite re_back"></span></a></td>
+            </table>
+            <div class="sidenavSup"></div>
+        </div>
+        <div  class="container-fluid text-center">
+            <div class="row content">
+                <div align="center" style=" width: 95%; margin: 0 auto" id ="headerDiv">
+                    <br>
+                    <br>
+                    <!--<img class="pointer" id="imgReporte" src="../images/btnReporteOff.png" onClick="cambiarImagen('imgReporte'); clickbtn('Reporte');" estado="off" onmouseover="this.src = '../images/btnReporteHov.png';" onmouseout="this.src = '../images/btnReporteOff.png';"/>-->
+                    <img class="pointer" id="imgCampos" src="../../../images/btnCamposOff.png" onClick="cambiarImagen('imgCampos'); clickbtn('Campos');" estado="off" onmouseover="this.src = '../../../images/btnCamposHov.png';"onmouseout="this.src = '../../../images/btnCamposOff.png';"/>
+                    <img class="pointer" id="imgFiltros" src="../../../images/btnFiltrosOff.png" onClick="cambiarImagen('imgFiltros'); clickbtn('Filtros');" estado="off" onmouseover="this.src = '../../../images/btnFiltrosHov.png';"onmouseout="this.src = '../../../images/btnFiltrosOff.png';"/>
+                    <img class="pointer" id="imgFormato" src="../../../images/btnFormatoOff.png" onClick="cambiarImagen('imgFormato'); clickbtn('Formato');" estado="off" onmouseover="this.src = '../../../images/btnFormatoHov.png';" onmouseout="this.src = '../../../images/btnFormatoOff.png';"hidden="true"/>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div id="divMIzq" class="col-sm-1 "></div>
+                <div id = "jjj" id="divCuerpo"class="col-sm-10 text-left" >
+                    <div id="divTexto" class="col-sm-3 letraParrafo"><h4 id = "subtitulo" class="subTitulo"></h4>
+                        <h4 id = "subtitulo" class="subTitulo"></h4> 
+                        <label class="letraParrafo" id="labelTexto"></label>
+                        <br>
+                        <br>
+                    </div>
+                    <div id="divContenido" class="col-sm-9 sidenavIzq" >
+                        <div id="Reporte" style=" display: none" >
+                            <label class="letraParrafo">Nombre del Reporte:</label><br>
+                            <input id="nomRepo" class="k-textbox" style="width: 100%;"/><br><br>
+                            <label class="letraParrafo">Directorio:</label><br>
+                            <input id="capi"  style="width: 100%;"/><br><br>
+
+                        </div> 
+                        <div id="Campos" style=" display: none">
+                            <div>
+                                <div class ="col-sm-9 borderDiv">
+                                    <div class = "col-sm-6" style="vertical-align: middle">
+                                        <br>
+                                        <label class="letraParrafo" >Anexo:</label><br>
+                                        <input id="anexo"  style="width: 100%;"/><br><br>
+                                    </div>
+                                    <div class="col-sm-6 ">
+                                        <br>
+                                        <label class="letraParrafo">Campo:</label><br>
+                                        <input id="campo"  style="width: 70%;"/>
+                                        <a id ="btnAdd" class="k-grid" onclick ="clickCrearCampo()" aling="right"><span class="k-sprite re_mas" title="Crear Campo"></span></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1 "></div>
+                                <div class="col-sm-2 borderDiv">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <label class="letraParrafo">&nbsp;</label><br>
+                                                <!--                                               <a id ="btnAddCmp" class="k-grid" onclick ="clickCrearCampo()" aling="right"><span class="k-sprite re_mas"></span></a>
+                                                -->
+                                            </td>
+                                            <td>
+                                                <br>
+                                                <label class="letraParrafo">&nbsp;</label><br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<a id ="btnCrear" class="k-grid" onclick ="addFun()" aling="right"><span class="k-sprite re_funcion" title="Crear Función"></span></a>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="container-fluid"></div>
+                            <br>
+
+                            <div id="outerWrapper1" class="sidenavSub">
+                                <div id="girdCampos"></div>
+                            </div>
+                        </div>
+
+                        <div id="Formato" style=" display: none">
+                            <h4 class="subTitulo">Formato</h4>
+                            <div id="outerWrapper" class="">
+                                <div id="girdFormato"></div>
+                            </div>
+                        </div>
+                        <div id="Filtros" style=" display: none">
+                            <h4 class="subTitulo">Filtros</h4> 
+                            <div id="outerWrapper2" class="sidenavSub">
+                                <div id="girdFiltros"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="divMDer" class="col-sm-1 ">
+                </div>
+            </div>
+        </div>
+        <div id ="window" name="windowDiv"></div>
+        <script id="rowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+
+            </td>
+            <td>
+            <a id = "aEdit#: rpt_cmp_pos#" class='k-grid-edit'><span id = "spanEdit#: rpt_cmp_pos#" class='k-sprite re_editoff'title="Editar"></span></a>
+            </td>
+            <td>
+            <span class="title">#: rpt_cmp_vis #</span>
+            </td>
+            <td>
+            <a class='k-grid-visible'><span id = "spanVisib#: rpt_cmp_pos#"  class='k-sprite re_checkAct' title="Visible"></span></a>
+            <a class='k-grid-condicion'><span id = "spanCondi#: rpt_cmp_pos#"  class='k-sprite re_conoff' title="Condición"></span></a>
+            <a  class='k-grid-destroyed'><span id = "spanDelete#: rpt_cmp_pos#" class='k-sprite re_trash'title="Borrar"></span></a>
+            </td>
+
+            </tr>
+        </script>
+        <script id="altRowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">
+            <td>
+
+            </td>
+            <td>
+            <a id = "aEdit#: rpt_cmp_pos#" class='k-grid-edit'><span id = "altSpanEdit#: rpt_cmp_pos#" class='k-sprite re_editoff'title="Editar"></span></a>
+            </td>
+            <td>
+            <span class="title">#: rpt_cmp_vis #</span>
+            </td>
+            <td>
+
+            <a class='k-grid-visible'><span id = "spanVisib#: rpt_cmp_pos#"  class='k-sprite re_checkAct' title="Visible"></span></a>
+            <a class='k-grid-condicion'><span id = "spanCondi#: rpt_cmp_pos#"  class='k-sprite re_conoff' title="Condición"></span></a>
+            <a  class='k-grid-destroyed'><span id = "spanDelete#: rpt_cmp_pos#" class='k-sprite re_trash'title="Borrar"></span></a>
+            </td>
+            </tr>
+        </script>
+        <script id="rowTemplate" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #">  
+            <td>
+            <span class="title">#: rpt_cmp_vis #</span>
+            <a  class='k-grid-'><span  class = "k-sprite #try{if(rpt_cmp_fun == true){#re_funcion#}else if(rpt_cmp_fil == false){##}}catch(e){##}#" ></span></a>
+            <div  id="divRowFiltro#: rpt_cmp_pos#" align = "center" class="col-sm-12">
+            </div>
+            </td>
+            <td valign="baseline">
+            <div  id="divRowBotones#: rpt_cmp_pos#" align = "center" >
+            <a class='k-grid-filtro'><span id = "spanLupa#: rpt_cmp_pos#" class='k-sprite re_filtrooff' title="Filtro"></span></a>
+            </div>
+            </td>
+            </tr>
+        </script>
+        <script id="altRowTemplate" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">
+            <td>
+            <span class="title">#: rpt_cmp_vis#</span>
+            <a  class='k-grid-'><span  class = "k-sprite #try{if(rpt_cmp_fun == true){#re_funcion#}else if(rpt_cmp_fil == false){##}}catch(e){##}#" ></span></a>
+            <div  id="altDivRowFiltro#: rpt_cmp_pos#" align = "center" class="col-sm-12">
+            </div>
+            </td>
+            <td valign="baseline">
+            <div  id="aleDivRowBotones#: rpt_cmp_pos#" align = "center">
+            <a class='k-grid-filtro'><span id = "altSpanLupa#: rpt_cmp_pos#"  class='k-sprite re_filtrooff'title="Filtro"></span></a>
+            </div>
+            </td>
+            </tr>
+        </script>
+        <script id="rowTemplateFormat" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #">  
+            <td>
+            <div class = "col-sm-3">
+            <span class="title">#: rpt_cmp_vis #</span>
+            </div>
+            <div  id="divRowFormato#: rpt_cmp_pos#" align = "center" class="col-sm-7">
+            </div>
+            </td>
+            <td valign="baseline">
+            <div  id="divRowBotones#: rpt_cmp_pos#" align = "center" >
+            <a class='k-grid-lista'><span id = "spanList#: rpt_cmp_pos#"  class='k-sprite re_listaoff' title="Lista"></span></a>
+            <a class='k-grid-visible'><span id = "spanVisi#: rpt_cmp_pos#"  class='k-sprite re_visibleon' title="Visible"></span></a>
+            </div>
+            </td>
+            </tr>
+        </script>
+        <script id="altRowTemplateFormat" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">
+            <td>
+            <div class = "col-sm-3">
+            <span class="title">#: rpt_cmp_vis#</span>
+            </div>
+            <div  id="altDivRowFormato#: rpt_cmp_pos#" align = "center" class="col-sm-7"> 
+            </div>
+            </td>
+            <td valign="baseline">
+            <div  id="aleDivRowBotones#: rpt_cmp_pos#" align = "center">
+            <a class='k-grid-lista'><span id = "altSpanList#: rpt_cmp_pos#" class='k-sprite re_listaoff' title="Lista"></span></a>
+            <a class='k-grid-visible'><span id = "altSpanVisi#: rpt_cmp_pos#"   class='k-sprite re_visibleon' title="Visible"></span></a>
+            </div>
+            </td>
+            </tr>
+        </script>
+        <style>
+
+
+            .placeholder {
+                outline-style: dashed;
+                outline-width: 1px;
+                outline-color: red;
+            }
+        </style>
+        
+        <div id="customPopUp" hidden="hidden" style = "overflow: hidden;background: #FFF" class="" ng-app="KendoDemos" ng-controller="MyCtrl">
+
+            <div class="k-window-titlebar k-header" style="margin-top: 1px;height: 2em">
+                &nbsp;
+                <span class="k-window-title" id="windowFil_wnd_title">Crear</span>
+                <div class="k-window-actions">
+                    <a role="button" href="#" class="k-window-action" aria-label="Close">
+                        <span class="k-icon k-i-close" onclick='cerrarCustomPopUp()'></span>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div>
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 50px;padding-left: 10px"><a class="k-grid"  aling="center"><span id = "imgOpc" class="k-sprite re_compon"></span></a></td>
+                        <td>
+                            <h4 id="tituloPopUp" class="subTitulo">Compartir el Reporte</h4>                                
+                        </td>
+                        <td style="width: 50px;height: 50px">
+                            <a hidden="hidden"  id ="btnCrearFltr" class="k-grid" onclick ="addFiltro()" >
+                                <span class="k-sprite re_mas"></span>
+                            </a>
+                            <a hidden="hidden"  id ="btnCrearCond" class="k-grid" onclick ="addConc()" >
+                                <span class="k-sprite re_mas"></span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <div class="sidenavSup"></div>                    
+            </div>
+
+            <span id="centeredNotification" style="display:none;"></span>
+
+            <div >
+                <div id="divMIzqPopup" class="col-sm-1 "></div>
+                <div id="popUpFunciones" hidden="hidden">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="col-sm-1"></div>
+                    <div id="divCuerpoPopup" class="col-sm-10 text-left" style="">
+
+
+                        <div class="col-sm-5">
+                            <label class="letraParrafo">Campo o valor:</label><br>
+                            <select id = "cmpVal1" kendo-combo-box
+                                    k-placeholder="'Seleccione Uno'"
+                                    k-data-text-field="'rpt_cmp_vis'"
+                                    k-data-value-field="'rpt_cmp_vis'"
+                                    k-filter="'contains'"
+                                    k-data-source="dataSourceCmp"
+                                    style="width: 100%;" ng-model="records[itemSele].cmp_fin_nom">
+                            </select><br><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="letraParrafo">Operación:</label><br>
+                            <select id = "funOpe"  kendo-combo-box
+                                    k-data-text-field="'text'"
+                                    k-data-value-field="'text'"
+                                    k-filter="'contains'"
+                                    k-suggest= "'true'"
+                                    k-index= "'0'"
+                                    k-data-source="dataSourceOpe"
+                                    style="width: 100%;" ng-model="records[itemSele].cmp_fun_ope">
+                            </select><br><br>
+                        </div>
+                        <div class="col-sm-5">
+                            <label  class="letraParrafo">Campo o valor:</label><br>
+                            <select id = "cmpVal2" kendo-combo-box
+                                    k-placeholder="'Seleccione Uno'"
+                                    k-data-text-field="'rpt_cmp_vis'"
+                                    k-data-value-field="'rpt_cmp_vis'"
+                                    k-filter="'contains'"
+                                    k-data-source="dataSourceCmp"
+                                    style="width: 100%;" 
+                                    ng-model="records[itemSele].rpt_fun_pos">
+                            </select><br><br>
+                        </div>
+
+                        <br><br>
+                        <div class="row"></div>
+                        <br><br>
+                        <div class="col-sm-1"></div>
+                        <div id = "div codFun" class="col-sm-10 borderDiv " style="max-height: 100px; min-height: 100px; overflow: true">
+                            <h9 ng-repeat="x in records" ng-click="clickItem(x)" ng-hide="hideLastAnd(x.id)">({{x.cmp_fin_nom}} {{x.cmp_fun_ope}} {{x.rpt_fun_pos}})
+                                <h9 ng-show="showAnd(x.id)">AND</h9>
+                        </div>
+                        <div class="col-sm-1"></div>
+
+                    </div>
+                        <div class="col-sm-1"></div>
+                    <footer><button id="btnFun" onclick = "saveElemCUFun()" class="k-primary" style="width: 100%;height: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >Guardar</button>            
+                </div>
+
+                <div id="popUpCond" hidden="hidden" style="height: 360px;width: 100%;overflow-y: auto;overflow-x : hidden">
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-11 "> 
+
+                        <div class="col-sm-4">
+                            <label class="letraParrafo">Campo:</label><br>
+                            <input id="cmpValoCond1"  style="width: 100%;"/><br><br></div>
+                        <div class="col-sm-3">
+                            <label class="letraParrafo">Operación:</label><br>
+                            <input id="conOpeCond1"  style="width: 80%;"/><br><br></div>
+                        <div class="col-sm-5">
+                            <label class="letraParrafo">Campo:</label><br>
+                            <input id="cmpValCond1"  style="width: 70%;"/>
+                            <!--<a class="k-grid" onclick="addConc()" aling="center"><span id = "imgOpc" class="k-sprite re_mas"></span></a>-->
+                            <br><br></div>
+                    </div>
+                    <!--<div class="sidenavSup"></div>-->
+                    <div id="operaciones">
+                    </div>
+                    <div id="divNewFun" tabindex="1" class = "divNewFun">
+
+
+                    </div>
+
+
+                    <footer><button id="btnCond" onclick = "saveElemCUCond()" class="k-primary" style="width: 100%;height: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >Enviar</button></footer>            
+                </div>
+                <div id="popUpFltr" hidden="hidden" style="display: block;height: 360px;width: 100%;overflow-y: auto;overflow-x : hidden">
+                    <div class="container-fluid text-center">
+                        <div class="row content">
+                            <div id="divMIzq" class="col-sm-1 "></div>
+                            <div id="divContenido" class="col-sm-10 " >
+                                <div id="CamposFltr" style="height:60%;width:100%"></div>
+                            </div>
+                        </div>
+                        <div id="divMDer" class="col-sm-1 ">
+                        </div>
+                        <br>
+                    </div>
+                    <footer><button id="btnFltr" onclick = "clicBtnSaveFiltros()" class="k-primary" style="width: 100%;height: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >Enviar</button></footer>            
+                </div>
+                <div id="popUpFltrV2" hidden="hidden" style="display: block;height: 360px;width: 100%;overflow-y: auto;overflow-x : hidden">
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <div class="container-fluid text-center">
+                        <div class="row content">
+                            <div id="divMIzq" class="col-sm-1 "></div>
+                            <div id="divContenido" class="col-sm-10 " >
+                                <div align="center" id="CamposFltrV2" style="height:60%;width:100%; min-height: 6px;line-height: 5px;" ></div>
+                            </div>
+                        </div>
+                        <div id="divMDer" class="col-sm-1 ">
+                        </div>
+                        <br>
+                    </div>
+                    <footer><button id="btnCrearRepov2" onclick = "clicBtnSaveFiltrosV2()" class="k-primary" style="width: 100%;height: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">Enviar</button></footer>            
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </div>
+    </body>
+</html>
+

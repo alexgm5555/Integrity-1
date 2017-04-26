@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Histórico de vacaciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script> 
+        <script src="../../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <link href="../../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>        
+        <script src="../../../scripts/kendo.all.min.js" type="text/javascript"></script>
+        <script src="../../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../../scripts/zipPdf.js" type="text/javascript"></script>
+        <script src="../../../scripts/pakoPdf.js" type="text/javascript"></script>
+        <script src="../../../js/servicios.js" type="text/javascript"></script>        
+        <script src="../js/variablesVacaciones.js" type="text/javascript"></script>
+        <script src="../js/vacaciones.js" type="text/javascript"></script>
+        <link href="../../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/integrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>        
+        <link href="../css/vacaciones.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div>
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                    <td>
+                        <h1 id = "subtitulo" class="subTitulo">Histórico de vacaciones</h1>                                
+                    </td>
+                    <td style="width: 40px; text-align: right; padding-right: 10px">
+                        <a id ="btnCrearPedido" class="k-grid" onclick="getPDF('.pdf-page')" aling="center"><span class="k-sprite po_downflecha_sup"></span></a>
+                    </td>
+                </tr>
+            </table>
+            <div class="sidenavSup"></div>                    
+        </div>
+        <table style="width: 100%">
+            <tr>               
+                <td style="width: 100%">
+                    <div id="divPDF" class="page-container hidden-on-narrow" style="width: 100%;overflow-y: auto;overflow-x : hidden">
+                        <div class="pdf-page size-letter">
+                            <div class="pdf-header">
+                                <span class="company-logo">
+                                    <img id="logoEmpresaPDF" src="" width="300" height="115"/>                                    
+                                </span>
+                                <span class="documentName"><h3>Histórico de vacaciones</h3></span>
+                            </div>
+                            <div class="pdf-footer">
+                                <span class="company-logo">                                    
+                                    <img src="../../../images/ComprobantePie.png" width="1054" height="132" style="position: absolute; right: 0px; bottom: 0px;"/>                                    
+                                </span>                                
+                            </div>
+                            <div class="encabezado" align="right">
+                                <table>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Sucursal/agencia:
+                                        </td>
+                                        <td>
+                                            <label id="lbSuscursal"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Centro de actividad:
+                                        </td>
+                                        <td>
+                                            <label id="lbCentroActividad"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Empleado:
+                                        </td>
+                                        <td>
+                                            <label id="lbEmpleado"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Codigo:
+                                        </td>
+                                        <td>
+                                            <label id="lbCodigo"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Fecha ingreso:
+                                        </td>
+                                        <td>
+                                            <label id="lbFechaIngreso"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Salario actual
+                                        </td>
+                                        <td>
+                                            <label id="lbSalario"></label>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-right: 10px">
+                                            Fecha vigencia sueldo
+                                        </td>
+                                        <td>
+                                            <label id="lbVigenciaSueldo"></label>
+                                        </td>                                        
+                                    </tr>
+                                </table>
+                            </div>                                                        
+                            <div class="pdf-body">
+                                <div id="grid"></div>                                
+                            </div>
+                        </div>
+                    </div>                    
+                </td>
+            </tr>
+        </table>
+        <script id="rowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title" id ="#: fechainicio #">#: fechainicio # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechafin #">#: fechafin # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: diasdisfrutados #">#: kendo.toString( diasdisfrutados,"n0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: diastomados #">#: kendo.toString( diastomados,"n0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: diasdinero #">#: kendo.toString( diasdinero,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: valorpagado #">#: kendo.toString( valorpagado,"c0") # </span>
+            </td>            
+            <td style="text-align: right">
+            <span class="title" id ="#: numeronomina #">#: kendo.toString( numeronomina,"n0") # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechainiperiodo #">#: fechainiperiodo # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechafinperiodo #">#: fechafinperiodo # </span>
+            </td>            
+            <td style="text-align: right">
+            <span class="title" id ="#: periodoscumplidos #">#: kendo.toString( periodoscumplidos,"n0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: anticipos #">#: kendo.toString( anticipos,"n0") # </span>
+            </td>
+            </tr>                       
+        </script>
+        <script id="altRowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">             
+            <td>
+            <span class="title" id ="#: fechainicio #">#: fechainicio # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechafin #">#: fechafin # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: diasdisfrutados #">#: kendo.toString( diasdisfrutados,"n0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: diastomados #">#: kendo.toString( diastomados,"n0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: diasdinero #">#: kendo.toString( diasdinero,"c0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: valorpagado #">#: kendo.toString( valorpagado,"c0") # </span>
+            </td>            
+            <td style="text-align: right">
+            <span class="title" id ="#: numeronomina #">#: kendo.toString( numeronomina,"n0") # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechainiperiodo #">#: fechainiperiodo # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: fechafinperiodo #">#: fechafinperiodo # </span>
+            </td>            
+            <td style="text-align: right">
+            <span class="title" id ="#: periodoscumplidos #">#: kendo.toString( periodoscumplidos,"n0") # </span>
+            </td>
+            <td style="text-align: right">
+            <span class="title" id ="#: anticipos #">#: kendo.toString( anticipos,"n0") # </span>
+            </td>
+            </tr>
+        </script>
+    </body>
+</html>

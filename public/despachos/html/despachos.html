@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Localidades</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; bgcolor:"#E6E6FA"}</style>
+   <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>html { font-size: 14px; font-family: Verdana, Helvetica, sans-serif; }</style>
+        
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>        
+        <script src="../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/despachos.js" type="text/javascript"></script>
+        <script src="../js/varDataSKendo.js" type="text/javascript"></script>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+       
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="../../scripts/bootstrap.js" type="text/javascript"></script>
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="../css/despachos.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body >
+         <script type="text/x-kendo-template" id="windowTemplate">
+            
+            Esta seguro que desea eliminar <strong>#= gpd__des # /  </strong> 
+            <br>
+            <button class="k-button" id="yesButton">Si</button>
+            <button class="k-button" id="noButton"> No</button>
+        </script>
+         <script id="rowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr data-uid="#: uid #"> 
+            <td>
+            <span class="title" id ="#: ped__num #">#: ped__num # </span>
+            </td>                           
+            <td>
+            <span class="title" id ="#: art__des #">#: art__des # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: ped__pend #">#: ped__pend # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: ped__can__k #">#: ped__can__k # </span>
+            </td>
+            <td>
+            <a  class='k-grid-check'><span id ="#=ID#" onclick = "changeEst(#=ID#)"title='check'  class = "k-sprite #try{if(checkIn){#po_checkAct#}else{#po_checkCreate#}}catch(e){#po_checkCreate#}#" ></span></a>
+            </td>
+            
+            </tr>
+        </script>
+        <script id="altRowTemplateCmp" type="text/x-kendo-tmpl">
+            <tr class="k-alt" data-uid="#: uid #">
+            
+            <td>
+            <span class="title" id ="#: ped__num #">#: ped__num # </span>
+            </td>                           
+            <td>
+            <span class="title" id ="#: art__des #">#: art__des # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: ped__pend #">#: ped__pend # </span>
+            </td>
+            <td>
+            <span class="title" id ="#: ped__can__k #">#: ped__can__k # </span>
+            </td>
+            <td>
+            <a  class='k-grid-check'><span id ="#=ID#" onclick = "changeEst(#=ID#)" title='check'  class = "k-sprite #try{if(checkIn){#po_checkAct#}else{#po_checkCreate#}}catch(e){#po_checkCreate#}#" ></span></a>                
+            </td>
+            
+            </tr>
+            
+        </script>
+        <div>
+            <table style="height: 50px; width: 100%">
+                <td style="width: 50px;height: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                <td style="width: 40%;height: 50px;  vertical-align: middle" ><span style="vertical-align:middle;"><h1 id = "subtitulo" class="subTitulo">Despachos</h1></span></td>
+                <td style="width: 60%; height: 50px;" class="navbar" > 
+                    <div class="container-fluid">
+                         <div id="textarea" hidden="true"></div>
+                        <button type="button" class="navbar-toggle" class="btn btn-default btn-circle btn-lg" data-toggle="collapse" data-target="#myNavbar">
+                            <i class="glyphicon glyphicon-list"></i>
+                        </button>                                                                         
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar" style="text-align: left">
+                        <ul class="nav navbar-nav">    
+                            
+                        </ul>
+                    </div>
+                </td>
+                <td style="width: 50px;height: 50px"><a id ="btnCrear" class="k-grid" onclick ="addRow()" aling="center"><span class="k-sprite po_look"></span></a></td>
+            </table>
+            <div class="sidenavSup"></div>
+        </div>
+       
+        <div class="container-fluid text-center">
+            <div class="row content">
+                
+                <div id="outerWrapper" class="col-sm-8 text-left">
+                    <div id="grid" name="grid"></div>
+                </div>
+                <div  class="col-sm-4 text-left" style = "vertical-align:middle;">
+                    <br>
+                    <br>
+                    <table class="k-edit-form-container" style="width: 90%">
+                        <tr>
+                            <td style="text-align: left"><label>Seleccionar Todos:</label></td>
+                        </tr>
+                        <tr>
+                            <td>  <a><span id ="imgChekAll" onclick = 'selectAll()' title='seleccionar Todos'  class = "k-sprite po_checkAct" ></span></a></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left"><label>Peso Total:</label></td>
+                        </tr>
+                        <tr>
+                            <td>  <label id = "pesoTotal"/> </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left"><label>Camion:</label></td>
+                        </tr>
+                        <tr>
+                            <td>  <input id = "Camion" class = "k-textbox" style="width: 90%"/></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left"><label>Ruta:</label></td>
+                        </tr>
+                        <tr>
+                            <td>  <input id = "Ruta" class = "k-textbox" style="width: 90%"/> </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left"><label>Transportista:</label></td>
+                        </tr>
+                        <tr>
+                            <td><input id = "Transportista" class = "k-textbox" style="width: 90%"/> </td>
+                        </tr>                        
+                        <tr>
+                            <td style="text-align: left"><label>Orden:</label></td>
+                        </tr>
+                        <tr>
+                            <td>  <input id = "Orden" class = "k-textbox" style="width: 90%"/></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left"><label>Flete:</label></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 3em ;"><input id = "flete"  style="width: 90%"/> </td>
+                        </tr>
+                        <tr style="">
+                            <td style="text-align: center;">   <button  type="button" id ="btnDespachar" class="k-primary" style="width: 50%;height: 40px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">Despachar </button></td>
+                        </tr>
+                       
+                    </table>
+
+                </div>
+            </div>
+            
+
+        <div>
+        </div>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,191 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20/09/2016, 02:14:29 PM
+    Author     : Desarrollo
+*/
+body{
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 14px; 
+    font-family: "Verdana"; 
+    color:"#E6E6FA";
+}
+table{
+    padding: 0px;
+    border-spacing: 0;
+}
+
+
+.sidenavSup {
+    border-style: solid;
+    border-color: #7EA700 #fff  #fff  #fff;
+}
+footer {
+            background-color: #333;
+            width: 100%;
+            bottom: 0;
+            left: 0px;
+            position: fixed;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+.sidenavIzq {
+    border-style: solid;
+    border-color: #fff #fff #fff #7EA700;
+    height: 100%;
+}
+.sidenavSub1{
+    border-style: solid;
+    border-color: #fff #fff #fff #7EA700;
+    height: 100%;
+}
+.letraParrafo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: normal;
+    font-family: Verdana;
+
+}
+.subTitulo{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 17px;
+    line-height: normal;
+    font-family: Verdana;
+    font-weight: bold;
+    vertical-align: center;
+}
+.subTituloPopUp{
+    font-style: normal; 
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 15px;
+    line-height: normal;
+    font-family: Verdana;
+    font-weight: bold;
+    vertical-align: center;
+}
+
+
+#outerWrapper{
+  background-color: #FFFFFF;
+  position:relative;
+  min-height:470px;
+}
+#grid {
+  height:100%;
+}
+.k-grid.table tr.k-state-selected{
+    background:  #FFFFFF;
+}
+
+#wrapper {
+        width: 950px;
+        margin: 0 auto;
+        }
+        
+#header {
+        padding-top: 40px;
+        width: 950px;
+        }
+        
+p {
+        font-size: 1.4em;
+        width: 400px;
+        }
+        
+a:link,     
+a:visited {
+        color: #a2b52d;
+        text-decoration: none;
+        }
+        
+a:hover, 
+a:focus {
+        border-bottom: 1px dotted #a2b52d;
+        }
+
+
+        .pt-page-moveFromLeft {
+    -webkit-animation: moveFromLeft .6s ease both;
+    animation: moveFromLeft .6s ease both;
+}
+table{
+    padding: 2px;
+}
+td{
+    padding: 2px
+}
+#customPopUp{
+    height:500px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:60%;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000; 
+}
+#customPopUp1{
+    height:500px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width:60%;
+    z-index: 9;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #000000; 
+}
+
+#disable {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    background-color:rgba(0,0,0,0.5);
+    color: #000000;
+    /*background: url("../images/fondo-arbol.png");*/
+    overflow: auto;  
+}
+footer {
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    left: 0px;
+    position: absolute;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+
+.k-window-titlebar .k-header {
+    display: none;
+}

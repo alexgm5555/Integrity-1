@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <link href="../../css/style2min.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jstree.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>               
+                <td style="padding: 10px">
+                    
+                </td>                                                
+            </tr>
+        </table>
+        <div id="jstree2" ondrop="drop(event)" ondragover="allowDrop(event)" style="font-family:Arial;font-size:9pt;color:#4d4d4d;width: 10px;height: 5px;"></div>
+        <script>
+
+
+
+
+            try {
+                $(function () {
+                    try {
+
+
+                        var txtjson = sessionStorage.getItem("txtJson2");
+                        txtjson = txtjson.replace(/(..\/css\/images\/leaf\.gif)/g, "../../css/images/leaf.gif");
+                        var treeJson = JSON.parse(txtjson);
+                        treeJson.plugins = ["dnd", "crrm", "themes", "json_data", "massload", "contextmenu","search"];
+                        treeJson.search = {"case_insensitive": true,"show_only_matches" : true};
+                        treeJson.contextmenu = {
+                            "items": function ($node) {
+                                return {
+                                    "Create": {
+                                        "label": "Create a new employee",
+                                        "action": function (obj) {
+                                            alert("hola");
+                                        }
+                                    },
+                                    "Rename": {
+                                        "label": "Rename an employee",
+                                        "action": function (obj) {
+                                             alert("item mod");
+                                            //this.rename(obj);
+                                        }
+                                    },
+                                    "Delete": {
+                                        "label": "Delete an employee",
+                                        "action": function (obj) {
+                                             alert("item elimina");
+                                            //this.remove(obj);
+                                        }
+                                    }
+                                };
+                            }
+                        }
+                        var to = false;
+                            $('#inpSearchTree2').keyup(function (e) {
+                                
+                              if(to) { clearTimeout(to); }
+                              to = setTimeout(function () {
+                                var v = $('#inpSearchTree2').val();
+                                //$('#jstree2').jstree(true).search(v);
+                                $('#jstree2').jstree('search', v);
+                              }, 250);
+                            });
+                        treeJson.core = {"check_callback": false, "data": treeJson.core.data};
+
+                        $('#jstree2').jstree(treeJson)
+                                .bind("click.jstree", function (e) {
+                                    //document.getElementById("demo").innerHTML = "Drop node " + data.node.id + " to " + data.parent;
+                                }).bind("select_node.jstree", function (e, data) {
+                            $('#jstree2').jstree(treeJson).check_while_dragging;
+                            var j = $('#jstree2').jstree('get_selected');
+
+
+                        });
+
+
+
+
+                        if (sessionStorage.getItem("pcf")) {
+                            $('#jstree2').jstree(true).select_node(sessionStorage.getItem("pcf"));
+                        }
+                    } catch (e) {
+                        alert(e.message);
+                    }
+                    $('#jstree2').on('dblclick', function () {
+                        if (sessionStorage.getItem("cabeceraLast") || (sessionStorage.getItem("cabeceraNew")) || (sessionStorage.getItem("cabeceraTitu")) || (sessionStorage.getItem("cabeceraLlaves"))) {
+                            sessionStorage.removeItem('cabeceraTitu');
+                            sessionStorage.removeItem('cabeceraNew');
+                            sessionStorage.removeItem('cabeceraLlaves');
+                            sessionStorage.removeItem('cabeceraLast');
+                        }
+
+
+                    });
+                });
+            } catch (err) {
+                alert(err);
+            }
+
+        </script>
+        <style type="text/css">
+            .jstree-default a.jstree-search { color:#8CC451; }
+        </style>
+    </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Facturas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="../../scripts/bootstrap.js" type="text/javascript"></script>        
+        <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="../../scripts/jquery-2.2.0.min.js" type="text/javascript"></script>         
+        <script src="../../scripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+        <link href="../../css/kendo.common.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../../scripts/kendoGrid.custom.min.js" type="text/javascript"></script>        
+        <script src="../../scripts/kendo.messages.es-ES.min.js" type="text/javascript"></script>
+        <script src="../../scripts/kendo.culture.es-CO.min.js" type="text/javascript"></script>
+        <script src="../../scripts/LibreriaIntegrity.js" type="text/javascript"></script>
+        <script src="../../js/servicios.js" type="text/javascript"></script>
+        <script src="../js/variablesFacturaQuantum.js" type="text/javascript"></script>
+        <script src="../js/facturaQuantum.js" type="text/javascript"></script> 
+        <script src="../../js/variablesPopUpDocumentos.js" type="text/javascript"></script>
+        <script src="../../js/popUpDocumentos.js" type="text/javascript"></script>
+        <link href="../../css/kendo.metro.mobile.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/kendo.metro.min.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="../css/facturaQuantum.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/cssSpriteIntegrity.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/paginaGenerica.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/popUpDocumentos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="popUpDocumentos" hidden="hidden" style = "overflow-y: hidden;" class="customPopUp">
+            <div class="k-window-titlebar k-header" style="margin-top: 1px;height: 2em">
+                &nbsp;
+                <span class="k-window-title"><label id="lbAccion"></label></span>
+                <div class="k-window-actions">
+                    <a role="button" href="#" class="k-window-action k-link" aria-label="Close">
+                        <span class="k-icon k-i-close" onclick="cerrarCustomPopUp('popUpDocumentos')" role="button"></span>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div id="divTituloCustomPopUp">
+                <table style="width: 100%; padding-top: 10px;">
+                    <tr>
+                        <td style="width: 50px; padding-top: 15px;"><a class="k-grid" aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                        <td>
+                            <h1 id = "subtitulo" class="subTitulo">Documentos adjuntos</h1>                                
+                        </td>                            
+                        <td style="width: 10%; height: 50px; vertical-align: middle; padding-top: 20px;"><span class="k-sprite  po_upfolder_sup" onclick="popUpSubirArchivo()" id="fileInput"  estado="off"></span></td>
+                    </tr>
+                </table>
+                <div class="sidenavSup"></div>
+                <input type='file' id='ipFile' style="display:none;" onchange = "cargarArchivo()">
+            </div>                        
+            <div id="gridDocumentoAd" style="height: 390px; width: 98%;overflow-y: hidden; overflow-x : hidden; margin-right: 0px;margin-left: 5px;"></div>            
+        </div>
+        <span id="centeredNotification" style="display:none;"></span>
+        <div class="container-fluid">
+            <div class="row content">
+                <div>
+                    <table style="width: 100%">
+                        <tr>
+                            <td style="width: 50px"><a class="k-grid"  aling="center"><span class="k-sprite po_bullet1"></span></a></td>
+                            <td>
+                                <h1 id = "subtitulo" class="subTitulo">Factura <label id="idNumerofactura"></label></h1>                                
+                            </td>
+                            <td style="width: 50px; text-align: right; padding-right: 20">
+                                <a id ="btnArchivos" class="k-grid" onclick ="abrirCustomPopUpDocumentosInstacia('popUpDocumentos')" aling="center"><span id ="imgArchivos"  class="k-icon po_upfolder_sup_disabled"></span></a>
+                            </td>
+                            <td style="width: 50px; text-align: right; padding-right: 20">
+                                <a id ="btnGuardar" class="k-grid" onclick ="guardarFactura()" aling="center"><span class="k-icon po_saveon"></span></a>
+                            </td>
+                            <td style="width: 50px; text-align: right; padding-right: 20">
+                                <a id ="btnGuardar" class="k-grid" onclick ="finalizarFactura()" aling="center"><span class="k-icon po_check_sup"></span></a>
+                            </td>
+                            <td style="width: 50px; text-align: right; padding-right: 10px">
+                                <a id ="btnCrear" class="k-grid" onclick ="volverFacturacion()" aling="center"><span class="k-icon po_back"></span></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="sidenavSup"></div>                    
+                </div>
+                <div class="row">
+                    <div class="col-md-4">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Sucursal/Agencia:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ipSucursal" style="width: 100%" required/>                        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Clase de documento:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ipCDocumento" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">NIT cliente:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ipNITCliente" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Cliente:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ipCliente" style="width: 100%" required/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Vendedor:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ipVendedor" style="width: 100%"/>
+                                </td>
+                            </tr>
+                        </table>                        
+                    </div>
+                    <div class="col-md-4">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Condiciones de pago:</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ipCdePago" style="width: 100%"/>                        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Fecha:</label>
+                                </td>
+                                <td>
+                                    <input id="ipFecha" value="" style="width: 100%" onChange="calcularFechaVencimiento()"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Fecha de vencimiento:</label>
+                                </td>
+                                <td>
+                                    <input id="ipFechaVencimiento" value=""  style="width: 100%" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Fletes</label>
+                                </td>
+                                <td>
+                                    <input id="ipFletes" type="number" style="width: 100%"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-4">                        
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 30%">
+                                    <label class="letraParrafo">Divisa</label>
+                                </td>
+                                <td style="width: 70%">
+                                    <input id="ipDivisa" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Tasa:</label>
+                                </td>
+                                <td>
+                                    <input id="ipTasa" type="number" style="width: 100%" onblur="onBlurTasaDeCambio()" title="Sí ingresa el dato manualmente quedará con la fecha de hoy"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="letraParrafo">Fecha tasa de cambio:</label>
+                                </td>
+                                <td>
+                                    <input id="ipFechaTasa" value="" style="width: 100%"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <span><input type="checkbox" id="ipActualizarTasa"/> Actualizar tasa de cambio</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 10%">
+                                    <label class="letraParrafo">Observaciones:</label><br>
+                                </td>
+                                <td>
+                                    <textarea id="txtAObservaciones" data-bind="value: textareaValue" class="k-textbox" style="height: 40px; width: 100%;"></textarea>
+                                </td>
+                            </tr>                            
+                        </table>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="container-fluid">
+            <div class="row content">
+                <div>
+                    <table style="width: 100%">
+                        <tr>
+                            <td>
+                                <h1 id = "subtitulo" class="subTitulo">Detalle</h1>
+                            </td>
+                            <td style="text-align: right; padding-right: 20">
+                                <a id ="btnAgregarItem" onclick="agregarItemDetalle()" class="k-grid" aling="center"><span class="k-sprite po_mas"></span></a>
+                            </td>
+                        </tr>
+                    </table>                    
+                </div>
+            </div>
+            <div id="grid"></div>            
+            <script id="rowTemplateItem" type="text/x-kendo-tmpl">
+                        <tr data-uid="#: uid #"> 
+                        <td>
+                        <span class="title">#: ConceptoDet #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: ClaseArticulo #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Articulo #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Descripcion #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Cantidad #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Descuento #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: IVA #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: ValorUnitario #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: ValorTotal #</span>
+                        </td>
+                        <td>                     
+                        <a  class='k-grid-editar' id = "editarItem#: ID#"><span class='k-sprite po_editoff'></span></a>
+                        <a  class='k-grid-eliminar' id = "eliminarItem#: ID#"><span class='k-sprite po_cerrar'></span></a>
+                
+                        </td>                
+                        </tr>
+            </script>
+            <script id="altRowTemplateItem" type="text/x-kendo-tmpl">
+                        <tr data-uid="#: uid #"> 
+                        <td>
+                        <span class="title">#: ConceptoDet #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: ClaseArticulo #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Articulo #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Descripcion #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Cantidad #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: Descuento #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: IVA #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: ValorUnitario #</span>
+                        </td>
+                        <td>
+                        <span class="title">#: ValorTotal #</span>
+                        </td>
+                        <td>                     
+                        <a  class='k-grid-editar' id = "editarItem#: ID#"><span class='k-sprite po_editoff'></span></a>
+                        <a  class='k-grid-eliminar' id = "eliminarItem#: ID#"><span class='k-sprite po_cerrar'></span></a>
+                        </td>                
+                        </tr>
+            </script>
+        </div>        
+    </body>
+</html>

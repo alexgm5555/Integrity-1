@@ -1,0 +1,38 @@
+
+.k-grid tr:hover {
+    background: transparent;
+}
+.k-grid tr:not(.k-state-selected):hover {
+    color: #80BD28;
+}
+
+.k-grid tr.k-alt:not(.k-state-selected):hover {
+    background: #f1f1f1;
+}
+
+.k-window-titlebar .k-header {
+    display: none;
+}
+
+.sidenavSup2 {
+    border-style: solid;
+    border-color: #80BD28 #fff  #fff  #fff;
+    height: 100%;
+}
+
+td{
+    padding: 5px
+}
+
+table{
+    padding: 2px;
+}
+
+footer {
+    background-color: #333;
+    width: 100%;
+    bottom: 0;
+    left: 0px;
+    position: absolute;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
