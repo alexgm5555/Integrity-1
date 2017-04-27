@@ -35,11 +35,11 @@ function CudTareaNormal(){
                     }
                     else   
                     {  
-                         
+                     parent.alertDialogs("Error "+resp.dsreassignvarioustasks.eeEstados[0].Estado);    
                     } 
                 } ,
                 error: function (e) {
-                  alertDialogs("Error" + e.status + " - " + e.statusText);
+                  parent.alertDialogs("Error" + e.status + " - " + e.statusText);
             }
                 
             }); 
@@ -75,18 +75,15 @@ function cudTareaFlujo(){debugger
                     {
                       
                         parent.cerrarReasignacion();
-                       
-                       
-                      
-                    
+
                     }
                     else   
                     {  
-                         
+                      parent.alertDialogs("Error "+resp.dsreassignvarioustasks.eeEstados[0].Estado);     
                     } 
                 } ,
                 error: function (e) {
-                  alertDialogs("Error" + e.status + " - " + e.statusText);
+                  parent.alertDialogs("Error" + e.status + " - " + e.statusText);
             }
                 
             });  

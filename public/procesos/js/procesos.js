@@ -441,7 +441,7 @@ function grafica(e){
             height: "70%",
             modal: true,
             resizable: false,
-            title: "Grafica",
+            title: "Diagrama De Proceso",
             width: "70%",
             content: UrL+"procesos/html/popUpGrafica.html",
             actions: [
@@ -724,7 +724,7 @@ function historicoDocs(){
         height: "40%",
         modal: true,
         resizable: false,
-        title: "Historico Vacaciones",   
+        title: "Histórico Vacaciones",   
         width: "70%",
         content: UrL+"procesos/formularioProcesos/html/popupHistoricoVacaciones.html",
         actions: [
