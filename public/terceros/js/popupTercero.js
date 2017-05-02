@@ -702,6 +702,8 @@ function guardarTercero(){
     var json = obj.getjson();
     var url = obj.getUrlSir();
     var mapData = obj.getMapData();
+    var filtroBusqueda = $("#ipTercero").val();
+    filtroBusqueda =  filtroBusqueda.slice(0,5)
     
     var key1 = Object.keys(json)[0];
     var key2 = Object.keys(json[key1])[1];
@@ -750,7 +752,7 @@ function guardarTercero(){
     }).done(function(e){
         var key1 = Object.keys(e)[0];
         if ((e[key1].eeEstados[0].Estado === "OK") || (e[key1].eeEstados[0].Estado === "")) {            
-            parent.closePopUpCabecera("", "");
+            parent.closePopUpCabecera("", filtroBusqueda);
         } else {
             alertDialogs(e[key1].eeEstados[0].Estado);
         }

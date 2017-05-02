@@ -173,13 +173,16 @@ function grilla() {
         altRowTemplate: kendo.template($("#altRowTemplate").html()),
         edit: function (e) {
             if (!e.model.isNew()) {
-                if (e.model[est] != 99) {
+                if (e.model[est] != 99) {                    
                     kendo.ui.progress($('.k-edit-form-container'), true);
                     kendo.ui.progress($('.k-edit-buttons'), true);
                     e.container.find(".k-loading-image").css("background-image", "url('')");
+                    debugger
+                    var rgeo= $("#idrgeo__cod").data("kendoDropDownList"); 
+                    rgeo.value(e.model.idrgeo__cod);                   
                 }
                 e.container.kendoWindow("title", "Editar");
-            } else {
+            } else {                
                 e.container.kendoWindow("title", "Crear");
             }
         }
@@ -405,7 +408,7 @@ function aprobarRegionGeo(e) {
         actions[1].action = function () {
             bandAlert = 0;
         };
-        createDialog("Atención", "Esta seguro de modificar el estado del registro ---" + fila[est] + " ---?", "400px", "200px", true, true, actions);
+        createDialog("Atención", "Esta seguro de modificar el estado del registro ---" + fila.rgeo__nom + " ---?", "400px", "200px", true, true, actions);
 
     } catch (e) {
         $('#grid').data('kendoGrid').dataSource.read();
@@ -437,7 +440,7 @@ function sendAjax(verHtml, obj) {
             bandAlert = 0;
         },
         error: function (e) {
-            alertDialogs("Error al consumir el servicio de la región geografica" + e.status + " - " + e.statusText);
+            alertDialogs(e.statusText);
             bandAlert = 0;
         }
     }).done(function () {
@@ -445,7 +448,7 @@ function sendAjax(verHtml, obj) {
             $('#grid').data('kendoGrid').dataSource.read();
             $('#grid').data('kendoGrid').refresh();
         } else {
-            alertDialogs("Problemas con el el servicio de región geografica.\n" + permitirIngreso);
+            alertDialogs(permitirIngreso);
         }
 
     });
@@ -475,7 +478,7 @@ function sendAjaxAClase(verHtml, obj) {
             bandAlert = 0;
         },
         error: function (e) {
-            alertDialogs("Error al consumir el servicio de crear lista de precios" + e.status + " - " + e.statusText);
+            alertDialogs(e.statusText);
             bandAlert = 0;
         }
     }).done(function () {
@@ -483,7 +486,7 @@ function sendAjaxAClase(verHtml, obj) {
             $('#grid').data('kendoGrid').dataSource.read();
             $('#grid').data('kendoGrid').refresh();
         } else {
-            alertDialogs("Problemas con el creación de crear lista de precios .\n" + permitirIngreso);
+            alertDialogs(permitirIngreso);
         }
 
     });

@@ -207,7 +207,7 @@ $(document).ready(function() {
 
     }).data("kendoWindow");
     
-        function grilla(e,nit,razon){debugger
+        function grilla(e,nit,razon){
         var  consultar = new sirProveedor();
         var  datajson = consultar.getjson();
         var  urlService = consultar.getUrlSir();

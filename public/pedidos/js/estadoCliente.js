@@ -4,10 +4,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(window).resize(function () {
+$(window).resize(function () {    
     var viewportHeight = $(window).height();
-    $('#outerWrapper').height(viewportHeight - 100);
-                        
+    $('#outerWrapper').height(viewportHeight - 60);
+    $('.k-grid-content').height(viewportHeight - 100);
 });
                     
                     
@@ -158,7 +158,7 @@ $(document).ready(function () {
                         return e[key1][mapCud];
                     }else
                     {
-                    alertDialogs("Error"+e[key1].eeEstados[0].Estado);    
+                        alertDialogs(e[key1].eeEstados[0].Estado);    
                     }
                 }},
             model: {
@@ -193,20 +193,11 @@ $(document).ready(function () {
      *  
      *  
      */
-    var gridheigth = $("body").height();
-    gridheigth = gridheigth*0.12 + gridheigth;
+    $(window).trigger("resize");  
     var grid1 = $("#grid").kendoGrid({
         dataSource: dataSource,
-                            
-        height: gridheigth,
         sortable: true,
-                           
-        pageable: {
-            refresh: true,
-            pageSizes: true,
-            buttonCount: 5
-        },
-        //navigatable: true,
+        pageable: false,
         columns: [
             {field: "gpd__cli__des", title: "Estado De Cliente",  hidden:false},
                                  	
@@ -219,11 +210,11 @@ $(document).ready(function () {
         edit: function(e) {
             if (!e.model.isNew()) {//caso en el que el popup es editar
                 if(e.model.ctr__est!= 99 ){
-                   kendo.ui.progress($('.k-edit-form-container'), true);
+                    kendo.ui.progress($('.k-edit-form-container'), true);
                     kendo.ui.progress($('.k-edit-buttons'), true);
                     e.container.find(".k-loading-image").css("background-image", "url('')");
 
-            }
+                }
             }
             else{//caso en el que el popup es crear
 
@@ -251,45 +242,41 @@ $(document).ready(function () {
         filter: "startswith"                    
     });
 
-     function clickEliminar(e) {
-    try {
-        var fila = $(e.currentTarget).closest("tr")[0].rowIndex;
-        e.preventDefault();
-        var dataItem = $("#grid").data("kendoGrid").dataItem($(e.target).closest("tr"));
-         if (dataItem.ctr__est!= 99){
-             alertDialogs("No se puede eliminar por el estado ");  
-         }else{
-        var actions = new Array();
-        actions[0] = new Object();
-        actions[0].text = "OK";
-        actions[0].action = function () {
-
-              
-            var dataSource = $("#grid").data("kendoGrid").dataSource;
-            dataSource.remove(dataItem);
-            dataSource.sync();
-            bandAlert = 0; 
-            
-            
-        };
-        actions[1] = new Object();
-        actions[1].text = "Cancelar";
-        actions[1].action = function () {
-            bandAlert = 0;
-        };
-        createDialog("Atención", "Esta seguro de eliminar el Registro ---" + dataItem.gpd__pre__des + " ---?", "400px", "200px", true, true, actions);
-         }
-    } catch (e) {
-        alert(e);
-        $('#grid').data('kendoGrid').dataSource.read();
-        $('#grid').data('kendoGrid').refresh();
-    }
+    function clickEliminar(e) {
+        try {
+            var fila = $(e.currentTarget).closest("tr")[0].rowIndex;
+            e.preventDefault();
+            var dataItem = $("#grid").data("kendoGrid").dataItem($(e.target).closest("tr"));
+            if (dataItem.ctr__est!= 99){
+                alertDialogs("No se puede eliminar por el estado ");  
+            }else{
+                var actions = new Array();
+                actions[0] = new Object();
+                actions[0].text = "OK";
+                actions[0].action = function () {
+                    var dataSource = $("#grid").data("kendoGrid").dataSource;
+                    dataSource.remove(dataItem);
+                    dataSource.sync();
+                    bandAlert = 0; 
+                };
+                actions[1] = new Object();
+                actions[1].text = "Cancelar";
+                actions[1].action = function () {
+                    bandAlert = 0;
+                };
+                createDialog("Atención", "Esta seguro de eliminar el Registro ---" + dataItem.gpd__cli__des + " ---?", "400px", "200px", true, true, actions);
+            }
+        } catch (e) {
+            createDialog(e);
+            $('#grid').data('kendoGrid').dataSource.read();
+            $('#grid').data('kendoGrid').refresh();
+        }
        
-}
+    }
             
                   
                         
-      function changImgFunc(results , e) {
+    function changImgFunc(results , e) {
      
         for (var i = 0; i < results.length; i++) {
             if (document.getElementById("spanproceso"+results[i].gpd__cli__des)){
@@ -322,12 +309,12 @@ function changeEst(e){
         actions[0] = new Object();
         actions[0].text = "OK";
         actions[0].action = function () {
-            if(seleccion.ctr__est==0){  
+            if(seleccion.ctr__est===0){  
+                bandAlert = 0; 
                 actjson.dsSICUDgpd_cli_est.eegpd_cli_est[0].gpd__cli__est=seleccion.gpd__cli__est;                      
                 actjson.dsSICUDgpd_cli_est.eegpd_cli_est[0].gpd__cli__des=seleccion.gpd__cli__des; 
                 actjson.dsSICUDgpd_cli_est.eegpd_cli_est[0].ctr__est=1; 
-                $.ajax({
-        
+                $.ajax({        
                     type: "PUT",        
                     async: false,
                     data: JSON.stringify(actjson),
@@ -335,7 +322,7 @@ function changeEst(e){
                     dataType: "json",        
                     contentType: "application/json;",
                     success: function (resp) {
-                        if((resp.dsSICUDgpd_cli_est.eeEstados[0].Estado)=="OK")
+                        if((resp.dsSICUDgpd_cli_est.eeEstados[0].Estado)==="OK")
                         {     
                             $('#grid').data('kendoGrid').refresh();
                             $('#grid').data('kendoGrid').dataSource.read();
@@ -343,7 +330,7 @@ function changeEst(e){
                         }
                         else
                         {
-                            alertDialogs("Error"+resp.dsSICUDgpd_cli_est.eeEstados[0].Estado); 
+                            alertDialogs(resp.dsSICUDgpd_cli_est.eeEstados[0].Estado); 
                             $('#grid').data('kendoGrid').refresh();
                             $('#grid').data('kendoGrid').dataSource.read();
                             $('#grid').data('kendoGrid').refresh();                             
@@ -353,7 +340,8 @@ function changeEst(e){
                 });
             }
 
-            if(seleccion.ctr__est==99){  
+            if(seleccion.ctr__est===99){ 
+                bandAlert = 0; 
                 actjson.dsSICUDgpd_cli_est.eegpd_cli_est[0].gpd__cli__est=seleccion.gpd__cli__est;                      
                 actjson.dsSICUDgpd_cli_est.eegpd_cli_est[0].gpd__cli__des=seleccion.gpd__cli__des; 
                 actjson.dsSICUDgpd_cli_est.eegpd_cli_est[0].ctr__est=0;  
@@ -366,7 +354,7 @@ function changeEst(e){
                     dataType: "json",        
                     contentType: "application/json;",
                     success: function (resp) {
-                        if((resp.dsSICUDgpd_cli_est.eeEstados[0].Estado)=="OK")
+                        if((resp.dsSICUDgpd_cli_est.eeEstados[0].Estado)==="OK")
                         {          
                             $('#grid').data('kendoGrid').refresh();
                             $('#grid').data('kendoGrid').dataSource.read();
@@ -374,10 +362,10 @@ function changeEst(e){
                         }
                         else
                         {
-                            alertDialogs("Error"+resp.dsSICUDgpd_cli_est.eeEstados[0].Estado);  
-                            $('#grid').data('kendoGrid').refresh();
-                            $('#grid').data('kendoGrid').dataSource.read();
-                            $('#grid').data('kendoGrid').refresh(); 
+                            alertDialogs(resp.dsSICUDgpd_cli_est.eeEstados[0].Estado);  
+//                            $('#grid').data('kendoGrid').refresh();
+//                            $('#grid').data('kendoGrid').dataSource.read();
+//                            $('#grid').data('kendoGrid').refresh(); 
                         }
                     }        
                 });

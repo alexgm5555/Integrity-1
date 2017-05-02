@@ -191,8 +191,7 @@ function grilla(obj) {
             if (!e.model.isNew()) {//caso en el que el popup es editar
 
                 e.container.kendoWindow("title", "Editar");
-                var idBanco = $("#idcto__cod").data("kendoNumericTextBox");
-//                var idNivel = $("#idcniv__cod").data("kendoNumericTextBox");
+                var idBanco = $("#idcto__cod").data("kendoMaskedTextBox");
                 idBanco.enable(false);
                 var idNit = $("#idter__nit").data("kendoMaskedTextBox");
                 idNit.enable(false);
@@ -204,8 +203,8 @@ function grilla(obj) {
 //                }
             } else {
                 e.container.kendoWindow("title", "Crear");
-                var idNit = $("#idter__nit").data("kendoMaskedTextBox");
-                idNit.enable(false);
+//                var idNit = $("#idter__nit").data("kendoMaskedTextBox");
+//                idNit.enable(false);
 //                var idNivel = $("#idcniv__cod").data("kendoNumericTextBox");
                 ////caso en el que el popup es crear
 //                Buscarlabel = buscarlabel.prevObject[3];

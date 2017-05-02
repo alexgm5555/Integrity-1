@@ -516,7 +516,7 @@ function logical(obj, nodo) {
     return obj;
 }
 function logicalrev(obj, nodo) {
-    debugger
+    
     if (obj[nodo].value === true) {
         delete  obj[nodo];
         obj[nodo] = true;

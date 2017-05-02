@@ -1,9 +1,15 @@
 /* variables para consumir el servicio Sir*/
 var objSir = new sir();
-    var urlSir = objSir.getUrlSir(); 
-    var mapSir = objSir.getmapSir();
-    var inputsir = objSir.getdataInputSir();
+var urlSir = objSir.getUrlSir(); 
+var mapSir = objSir.getmapSir();
+var inputsir = objSir.getdataInputSir();
 var est= "cla__est";
+
+$(window).resize(function () {
+    var viewportHeight = $(window).height();
+    $('#outerWrapper').height(viewportHeight - 60);
+    $('.k-grid-content').height(viewportHeight - 100);
+});
 
 $(document).ready(function() {
     fltrEst()
@@ -56,7 +62,7 @@ function grilla(obj){
     /*hiden: true --- ocultar en grilla*/
     var columns = [
         //btnDer,
-//        {field: "cla__cli", title: "ID",width: "100%"},
+        //        {field: "cla__cli", title: "ID",width: "100%"},
         {field: "cla__nom", title: "Clase Cliente",width: "100%"},
         //            {field: "act__cod", title: "Actividad",width: "100%"},
         //            {field: "cto__cod", title: "Centro de Actividad",width: "100%"},
@@ -96,7 +102,7 @@ function grilla(obj){
                     if (operation === 'read') {
                         return JSON.stringify(inputsir);
                     }
-                     else if (operation === 'create') {
+                    else if (operation === 'create') {
                         var key1 = Object.keys(inputCud)[0]
                         options[est] = 99;
                         inputCud[key1][mapCud] = [options];
@@ -120,8 +126,8 @@ function grilla(obj){
                 if (e[key1].eeEstados[0].Estado === "OK") {
                     if(e[key1][mapSir]){
                         for (var i = 0;i<e[key1][mapSir].length;i++){
-                        e[key1][mapSir][i].id = i;
-                    }
+                            e[key1][mapSir][i].id = i;
+                        }
                     }else{
                         grilla();
                     }
@@ -234,7 +240,7 @@ function aprobarClase(e) {
         actions[1].action = function () {
             bandAlert = 0;
         };
-        createDialog("Atención", "Esta seguro de modificar el estado del registro ---" + fila[est] + " ---?", "400px", "200px", true, true, actions);
+        createDialog("Atención", "Esta seguro de modificar el estado del registro ---" + fila.cla__nom+ " ---?", "400px", "200px", true, true, actions);
 
     } catch (e) {
         $('#grid').data('kendoGrid').dataSource.read();
@@ -265,7 +271,7 @@ function sendAjaxAClase(verHtml, obj) {
             bandAlert = 0;
         },
         error: function (e) {
-            alertDialogs("Error al consumir el servicio de clases de cliente." + e.status + " - " + e.statusText);
+            alertDialogs(e.status + " - " + e.statusText);
             bandAlert = 0;
         }
     }).done(function () {
@@ -281,22 +287,22 @@ function sendAjaxAClase(verHtml, obj) {
 function onChangeFltr() {
     inputsir= {
         "dsSIRgpr_cla":{  
-                "eeDatos":[  
-                    {  
-                        "picusrcod":sessionStorage.getItem("usuario"),
-                        "picfiid":sessionStorage.getItem("picfiid"),
-                        "local_ip":sessionStorage.getItem("ipPrivada"),
-                        "remote_ip":sessionStorage.getItem("ipPublica")
-                    }
-                ],
-                "eeSIRgpr_cla":[  
-                    {  
-                        "piicla__cli" : 0,
-                        "piccial__cod" : "*",
-                        "piiclaest": $("#fltrEst").val(),
-                    }
-                ]
-            }
+            "eeDatos":[  
+                {  
+                    "picusrcod":sessionStorage.getItem("usuario"),
+                    "picfiid":sessionStorage.getItem("picfiid"),
+                    "local_ip":sessionStorage.getItem("ipPrivada"),
+                    "remote_ip":sessionStorage.getItem("ipPublica")
+                }
+            ],
+            "eeSIRgpr_cla":[  
+                {  
+                    "piicla__cli" : 0,
+                    "piccial__cod" : "*",
+                    "piiclaest": $("#fltrEst").val(),
+                }
+            ]
+        }
     }
     grilla(inputsir);
     

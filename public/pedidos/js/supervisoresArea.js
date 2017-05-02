@@ -145,18 +145,15 @@ $(document).ready(function () {
                     var nombre = $("#nombre")[0].value;
                     var pais = $("#pais").data("kendoDropDownList");
                     var area = $("#area").data("kendoDropDownList");
-                    var select = pais.selectedIndex;
-                    pais = pais.dataSource._data[select].ciu__cod;
-                    var select = area.selectedIndex;
-                    area = area.dataSource._data[select].ageo__cod;
+                    
                     actjson.dsSICUDgpd_sar.eegpd_sar[0].sar__cod=options.sar__cod;  
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].pai__cod=pais;  
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ciu__nom=options.ciu__nom;
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].pai__cod = pais.dataSource._data[pais.selectedIndex].ciu__cod;  
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ciu__nom = pais.dataSource._data[pais.selectedIndex].ciu__nom; 
                     actjson.dsSICUDgpd_sar.eegpd_sar[0].ter__nit=cedula;   
                     actjson.dsSICUDgpd_sar.eegpd_sar[0].ter__raz=nombre; 
                     actjson.dsSICUDgpd_sar.eegpd_sar[0].sar__est=options.sar__est;   
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__cod=area; 
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__nom=options.ageo__nom; 
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__cod = area.dataSource._data[area.selectedIndex].ageo__cod; 
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__nom= area.dataSource._data[area.selectedIndex].ageo__nom;
                     return JSON.stringify(actjson);          
                     $('#grid').data('kendoGrid').refresh();
                     $('#grid').data('kendoGrid').dataSource.read();
@@ -167,17 +164,13 @@ $(document).ready(function () {
                     var cedula = $("#cedula")[0].value;
                     var nombre = $("#nombre")[0].value;
                      var pais = $("#pais").data("kendoDropDownList");
-                     var area = $("#area").data("kendoDropDownList");
-                     var select = pais.selectedIndex;
-                    pais = pais.dataSource._data[select].ciu__cod;
-                    var select = area.selectedIndex;
-                    area = area.dataSource._data[select].ageo__cod;
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].pai__cod=parseInt(pais);  
+                     var area = $("#area").data("kendoDropDownList");                                         
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].pai__cod = pais.dataSource._data[pais.selectedIndex].ciu__cod;  
                     actjson.dsSICUDgpd_sar.eegpd_sar[0].ter__nit=cedula;                     
                     actjson.dsSICUDgpd_sar.eegpd_sar[0].sar__est=99;   
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__cod=area; 
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__nom=options.ageo__nom;
-                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ciu__nom=options.ciu__nom; 
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__cod = area.dataSource._data[area.selectedIndex].ageo__cod; 
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ageo__nom= area.dataSource._data[area.selectedIndex].ageo__nom;
+                    actjson.dsSICUDgpd_sar.eegpd_sar[0].ciu__nom = pais.dataSource._data[pais.selectedIndex].ciu__nom; 
                     actjson.dsSICUDgpd_sar.eegpd_sar[0].ter__raz=nombre;  
                     
                     return JSON.stringify(actjson);          
@@ -246,9 +239,11 @@ $(document).ready(function () {
      *  
      *  
      */
-    var gridheigth = $("body").height();
+    debugger
+    var gridheigth = $("#idFrame").height();
     gridheigth = gridheigth*0.12 + gridheigth;
     var grid1 = $("#grid").kendoGrid({
+        height:gridheigth,
         dataSource: dataSource,
         columns: [
             {field: "sar__cod", title: "Codigo Supervisor",  hidden:false},
@@ -699,7 +694,7 @@ function changeEst(e){
         actions[1].action = function () {
             bandAlert = 0;
         };
-        createDialog("Atención", "Esta seguro de cambiar el estado de Registro ---" + seleccion.sar__cod + " ---?", "400px", "200px", true, true, actions);
+        createDialog("Atención", "Esta seguro de cambiar el estado de Registro ---" + seleccion.ciu__nom +" / "+seleccion.ter__raz+ " ---?", "400px", "200px", true, true, actions);
 
     } catch (e) {
         createDialog(e);

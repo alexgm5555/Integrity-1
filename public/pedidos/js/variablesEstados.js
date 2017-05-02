@@ -106,7 +106,7 @@ function sirConsultaCliente() {
 function sirPaises() {
     var urlSir = ipServicios + baseParameters +"SIRsic_ciu_pais";
     var json = { 
-        "dsSIRsic_ciu":{ 
+        "dsSIRsic_ciu_pais":{ 
             "eeDatos":[ 
                 { 
                     "picusrcod":sessionStorage.getItem("usuario"),

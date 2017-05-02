@@ -218,11 +218,7 @@ function claseCliente(container, options) {
                     }
                 }
             }
-
         });
-        
-
-          
     }        
     
     nombre();

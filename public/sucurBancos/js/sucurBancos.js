@@ -190,9 +190,9 @@ function grilla(obj) {
             if (!e.model.isNew()) {//caso en el que el popup es editar
 
                 e.container.kendoWindow("title", "Editar");
-//                debugger
+//                
                 var idBanco = $("#idbco__cod").data("kendoMaskedTextBox");
-                debugger
+                
                 idBanco.value(codBank);
                 idBanco.enable(false);
 //                e.container.find("span[name=bco__cod]")[0].style.display = "none";

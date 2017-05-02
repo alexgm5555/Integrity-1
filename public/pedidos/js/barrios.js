@@ -104,6 +104,7 @@ $(document).ready(function () {
         
     }).data("kendoWindow");
     function grilla(e){
+        
         var  consultar = new sirBarrios();
         var  datajson = consultar.getjson();
         var  urlService = consultar.getUrlSir();
@@ -145,23 +146,21 @@ $(document).ready(function () {
                         return JSON.stringify(datajson);
                     }
                     if (operation === "update") {
-                        var ciudad_cod = $("#ciudades").data("kendoComboBox")._old;
-                        var ciudad_nom = $("#ciudades").data("kendoComboBox")._prev;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__cod=ciudad_cod;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__nom=ciudad_nom;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__cod=options.bar__cod;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__dsc=options.bar__dsc;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__str=options.bar__str;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__est=options.bar__est;   
+                        var ciudad= $("#ciudades").data("kendoDropDownList");                        
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__cod = ciudad.dataSource._data[ciudad.selectedIndex].ciu__cod;
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__nom = ciudad.dataSource._data[ciudad.selectedIndex].ciu__nom;
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__cod = options.bar__cod;
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__dsc = options.bar__dsc;
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__str = options.bar__str;
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].bar__est = options.bar__est;   
                         return JSON.stringify(actjson);
                         
                         
                     }
                     if (operation === "create") {
-                        var ciudad_cod = $("#ciudades").data("kendoComboBox")._old;
-                        var ciudad_nom = $("#ciudades").data("kendoComboBox")._prev;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__cod=ciudad_cod;
-                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__nom=ciudad_nom;
+                        var ciudad= $("#ciudades").data("kendoDropDownList");                        
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__cod = ciudad.dataSource._data[ciudad.selectedIndex].ciu__cod;
+                        actjson.dsSICUgpd_bar.eegpd_bar[0].ciu__nom = ciudad.dataSource._data[ciudad.selectedIndex].ciu__nom;
                         actjson.dsSICUgpd_bar.eegpd_bar[0].bar__cod=options.bar__cod;
                         actjson.dsSICUgpd_bar.eegpd_bar[0].bar__dsc=options.bar__dsc;
                         actjson.dsSICUgpd_bar.eegpd_bar[0].bar__str=options.bar__str;
@@ -217,8 +216,8 @@ $(document).ready(function () {
                     
                 }
             },error: function (e) {
-                        alertDialogs(e.errorThrown);
-                    }
+                alertDialogs(e.errorThrown);
+            }
         });
         
         /**
@@ -251,15 +250,15 @@ $(document).ready(function () {
             editable: "popup",
             edit: function(e) {
                 if (!e.model.isNew()) {//caso en el que el popup es editar
-                    if(e.model.bar__est!= 99 ){
-                        
-                        
+                    if(e.model.bar__est!= 99 ){                                                
                         kendo.ui.progress($('.k-edit-form-container'), true);
                         kendo.ui.progress($('.k-edit-buttons'), true);
                         e.container.find(".k-loading-image").css("background-image", "url('')");
                         
                     }else{
                         
+                        var dropdownlist = $("#ciudades").data("kendoDropDownList");
+                        dropdownlist.value(e.model.ciu__cod);                                                
                     }
                 }
                 else{//caso en el que el popup es crear 
@@ -327,7 +326,7 @@ function ciudades(container, options) {
     var mapCud1 = "eesic_ciu";
     $('<input  id = "ciudades" required name="' + options.field + '"/>')
             .appendTo(container)
-            .kendoComboBox({
+            .kendoDropDownList({
                 dataTextField: "ciu__nom",
         dataValueField: "ciu__cod",
         dataSource: {
