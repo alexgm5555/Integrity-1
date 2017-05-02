@@ -400,7 +400,7 @@ function menufunciones() {
 
 
 function inicio() {
-    window.location.assign("index.html");
+    window.location = "/Integrity?idWeb="+sessionStorage.getItem("idWeb");;
 }
 
 function abreFuncion(servicio) {
