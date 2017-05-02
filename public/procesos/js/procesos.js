@@ -78,7 +78,7 @@ $(document).ready(function () {
         }
     });
     var name = sessionStorage.getItem("usuario");
-    document.getElementById("demo").innerHTML = "Mis Tareas" ;
+    //document.getElementById("demo").innerHTML = "Mis Tareas" ;
     /**
      *  FUNCION CREAR GRILLA
      * Funcion cancel se ejecuta con el evento OnClick de EDIT grid
@@ -118,6 +118,7 @@ $(document).ready(function () {
             var results = datasource.data();
             changImgFunc(results);
         },
+        
         cancel: function(e) {                                                                                   
             e._defaultPrevented= true;
             $('#grid').data('kendoGrid').refresh();                                             
@@ -125,7 +126,7 @@ $(document).ready(function () {
             $('#grid').data('kendoGrid').refresh();                                                                                        
         } 
     });
-
+$("#grid .k-grid-header").css('display', 'none');
                         
     var consultar = new sirtask();
     var datajson = consultar.getjson();
@@ -189,6 +190,9 @@ $(document).ready(function () {
         dataSource: datasourcex,
         selectable:"multiple, row",
         sortable: true,
+        change:function(e){            
+             document.getElementById("cargar").setAttribute("class", "k-sprite pro_asignaroff");
+        },
         filterable: {
             mode: "row",
             operators: {
