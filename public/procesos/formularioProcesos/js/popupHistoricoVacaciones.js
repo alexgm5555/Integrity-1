@@ -82,18 +82,19 @@ $(document).ready(function() {debugger
                             dataSource: dataSource,
                             selectable: true,
                             columns: [
-                                {field: "dva__ini", title: "Fecha de inicio",  hidden:false},
-                                {field: "dva__fin", title: "Fecha Fin",  hidden:false},
-                                {field: "dva__rei", title: "Fecha Reintegro",  hidden:false},
+                                {field: "dva__ini", title: "Inicio",  hidden:false},
+                                {field: "dva__fin", title: "Fin",  hidden:false},
+                                {field: "dva__rei", title: "Reintegro",  hidden:false},
                                 {field: "dva__cal", title: "Dias disfrutados",  hidden:false},
                                 {field: "dva__hab", title: "Dias tomados",  hidden:false},
-                                {field: "dva__din", title: "Dias dinero",  hidden:false},
+                                {field: "dva__din", title: "Dias en dinero",  hidden:false},
                                 {field: "dva__pag", title: "Valor pagado",  hidden:false},
-                                {field: "dva__iper", title: "Inicio periodo",  hidden:false},
-                                {field: "dva__fper", title: "Fin periodo",  hidden:false},
+                                {field: "dva__iper", title: "Periodo",  hidden:false},
+                                
                                 ],
                                 
-                            
+                            rowTemplate: kendo.template($("#rowTemplateCmp").html()),
+                            altRowTemplate: kendo.template($("#altRowTemplateCmp").html()),
                            
                         });
      // $("#grillaDocs .k-grid-header").css('display', 'none');

@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var routes = require('./routes/login');
 app.use('/', routes);
 app.use('/pageError',routes);
+app.use('/olvidoContrasenia',routes);
 
 var users = require('./routes/users');
 app.use('/users', users);

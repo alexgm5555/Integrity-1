@@ -1609,7 +1609,7 @@
 	width: 34px;
 	height: 34px;
 	background: url(../images/SpriteIntegrity.png) -408px -458px;
-	cursor:pointer
+	
 }
 /* ——  */
 
@@ -2701,6 +2701,30 @@
 	height: 34px;
 	background: url(../images/SpriteIntegrity.png) -608px -1008px;
 }
+
+
+
+/* ——  */
+
+.white_asigar{
+	width: 34px;
+	height: 34px;
+	background: url(../images/SpriteIntegrity.png) -858px -1208px;
+	cursor:pointer
+}
+.white_asigar:hover {
+	width: 34px;
+	height: 34px;
+	background: url(../images/SpriteIntegrity.png) -858px -1208px;
+	cursor:pointer
+}
+.white_asigar:active {
+	width: 34px;
+	height: 34px;
+	background: url(../images/SpriteIntegrity.png) -858px -1208px;
+}
+
+
 
 
 

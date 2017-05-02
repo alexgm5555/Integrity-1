@@ -236,3 +236,6 @@ footer {
     /*background: url("../images/fondo-arbol.png");*/
       
 }
+.k-block, .k-draghandle, .k-inline-block, .k-widget {
+   border-style: none; 
+}

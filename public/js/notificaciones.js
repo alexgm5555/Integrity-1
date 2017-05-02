@@ -27,7 +27,12 @@ function notificaciones(){
                 if (e[key1].eeEstados[0].Estado === "OK") {
                     return e[key1][mapCud];
                 } else {
+                   if(e[key1].eeEstados[0].Returnid===11){
+                        alertDialogs("hola");
+                   }else{
                     alertDialogs(e[key1].eeEstados[0].Estado);
+                   }
+                   
                 }
             },
             model: {
