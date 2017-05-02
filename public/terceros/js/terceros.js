@@ -187,6 +187,9 @@ function changeEst(e){
     var key2 = Object.keys(actjson[key1])[1];
     actjson[key1][key2][0] = tercero;
     
+    var filtroBusqueda = tercero.ter__raz;
+    filtroBusqueda =  filtroBusqueda.slice(0,5)
+    
     try {   
         var actions = new Array();
         actions[0] = new Object();
@@ -207,7 +210,7 @@ function changeEst(e){
                     }         
                 }).done(function(resp){                    
                        if((resp.dsSICUDsic_ter.eeEstados["0"].Estado)==="OK"){
-                            grid("", resp.dsSICUDsic_ter.eesic_ter["0"].ter__raz);
+                            grid("", filtroBusqueda);
                         }else{
                             bandAlert = 0;
                             alertDialogs("Error "+(resp.dsSICUDsic_ter.eeEstados["0"].Estado));
@@ -224,7 +227,7 @@ function changeEst(e){
                     contentType: "application/json;",
                     success: function (resp) {                        
                         if((resp.dsSICUDsic_ter.eeEstados["0"].Estado)=="OK"){
-                            grid("", resp.dsSICUDsic_ter.eesic_ter["0"].ter__raz);
+                            grid("", filtroBusqueda);
                         }else{
                             bandAlert = 0;
                             alertDialogs("Error "+(resp.dsSICUDsic_ter.eeEstados["0"].Estado));

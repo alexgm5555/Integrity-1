@@ -4,12 +4,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(window).resize(function () {
+$(window).resize(function () {    
     var viewportHeight = $(window).height();
-    $('#outerWrapper').height(viewportHeight - 100);
-                        
+    $('#outerWrapper').height(viewportHeight - 60);
+    $('.k-grid-content').height(viewportHeight - 100);
 });
-                    
+                              
                     
 /**
  * FUNCION crear usuario nuevo
@@ -132,7 +132,7 @@ $(document).ready(function () {
                     $('#grid').data('kendoGrid').refresh();
                     $('#grid').data('kendoGrid').dataSource.read();
                     $('#grid').data('kendoGrid').refresh();      
-                  // window.location.reload();                                  
+                    // window.location.reload();                                  
                 }
                 if (operation === "destroy") {
                     actjson.dsSICUDgpd_pre_est.eegpd_pre_est[0].gpd__pre__des=options.gpd__pre__des;  
@@ -159,7 +159,7 @@ $(document).ready(function () {
                         return e[key1][mapCud];
                     }else
                     {
-                    alertDialogs("Error"+e[key1].eeEstados[0].Estado);    
+                        alertDialogs("Error"+e[key1].eeEstados[0].Estado);    
                     }
                 }},
             model: {
@@ -193,20 +193,11 @@ $(document).ready(function () {
      *  
      *  
      */
-    var gridheigth = $("body").height();
-    gridheigth = gridheigth*0.12 + gridheigth;
+    $(window).trigger("resize");  
     var grid1 = $("#grid").kendoGrid({
-        dataSource: dataSource,
-                            
-        height: gridheigth,
+        dataSource: dataSource,        
         sortable: true,
-                           
-        pageable: {
-            refresh: true,
-            pageSizes: true,
-            buttonCount: 5
-        },
-        //navigatable: true,
+        pageable: false,
         columns: [
             {field: "gpd__pre__des", title: "Estado De Presupuesto",  hidden:false},
                                  	
@@ -218,17 +209,17 @@ $(document).ready(function () {
         edit: function(e) {
             if (!e.model.isNew()) {//caso en el que el popup es editar
                 if(e.model.ctr__est!= 99 ){
-                   kendo.ui.progress($('.k-edit-form-container'), true);
+                    kendo.ui.progress($('.k-edit-form-container'), true);
                     kendo.ui.progress($('.k-edit-buttons'), true);
                     e.container.find(".k-loading-image").css("background-image", "url('')");
 
-            }
+                }
             }
             else{//caso en el que el popup es crear
 
             }
         } ,
-         rowTemplate: kendo.template($("#rowTemplateCmp").html()),
+        rowTemplate: kendo.template($("#rowTemplateCmp").html()),
         altRowTemplate: kendo.template($("#altRowTemplateCmp").html()),
         dataBound: function (e) {
             var results = dataSource.data();
@@ -250,40 +241,40 @@ $(document).ready(function () {
         filter: "startswith"                    
     });
 
-     function clickEliminar(e) {
-    try {
-        var fila = $(e.currentTarget).closest("tr")[0].rowIndex;
-        e.preventDefault();
-        var dataItem = $("#grid").data("kendoGrid").dataItem($(e.target).closest("tr"));
-         if (dataItem.ctr__est!= 99){
-             alertDialogs("No se puede eliminar por el estado ");  
-         }else{
-        var actions = new Array();
-        actions[0] = new Object();
-        actions[0].text = "OK";
-        actions[0].action = function () {
+    function clickEliminar(e) {
+        try {
+            var fila = $(e.currentTarget).closest("tr")[0].rowIndex;
+            e.preventDefault();
+            var dataItem = $("#grid").data("kendoGrid").dataItem($(e.target).closest("tr"));
+            if (dataItem.ctr__est!= 99){
+                alertDialogs("No se puede eliminar por el estado ");  
+            }else{
+                var actions = new Array();
+                actions[0] = new Object();
+                actions[0].text = "OK";
+                actions[0].action = function () {
 
               
-            var dataSource = $("#grid").data("kendoGrid").dataSource;
-            dataSource.remove(dataItem);
-            dataSource.sync();
-            bandAlert = 0; 
+                    var dataSource = $("#grid").data("kendoGrid").dataSource;
+                    dataSource.remove(dataItem);
+                    dataSource.sync();
+                    bandAlert = 0; 
             
             
-        };
-        actions[1] = new Object();
-        actions[1].text = "Cancelar";
-        actions[1].action = function () {
-            bandAlert = 0;
-        };
-        createDialog("Atención", "Esta seguro de eliminar el Registro ---" + dataItem.gpd__pre__des + " ---?", "400px", "200px", true, true, actions);
-         }
-    } catch (e) {
-        alert(e);
-        $('#grid').data('kendoGrid').dataSource.read();
-        $('#grid').data('kendoGrid').refresh();
-    }
-}                   
+                };
+                actions[1] = new Object();
+                actions[1].text = "Cancelar";
+                actions[1].action = function () {
+                    bandAlert = 0;
+                };
+                createDialog("Atención", "Esta seguro de eliminar el Registro ---" + dataItem.gpd__pre__des + " ---?", "400px", "200px", true, true, actions);
+            }
+        } catch (e) {
+            alert(e);
+            $('#grid').data('kendoGrid').dataSource.read();
+            $('#grid').data('kendoGrid').refresh();
+        }
+    }                   
     function changImgFunc(results , e) {
      
         for (var i = 0; i < results.length; i++) {
@@ -306,7 +297,7 @@ $(document).ready(function () {
                         
 });
                     
- function changeEst(e){
+function changeEst(e){
     var  actualizar = new cudPresupuesto();
     var  actjson = actualizar.getjson();
     var  urlactualizar = actualizar.getUrlSir();

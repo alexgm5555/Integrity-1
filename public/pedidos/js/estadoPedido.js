@@ -4,10 +4,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(window).resize(function () {
+$(window).resize(function () {    
     var viewportHeight = $(window).height();
-    $('#outerWrapper').height(viewportHeight - 100);
-                        
+    $('#outerWrapper').height(viewportHeight - 60);
+    $('.k-grid-content').height(viewportHeight - 100);
 });
                     
                     
@@ -203,20 +203,11 @@ $(document).ready(function () {
      *  
      *  
      */
-    var gridheigth = $("body").height();
-    gridheigth = gridheigth*0.12 + gridheigth;
+    $(window).trigger("resize");  
     var grid1 = $("#grid").kendoGrid({
         dataSource: dataSource,
-                            
-        height: gridheigth,
-        sortable: true,
-                           
-        pageable: {
-            refresh: true,
-            pageSizes: true,
-            buttonCount: 5
-        },
-        //navigatable: true,
+        sortable: true,    
+        pageable: false,        
         columns: [
             {field: "gpd__des", title: "Estado De Pedido",  hidden:false},
                                  	
@@ -272,13 +263,11 @@ $(document).ready(function () {
         actions[0] = new Object();
         actions[0].text = "OK";
         actions[0].action = function () {
-
-              
+            
             var dataSource = $("#grid").data("kendoGrid").dataSource;
             dataSource.remove(dataItem);
             dataSource.sync();
-            bandAlert = 0; 
-            
+            bandAlert = 0;            
             
         };
         actions[1] = new Object();
@@ -286,7 +275,7 @@ $(document).ready(function () {
         actions[1].action = function () {
             bandAlert = 0;
         };
-        createDialog("Atención", "Esta seguro de eliminar el Registro ---" + dataItem.gpd__pre__des + " ---?", "400px", "200px", true, true, actions);
+        createDialog("Atención", "Esta seguro de eliminar el Registro ---" + dataItem.gpd__des + " ---?", "400px", "200px", true, true, actions);
          }
     } catch (e) {
         alert(e);

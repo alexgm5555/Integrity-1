@@ -677,10 +677,9 @@ function setInfoCliente(e){
                 var dropdownlist = $("#ipCiudad").data("kendoDropDownList");
                 dropdownlist.value(dataItemEstablicimiento.ciu__cod); 
                 dropdownlist.enable(false)
-                
+                debugger
                 var dropdownlist = $("#ipSucursal").data("kendoDropDownList");
                 dropdownlist.value(dataItemEstablicimiento.suc__cod); 
-                
                 dropDownListVendedor(dataItemEstablicimiento.suc__cod);
             }
         },
@@ -696,11 +695,10 @@ function setInfoCliente(e){
                 var dropdownlist = $("#ipCiudad").data("kendoDropDownList");
                 dropdownlist.value(dataItemEstablicimiento.ciu__cod);
                 dropdownlist.enable(false)
-                
+                debugger
                 var dropdownlist = $("#ipSucursal").data("kendoDropDownList");
                 dropdownlist.value(dataItemEstablicimiento.suc__cod); 
-                
-                s(dataItemEstablicimiento.suc__cod);
+                dropDownListVendedor(dataItemEstablicimiento.suc__cod);
             }
         }
     });

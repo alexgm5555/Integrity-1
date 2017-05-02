@@ -6,7 +6,7 @@
 $(window).resize(function () {
     var viewportHeight = $(window).height();
     $('#outerWrapper').height(viewportHeight - 100);
-                        
+    $('.k-grid-content').height(viewportHeight - 100);
 });
                     
  function newCliente(){
@@ -250,7 +250,7 @@ $(document).ready(function () {
         }}
         }
     });
-//    $(window).trigger("resize");
+    $(window).trigger("resize");
     var grid1 = $("#grid").kendoGrid({
         dataSource: dataSource,
 

@@ -526,15 +526,13 @@ function gridDetalle(){
                 itemGuardado = resp.dsSIRgfc_fac.eeEstados[0].Estado;                
             },
             error: function (e) {
-                console.log(JSON.stringify(e));
-                alertDialogs("Error consumiendo el servicio de guardar\n"+ e.status +" - "+ e.statusText);
+                alertDialogs(e.status +" - "+ e.statusText);
             }
         }).done(function(){
             if(itemGuardado=="OK"){
                 cargarDatosGrilla();
             }else{                    
-                alertDialogs("factura con errores  \n"+itemGuardado);
-                console.log("Datos  \n" + itemGuardado);                
+                alertDialogs(itemGuardado);                
             }
         });
         
@@ -632,8 +630,7 @@ function validaCabecera(){
             cabeceraValida = JSON.stringify(resp.dsSIRgfc_fac.eeEstados[0].Estado);            
         },
         error: function (e) {
-            console.log(JSON.stringify(e));
-            alertDialogs("Error consumiendo el servicio de validar cabecera\n"+ e.status +" - "+ e.statusText);
+            alertDialogs(e.status +" - "+ e.statusText);
         }
     }).done(function(){
         if(cabeceraValida=='"OK"'){
@@ -727,7 +724,7 @@ function setInfoCliente(e){
                             return JSON.stringify(authfacpag);
                         }	
                     } catch (e) {
-                        alertDialogs("Error 825"+e.message)
+                        alertDialogs(e.message)
                     }
                 },
             },
@@ -797,7 +794,7 @@ function setInfoCliente(e){
                     if ((e[key1].eeEstados[0].Estado === "OK") || (e[key1].eeEstados[0].Estado === "")) {                        
                         return e[key1][mapDataVendedor];
                     } else {
-                        alertDialogs("Error en el servicio" + e[key1].eeEstados[0].Estado);
+                        alertDialogs(e[key1].eeEstados[0].Estado);
                     }                
                 },
                 model: {
@@ -920,8 +917,7 @@ function guardarFactura(){
             }
         },
         error: function (e) {
-            console.log(JSON.stringify(e));
-            alertDialogs("Error consumiendo el servicio de guardar\n"+ e.status +" - "+ e.statusText);
+            alertDialogs(e.status +" - "+ e.statusText);
         }
     }).done(function(){
         if(facturaGuardada=='"OK"'){            
@@ -943,8 +939,7 @@ function guardarFactura(){
             cargarDatosGrilla();
                              
         }else{                    
-            alertDialogs("factura con errores  \n"+facturaGuardada);
-            console.log("Datos  \n" + facturaGuardada);                
+            alertDialogs(facturaGuardada);            
         }
     });
 }
@@ -1000,9 +995,11 @@ function onDataBoundOpcPago(e){
     calcularFechaVencimiento (dropdownlist.dataSource._data[dropdownlist.selectedIndex-1].fac__num);    
 }
 function onDataBoundVendedor(e){
+    
     var dropdownlist = $("#ipVendedor").data("kendoDropDownList");
     dropdownlist.value(sessionStorage.getItem("codVendedor")); 
     dropdownlist.readonly(true);
+    debugger
     var dropdownlistSuc = $("#ipSucursal").data("kendoDropDownList");
     dropdownlistSuc.value(dropdownlist.dataSource._data[dropdownlist.selectedIndex].suc__cod);
     dropdownlistSuc.readonly(true);
@@ -1060,7 +1057,7 @@ function cargarFactura(){
                 factura = resp; 
             },
             error: function (e) {
-                alertDialogs(" Error al consumir el servicio: cargarFactura/SIRgfc_fac_act \n"+ e.status +" - "+ e.statusText);                
+                alertDialogs(e.status +" - "+ e.statusText);                
             }
         }).done(function(){
             if(estado=='"OK"'){                
@@ -1128,19 +1125,19 @@ function cargarFactura(){
                         }                        
                     },
                     error: function (e) {
-                        alertDialogs(" Error al consumir el servicio: cargarFactura/SIRgfc_cli \n"+ e.status +" - "+ e.statusText);                        
+                        alertDialogs( e.status +" - "+ e.statusText);                        
                     }
                 }).done(function(){
                     setInfoCliente();
                 });                
                 cargarDatosGrilla();
             }else{
-                alertDialogs("Error cargando la información de la factura.\n"+estado)
+                alertDialogs(estado)
             }
         });
         
     } catch (e) {
-        alertDialogs("Function: consumeServAjaxSIR Error: " + e.message);
+        alertDialogs(e.message);
     }
 //    sessionStorage.removeItem("factura");    
 }
@@ -1176,7 +1173,7 @@ function cargarDatosGrilla(){
                     factura = resp; 
                 },
                 error: function (e) {
-                    alertDialogs(" Error al consumir el servicio: cargarDatosGrilla/SIRgfc_fac_act \n"+ e.status +" - "+ e.statusText);                
+                    alertDialogs(e.status +" - "+ e.statusText);                
                 }
             }).done(function(){
                 if(estado=='"OK"'){
@@ -1213,13 +1210,13 @@ function cargarDatosGrilla(){
                         gridDetalle();
                     }                   
                 }else{
-                    alertDialogs("Error cargando la información del detalle de la  factura.\n"+estado)
+                    alertDialogs(estado)
                 }
                 gridDetalle();
             });                        
         }        
     } catch (e) {
-        alertDialogs("Function: consumeServAjaxSIR Error: " + e.message);
+        alertDialogs(e.message);
     }
 }
 

@@ -1,4 +1,4 @@
-                   
+
 /*  FUNCION RESIZE WINDOW 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,11 +6,11 @@
  */
 $(window).resize(function () {
     var viewportHeight = $(window).height();
-    $('#outerWrapper').height(viewportHeight - 100);
-                        
+    $('#outerWrapper').height(viewportHeight - 60);
+    $('.k-grid-content').height(viewportHeight - 100);
 });
-                    
-                    
+
+
 /**
  * FUNCION crear usuario nuevo
  * grid1 variable almacena data de grid
@@ -21,43 +21,43 @@ $(window).resize(function () {
  */ function newrol(){
     var grid1 = $("#grid").data("kendoGrid");
     var dataSource = $("#grid").data("kendoGrid").dataSource;
-                            
+    
     grid1.options.editable = "popup";
     grid1.addRow();
     grid1.options.editable = "popup";
-                            
+    
 }
 function editar_rol(){
-                	
-                    
+    
+    
     var grid1 = $("#grid").data("kendoGrid");
-                        
+    
     //                        var row = grid1.dataItem(grid1.select());
     //                        sessionStorage.setItem("Idrol",row.car__cod);
     //                         sessionStorage.setItem("Rolname",row.car__nom);
     window.location = ("tareas.html");
 }
-                    
 
-                    
-                    
+
+
+
 $(document).ready(function() {
-                                            
-                    
+    
+    
     $("#toolbar").kendoToolBar({
         items: [
-                                
-                                
+            
+            
             { template: "<label>Buscar:</label>" },
             {
                 template: "<input id='filtro' style='width: auto;'/>",
                 overflow: "always"
             }
-                                
+            
         ]
     });
-                        
-                        
+    
+    
 });
 
 /**
@@ -93,18 +93,18 @@ $(document).ready(function () {
             var send = parseInt ($("#fltrEst").data("kendoDropDownList").value() ); 
             grilla(send);
         }
-         
-
+        
+        
     }); 
     var windowTemplate = kendo.template($("#windowTemplate").html());
     var window = $("#window1").kendoWindow({
         title: "Eliminar",
         visible: false, //the window will not appear before its .open method is called
-
+        
     }).data("kendoWindow");
     function grilla(e){
-    
-    
+        
+        
         var  consultar = new sirCobradores();
         var  datajson = consultar.getjson();
         var  urlService = consultar.getUrlSir();
@@ -112,7 +112,7 @@ $(document).ready(function () {
         var  actualizar = new cudCobradores();
         var  actjson = actualizar.getjson();
         var  urlactualizar = actualizar.getUrlSir();
-
+        
         var mapCud = "eegpd_cbr";
         dataSource = new kendo.data.DataSource({
             transport: {
@@ -128,7 +128,7 @@ $(document).ready(function () {
                     type: "PUT",
                     contentType: "application/json; charset=utf-8"
                 },
-                                
+                
                 create: { 
                     url: urlactualizar,
                     dataType: "json",
@@ -148,11 +148,11 @@ $(document).ready(function () {
                     if (operation === "update") {
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__cod=options.cbr__cod;   
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].ter__nit=options.ter__nit; 
-                   
+                        
                         //actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__est=parseInt(options.cbr__est);
                         return JSON.stringify(actjson);
-                                        
-                                        
+                        
+                        
                     }
                     if (operation === "create") {
                         var cedula = $("#cedula")[0].value;
@@ -160,9 +160,9 @@ $(document).ready(function () {
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__cod=11;
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].ter__nit=cedula; 
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].ter__raz=nombre; 
-                    
+                        
                         //actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__est=parseInt(options.cbr__est);
- 
+                        
                         return JSON.stringify(actjson);          
                         $('#grid').data('kendoGrid').refresh();
                         $('#grid').data('kendoGrid').dataSource.read();
@@ -172,16 +172,16 @@ $(document).ready(function () {
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__cod=options.cbr__cod;       
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].ter__nit=options.ter__nit;  
                         actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__est=parseInt(options.cbr__est); 
-                    
+                        
                         return JSON.stringify(actjson);
-                                        
+                        
                         $('#grid').data('kendoGrid').refresh();
                         $('#grid').data('kendoGrid').dataSource.read();
                         $('#grid').data('kendoGrid').refresh();                                           
                     }
-                                    
+                    
                 }
-                                
+                
             },
             batch: false,
             severFiltering: true,                            
@@ -196,8 +196,8 @@ $(document).ready(function () {
                             $('#grid').data('kendoGrid').refresh();
                         }else
                         {
-                            alertDialogs("Error"+e[key1].eeEstados[0].Estado);
-                    
+                            alertDialogs(e[key1].eeEstados[0].Estado);
+                            
                         }
                     }},
                 model: {
@@ -207,15 +207,15 @@ $(document).ready(function () {
                         ter__nit:    {editable: true, nullable: false},
                         ter__raz:    {editable: true, nullable: false},
                         cbr__est:    {editable: true, nullable: false}
+                        
+                    },
                     
-                },
-             
+                }
+            },error: function (e) {
+                alertDialogs(e.errorThrown);
             }
-        },error: function (e) {
-            alertDialogs(e.errorThrown);
-        }
-    });
-
+        });
+        
         /**
          *  FUNCION CREAR GRILLA
          * Funcion cancel se ejecuta con el evento OnClick de EDIT grid
@@ -224,12 +224,11 @@ $(document).ready(function () {
                             $('#grid').data('kendoGrid').refresh();                                             
                             $('#grid').data('kendoGrid').dataSource.read();
                             $('#grid').data('kendoGrid').refresh(); `}                                                                                       
-                       
+        
          *  
          *  
          */
-        var gridheigth = $("body").height();
-        gridheigth = gridheigth*0.12 + gridheigth;
+        $(window).trigger("resize");
         var grid1 = $("#grid").kendoGrid({
             dataSource: dataSource,
             columns: [ 
@@ -251,7 +250,7 @@ $(document).ready(function () {
                     // Disable the editor of the "id" column when editing data items
                     $("#cedula")[0].value = e.model.ter__nit;
                     $("#cedula")[0].readOnly="true";
-     
+                    
                 }
             } ,
             rowTemplate: kendo.template($("#rowTemplateCmp").html()),
@@ -276,7 +275,7 @@ $(document).ready(function () {
         dataSource: dataSource,                        
         filter: "startswith"                    
     });
-
+    
     function nombre(container, options) {
         var obj = new sirConsultaCliente();
         var objJson = obj.getjson();
@@ -308,7 +307,7 @@ $(document).ready(function () {
                     },
                     parameterMap: function (options, operation) { // authdsgfc_cli JSon que se envia al cliente
                         try {
-                                          
+                            
                             if (operation === 'read') {
                                 var key1 = Object.keys(objJson)[0];
                                 var key2 = Object.keys(objJson[key1])[1];
@@ -328,7 +327,7 @@ $(document).ready(function () {
                             //$("#cedula").val(e.dsgfc_cli.eegfc_cli[0].ter__nit);
                             return e[key1][mapData];
                         }else if(e[key1].eeEstados[0].Estado==="ERROR: Patrón de Búsqueda insuficiente !"){
-                        
+                            
                         }else{
                             alertDialogs(e[key1].eeEstados[0].Estado);
                         }
@@ -346,13 +345,13 @@ $(document).ready(function () {
                 }            
             }
         });    
-          
+        
     }
-   
-
-
+    
+    
+    
     function clickEliminar(e) {
-
+        
         try {
             var fila = $(e.currentTarget).closest("tr")[0].rowIndex;
             e.preventDefault();
@@ -372,16 +371,16 @@ $(document).ready(function () {
                 bandAlert = 0;
             };
             createDialog("Atención", "Esta seguro de eliminar el Registro ---" + dataItem.ter__nit + " ---?", "400px", "200px", true, true, actions);
-
+            
         } catch (e) {
             alert(e);
             $('#grid').data('kendoGrid').dataSource.read();
             $('#grid').data('kendoGrid').refresh();
         }
     }                   
-                        
+    
     function cedula(container, options) {
-
+        
         var obj = new sirConsultaCliente();
         var objJson = obj.getjson();
         var url = obj.getUrlSir();
@@ -411,7 +410,7 @@ $(document).ready(function () {
                     },
                     parameterMap: function (options, operation) { // authdsgfc_cli JSon que se envia al cliente
                         try {
-                                          
+                            
                             if (operation === 'read') {
                                 var key1 = Object.keys(objJson)[0];
                                 var key2 = Object.keys(objJson[key1])[1];
@@ -430,7 +429,7 @@ $(document).ready(function () {
                         if ((e[key1].eeEstados[0].Estado === "OK") || (e[key1].eeEstados[0].Estado === "")) {
                             return e[key1][mapData];
                         }else if(e[key1].eeEstados[0].Estado==="ERROR: Patrón de Búsqueda insuficiente "){
-                        
+                            
                         }else{
                             alertDialogs(e[key1].eeEstados[0].Estado);
                         }
@@ -449,33 +448,33 @@ $(document).ready(function () {
             }
         });
     }                       
-
-                        
+    
+    
     function regionCod(container, options) {
-
+        
         var estados = [
             {text: "101001", valor: "1"},
             {text: "157001", valor: "2"},
-
+            
         ];
         $('<input id="region" required name="' + options.field + '"/>'+options.model.rgeo__cod)
                 .appendTo(container)
-          
+        
                 .kendoDropDownList({
                     dataTextField: "text",
             dataValueField: "valor",               
             dataSource: estados
         });
-               
+        
     }      
 });
-                    
-                    
+
+
 
 
 
 function changImgFunc(results , e) {
-     
+    
     for (var i = 0; i < results.length; i++) {
         if (document.getElementById("spanproceso"+results[i].cbr__cod)){
             if(results[i].cbr__est==0){                            
@@ -486,11 +485,11 @@ function changImgFunc(results , e) {
             }
             if(results[i].cbr__est==1){     
                 document.getElementById("spanproceso"+results[i].cbr__cod).setAttribute("class", "k-sprite po_checkBloq");
-
+                
             }
         }
     }
-
+    
 } 
 
 function changeEst(e){
@@ -499,8 +498,8 @@ function changeEst(e){
     var  urlactualizar = actualizar.getUrlSir();
     var seleccion =  $("#grid").data("kendoGrid")._data[($(e.currentTarget).closest("tr")["0"].sectionRowIndex)];  
     try {
-           
-            
+        
+        
         var actions = new Array();
         actions[0] = new Object();
         actions[0].text = "OK";
@@ -510,7 +509,7 @@ function changeEst(e){
                 actjson.dsSICUDgpd_cbr.eegpd_cbr[0].ter__nit=seleccion.ter__nit;                     
                 actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__est=1; 
                 $.ajax({
-        
+                    
                     type: "PUT",        
                     async: false,
                     data: JSON.stringify(actjson),
@@ -526,20 +525,20 @@ function changeEst(e){
                         }
                         else
                         {
-                            alertDialogs("Error"+resp.dsSICUDgpd_cbr.eeEstados[0].Estado); 
+                            alertDialogs(resp.dsSICUDgpd_cbr.eeEstados[0].Estado); 
                             $('#grid').data('kendoGrid').refresh();
                             $('#grid').data('kendoGrid').dataSource.read();
                             $('#grid').data('kendoGrid').refresh();                             
                         }
                     } 
-        
+                    
                 });
             }else if(seleccion.cbr__est===99){  
                 actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__cod=seleccion.cbr__cod;  
                 actjson.dsSICUDgpd_cbr.eegpd_cbr[0].ter__nit=seleccion.ter__nit;                     
                 actjson.dsSICUDgpd_cbr.eegpd_cbr[0].cbr__est=0;  
                 $.ajax({
-        
+                    
                     type: "PUT",        
                     async: false,
                     data: JSON.stringify(actjson),
@@ -555,13 +554,13 @@ function changeEst(e){
                         }
                         else
                         {
-                            alertDialogs("Error"+resp.dsSICUDgpd_cbr.eeEstados[0].Estado);  
+                            alertDialogs(resp.dsSICUDgpd_cbr.eeEstados[0].Estado);  
                             $('#grid').data('kendoGrid').refresh();
                             $('#grid').data('kendoGrid').dataSource.read();
                             $('#grid').data('kendoGrid').refresh(); 
                         }
                     } 
-        
+                    
                 });
             }
             bandAlert = 0;
@@ -572,12 +571,12 @@ function changeEst(e){
             bandAlert = 0;
         };
         createDialog("Atención", "Esta seguro de cambiar estado de Registro ---" + seleccion.ter__raz + " ---?", "400px", "200px", true, true, actions);
-
+        
     } catch (e) {
         createDialog(e);
         $('#grid').data('kendoGrid').dataSource.read();
         $('#grid').data('kendoGrid').refresh();
     }
     
- 
+    
 }

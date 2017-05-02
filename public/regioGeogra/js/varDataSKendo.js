@@ -147,7 +147,7 @@ function SIRsic_ciu_pais () {
     var url = ipServicios+baseParameters+"SIRsic_ciu_pais";
     var mapSir = "eesic_ciu";
     var dataInputSir = {
-        "dsSIRsic_ciu": {
+        "dsSIRsic_ciu_pais": {
             "eeDatos": [
                 {
                     "picusrcod": sessionStorage.getItem("usuario"),

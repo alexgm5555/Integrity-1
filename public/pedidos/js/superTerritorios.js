@@ -144,7 +144,7 @@ $(document).ready(function () {
                         return JSON.stringify(datajson);
                     }
                     if (operation === "update") {
-                        debugger
+                        
                         var cedula = $("#cedula").val();
                         var nombre = $("#nombre").val();
                         var recaudo = $("#Recaudo").val();
@@ -272,7 +272,7 @@ $(document).ready(function () {
                 
                 {field: "trr__cod", title: "Territorio",  hidden:false,  editor:territorios,
 //                    template: function (e) {
-//                        debugger
+//                        
 //                        return e.trr__cod;
 //                    }
                 },   
@@ -312,7 +312,7 @@ $(document).ready(function () {
                     var buscarlabel = $("label").find("for");
                     Buscarlabel = buscarlabel.prevObject[0];
                     Buscarlabel.style.display = "none";
-                    e.container.find("input[name=str__cod]")[0].hidden="true";
+//                    e.container.find("input[name=str__cod]")[0].hidden="true";
                     
                 }
             } ,
@@ -417,7 +417,7 @@ $(document).ready(function () {
                 .kendoAutoComplete({
                     dataTextField: "ter__raz",
             dataValueField: "ter__nit",        
-            placeholder: "Selecione un cliente...",
+            placeholder: "Nombre...",
             minLength: 4,
             filter: "contains",
             select: function(e) {                
@@ -506,7 +506,7 @@ $(document).ready(function () {
                     data: function (e) {
                         var key1 = Object.keys(e)[0];
                         if (e[key1].eeEstados[0].Estado === "OK") {
-                            debugger
+                            
                             return e[key1][mapCud1];
                         } else {
                             alertDialogs("Error Con Servicio Regiones"+e[key1].eeEstados[0].Estado);
@@ -536,7 +536,7 @@ $(document).ready(function () {
                 .kendoAutoComplete({
                     dataTextField: "ter__nit",
             dataValueField: "ter__nit",        
-            placeholder: "Selecione un cliente...",
+            placeholder: "Documento de identidad...",
             minLength: 6,
             filter: "contains",
             select: function(e) {                
